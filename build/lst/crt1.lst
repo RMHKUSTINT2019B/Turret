@@ -1,0 +1,1526 @@
+ARM GAS  C:\Users\Pearl\AppData\Local\Temp\cce0Cewi.s 			page 1
+
+
+   1              		.cpu cortex-m3
+   2              		.eabi_attribute 20, 1
+   3              		.eabi_attribute 21, 1
+   4              		.eabi_attribute 23, 3
+   5              		.eabi_attribute 24, 1
+   6              		.eabi_attribute 25, 1
+   7              		.eabi_attribute 26, 1
+   8              		.eabi_attribute 30, 2
+   9              		.eabi_attribute 34, 1
+  10              		.eabi_attribute 18, 4
+  11              		.file	"crt1.c"
+  12              		.text
+  13              	.Ltext0:
+  14              		.cfi_sections	.debug_frame
+  15              		.section	.text.__core_init,"ax",%progbits
+  16              		.align	1
+  17              		.p2align 4,,15
+  18              		.weak	__core_init
+  19              		.syntax unified
+  20              		.thumb
+  21              		.thumb_func
+  22              		.fpu softvfp
+  23              		.type	__core_init, %function
+  24              	__core_init:
+  25              	.LFB63:
+  26              		.file 1 ".//os/common/startup/ARMCMx/compilers/GCC/crt1.c"
+  27              		.loc 1 137 0
+  28              		.cfi_startproc
+  29              		@ args = 0, pretend = 0, frame = 0
+  30              		@ frame_needed = 0, uses_anonymous_args = 0
+  31              		@ link register save eliminated.
+  32              		.loc 1 143 0
+  33 0000 7047     		bx	lr
+  34              		.cfi_endproc
+  35              	.LFE63:
+  36              		.size	__core_init, .-__core_init
+  37 0002 00BF     		.section	.text.__early_init,"ax",%progbits
+  38              		.align	1
+  39              		.p2align 4,,15
+  40              		.weak	__early_init
+  41              		.syntax unified
+  42              		.thumb
+  43              		.thumb_func
+  44              		.fpu softvfp
+  45              		.type	__early_init, %function
+  46              	__early_init:
+  47              	.LFB69:
+  48              		.cfi_startproc
+  49              		@ args = 0, pretend = 0, frame = 0
+  50              		@ frame_needed = 0, uses_anonymous_args = 0
+  51              		@ link register save eliminated.
+  52 0000 7047     		bx	lr
+  53              		.cfi_endproc
+  54              	.LFE69:
+  55              		.size	__early_init, .-__early_init
+  56 0002 00BF     		.section	.text.__late_init,"ax",%progbits
+  57              		.align	1
+ARM GAS  C:\Users\Pearl\AppData\Local\Temp\cce0Cewi.s 			page 2
+
+
+  58              		.p2align 4,,15
+  59              		.weak	__late_init
+  60              		.syntax unified
+  61              		.thumb
+  62              		.thumb_func
+  63              		.fpu softvfp
+  64              		.type	__late_init, %function
+  65              	__late_init:
+  66              	.LFB71:
+  67              		.cfi_startproc
+  68              		@ args = 0, pretend = 0, frame = 0
+  69              		@ frame_needed = 0, uses_anonymous_args = 0
+  70              		@ link register save eliminated.
+  71 0000 7047     		bx	lr
+  72              		.cfi_endproc
+  73              	.LFE71:
+  74              		.size	__late_init, .-__late_init
+  75 0002 00BF     		.section	.text.__default_exit,"ax",%progbits
+  76              		.align	1
+  77              		.p2align 4,,15
+  78              		.weak	__default_exit
+  79              		.syntax unified
+  80              		.thumb
+  81              		.thumb_func
+  82              		.fpu softvfp
+  83              		.type	__default_exit, %function
+  84              	__default_exit:
+  85              	.LFB66:
+  86              		.loc 1 183 0
+  87              		.cfi_startproc
+  88              		@ Volatile: function does not return.
+  89              		@ args = 0, pretend = 0, frame = 0
+  90              		@ frame_needed = 0, uses_anonymous_args = 0
+  91              		@ link register save eliminated.
+  92              	.L6:
+  93 0000 FEE7     		b	.L6
+  94              		.cfi_endproc
+  95              	.LFE66:
+  96              		.size	__default_exit, .-__default_exit
+  97 0002 00BF     		.section	.text.__init_ram_areas,"ax",%progbits
+  98              		.align	1
+  99              		.p2align 4,,15
+ 100              		.global	__init_ram_areas
+ 101              		.syntax unified
+ 102              		.thumb
+ 103              		.thumb_func
+ 104              		.fpu softvfp
+ 105              		.type	__init_ram_areas, %function
+ 106              	__init_ram_areas:
+ 107              	.LFB67:
+ 108              		.loc 1 193 0
+ 109              		.cfi_startproc
+ 110              		@ args = 0, pretend = 0, frame = 0
+ 111              		@ frame_needed = 0, uses_anonymous_args = 0
+ 112              		@ link register save eliminated.
+ 113              	.LVL0:
+ 114              		.loc 1 193 0
+ARM GAS  C:\Users\Pearl\AppData\Local\Temp\cce0Cewi.s 			page 3
+
+
+ 115 0000 F0B4     		push	{r4, r5, r6, r7}
+ 116              		.cfi_def_cfa_offset 16
+ 117              		.cfi_offset 4, -16
+ 118              		.cfi_offset 5, -12
+ 119              		.cfi_offset 6, -8
+ 120              		.cfi_offset 7, -4
+ 121              	.LBB2:
+ 122              		.loc 1 210 0
+ 123 0002 0027     		movs	r7, #0
+ 124 0004 134E     		ldr	r6, .L19
+ 125              	.LBE2:
+ 126              		.loc 1 193 0
+ 127 0006 144D     		ldr	r5, .L19+4
+ 128 0008 144C     		ldr	r4, .L19+8
+ 129 000a 154B     		ldr	r3, .L19+12
+ 130 000c 1549     		ldr	r1, .L19+16
+ 131 000e 06F1700C 		add	ip, r6, #112
+ 132              	.LVL1:
+ 133              	.L13:
+ 134              	.LBB3:
+ 135              		.loc 1 202 0
+ 136 0012 9C42     		cmp	r4, r3
+ 137 0014 11D9     		bls	.L17
+ 138 0016 1A46     		mov	r2, r3
+ 139 0018 0439     		subs	r1, r1, #4
+ 140              	.LVL2:
+ 141              	.L9:
+ 142              		.loc 1 203 0
+ 143 001a 51F8040F 		ldr	r0, [r1, #4]!
+ 144              	.LVL3:
+ 145 001e 42F8040B 		str	r0, [r2], #4
+ 146              	.LVL4:
+ 147              		.loc 1 202 0
+ 148 0022 9442     		cmp	r4, r2
+ 149 0024 F9D8     		bhi	.L9
+ 150 0026 DA43     		mvns	r2, r3
+ 151              	.LVL5:
+ 152 0028 1444     		add	r4, r4, r2
+ 153 002a 24F00304 		bic	r4, r4, #3
+ 154 002e 0434     		adds	r4, r4, #4
+ 155 0030 2344     		add	r3, r3, r4
+ 156              	.LVL6:
+ 157              		.loc 1 209 0
+ 158 0032 9D42     		cmp	r5, r3
+ 159 0034 03D9     		bls	.L18
+ 160              	.LVL7:
+ 161              	.L11:
+ 162              		.loc 1 210 0
+ 163 0036 43F8047B 		str	r7, [r3], #4
+ 164              	.LVL8:
+ 165              	.L17:
+ 166              		.loc 1 209 0
+ 167 003a 9D42     		cmp	r5, r3
+ 168 003c FBD8     		bhi	.L11
+ 169              	.L18:
+ 170              	.LVL9:
+ 171              	.LBE3:
+ARM GAS  C:\Users\Pearl\AppData\Local\Temp\cce0Cewi.s 			page 4
+
+
+ 172              		.loc 1 215 0
+ 173 003e 6645     		cmp	r6, ip
+ 174 0040 05D0     		beq	.L7
+ 175 0042 D6E90413 		ldrd	r1, r3, [r6, #16]
+ 176              	.LVL10:
+ 177 0046 D6E90645 		ldrd	r4, r5, [r6, #24]
+ 178 004a 1036     		adds	r6, r6, #16
+ 179              	.LVL11:
+ 180 004c E1E7     		b	.L13
+ 181              	.LVL12:
+ 182              	.L7:
+ 183              		.loc 1 217 0
+ 184 004e F0BC     		pop	{r4, r5, r6, r7}
+ 185              		.cfi_restore 7
+ 186              		.cfi_restore 6
+ 187              		.cfi_restore 5
+ 188              		.cfi_restore 4
+ 189              		.cfi_def_cfa_offset 0
+ 190              	.LVL13:
+ 191 0050 7047     		bx	lr
+ 192              	.L20:
+ 193 0052 00BF     		.align	2
+ 194              	.L19:
+ 195 0054 00000000 		.word	.LANCHOR0
+ 196 0058 00000000 		.word	__ram0_noinit__
+ 197 005c 00000000 		.word	__ram0_clear__
+ 198 0060 00000000 		.word	__ram0_init__
+ 199 0064 00000000 		.word	__ram0_init_text__
+ 200              		.cfi_endproc
+ 201              	.LFE67:
+ 202              		.size	__init_ram_areas, .-__init_ram_areas
+ 203              		.section	.rodata.ram_areas,"a",%progbits
+ 204              		.align	2
+ 205              		.set	.LANCHOR0,. + 0
+ 206              		.type	ram_areas, %object
+ 207              		.size	ram_areas, 128
+ 208              	ram_areas:
+ 209 0000 00000000 		.word	__ram0_init_text__
+ 210 0004 00000000 		.word	__ram0_init__
+ 211 0008 00000000 		.word	__ram0_clear__
+ 212 000c 00000000 		.word	__ram0_noinit__
+ 213 0010 00000000 		.word	__ram1_init_text__
+ 214 0014 00000000 		.word	__ram1_init__
+ 215 0018 00000000 		.word	__ram1_clear__
+ 216 001c 00000000 		.word	__ram1_noinit__
+ 217 0020 00000000 		.word	__ram2_init_text__
+ 218 0024 00000000 		.word	__ram2_init__
+ 219 0028 00000000 		.word	__ram2_clear__
+ 220 002c 00000000 		.word	__ram2_noinit__
+ 221 0030 00000000 		.word	__ram3_init_text__
+ 222 0034 00000000 		.word	__ram3_init__
+ 223 0038 00000000 		.word	__ram3_clear__
+ 224 003c 00000000 		.word	__ram3_noinit__
+ 225 0040 00000000 		.word	__ram4_init_text__
+ 226 0044 00000000 		.word	__ram4_init__
+ 227 0048 00000000 		.word	__ram4_clear__
+ 228 004c 00000000 		.word	__ram4_noinit__
+ARM GAS  C:\Users\Pearl\AppData\Local\Temp\cce0Cewi.s 			page 5
+
+
+ 229 0050 00000000 		.word	__ram5_init_text__
+ 230 0054 00000000 		.word	__ram5_init__
+ 231 0058 00000000 		.word	__ram5_clear__
+ 232 005c 00000000 		.word	__ram5_noinit__
+ 233 0060 00000000 		.word	__ram6_init_text__
+ 234 0064 00000000 		.word	__ram6_init__
+ 235 0068 00000000 		.word	__ram6_clear__
+ 236 006c 00000000 		.word	__ram6_noinit__
+ 237 0070 00000000 		.word	__ram7_init_text__
+ 238 0074 00000000 		.word	__ram7_init__
+ 239 0078 00000000 		.word	__ram7_clear__
+ 240 007c 00000000 		.word	__ram7_noinit__
+ 241              		.text
+ 242              	.Letext0:
+ 243              		.file 2 "c:\\chibistudio\\tools\\gnu tools arm embedded\\7.0 2017q4\\arm-none-eabi\\include\\machi
+ 244              		.file 3 "c:\\chibistudio\\tools\\gnu tools arm embedded\\7.0 2017q4\\arm-none-eabi\\include\\sys\\
+ 245              		.file 4 ".//os/common/ext/ARM/CMSIS/Core/Include/core_cm3.h"
+ 246              		.file 5 ".//os/common/ext/ST/STM32F1xx/system_stm32f1xx.h"
+ 247              		.section	.debug_info,"",%progbits
+ 248              	.Ldebug_info0:
+ 249 0000 62030000 		.4byte	0x362
+ 250 0004 0400     		.2byte	0x4
+ 251 0006 00000000 		.4byte	.Ldebug_abbrev0
+ 252 000a 04       		.byte	0x4
+ 253 000b 01       		.uleb128 0x1
+ 254 000c 00000000 		.4byte	.LASF59
+ 255 0010 0C       		.byte	0xc
+ 256 0011 44010000 		.4byte	.LASF60
+ 257 0015 FC030000 		.4byte	.LASF61
+ 258 0019 18000000 		.4byte	.Ldebug_ranges0+0x18
+ 259 001d 00000000 		.4byte	0
+ 260 0021 00000000 		.4byte	.Ldebug_line0
+ 261 0025 02       		.uleb128 0x2
+ 262 0026 01       		.byte	0x1
+ 263 0027 06       		.byte	0x6
+ 264 0028 B7020000 		.4byte	.LASF0
+ 265 002c 03       		.uleb128 0x3
+ 266 002d 40020000 		.4byte	.LASF4
+ 267 0031 02       		.byte	0x2
+ 268 0032 2B       		.byte	0x2b
+ 269 0033 37000000 		.4byte	0x37
+ 270 0037 02       		.uleb128 0x2
+ 271 0038 01       		.byte	0x1
+ 272 0039 08       		.byte	0x8
+ 273 003a 7C020000 		.4byte	.LASF1
+ 274 003e 02       		.uleb128 0x2
+ 275 003f 02       		.byte	0x2
+ 276 0040 05       		.byte	0x5
+ 277 0041 FF000000 		.4byte	.LASF2
+ 278 0045 02       		.uleb128 0x2
+ 279 0046 02       		.byte	0x2
+ 280 0047 07       		.byte	0x7
+ 281 0048 62030000 		.4byte	.LASF3
+ 282 004c 03       		.uleb128 0x3
+ 283 004d 3E040000 		.4byte	.LASF5
+ 284 0051 02       		.byte	0x2
+ 285 0052 4D       		.byte	0x4d
+ARM GAS  C:\Users\Pearl\AppData\Local\Temp\cce0Cewi.s 			page 6
+
+
+ 286 0053 57000000 		.4byte	0x57
+ 287 0057 02       		.uleb128 0x2
+ 288 0058 04       		.byte	0x4
+ 289 0059 05       		.byte	0x5
+ 290 005a 0C020000 		.4byte	.LASF6
+ 291 005e 03       		.uleb128 0x3
+ 292 005f 1A010000 		.4byte	.LASF7
+ 293 0063 02       		.byte	0x2
+ 294 0064 4F       		.byte	0x4f
+ 295 0065 69000000 		.4byte	0x69
+ 296 0069 02       		.uleb128 0x2
+ 297 006a 04       		.byte	0x4
+ 298 006b 07       		.byte	0x7
+ 299 006c FF020000 		.4byte	.LASF8
+ 300 0070 02       		.uleb128 0x2
+ 301 0071 08       		.byte	0x8
+ 302 0072 05       		.byte	0x5
+ 303 0073 C4010000 		.4byte	.LASF9
+ 304 0077 02       		.uleb128 0x2
+ 305 0078 08       		.byte	0x8
+ 306 0079 07       		.byte	0x7
+ 307 007a C3020000 		.4byte	.LASF10
+ 308 007e 04       		.uleb128 0x4
+ 309 007f 04       		.byte	0x4
+ 310 0080 05       		.byte	0x5
+ 311 0081 696E7400 		.ascii	"int\000"
+ 312 0085 02       		.uleb128 0x2
+ 313 0086 04       		.byte	0x4
+ 314 0087 07       		.byte	0x7
+ 315 0088 F2020000 		.4byte	.LASF11
+ 316 008c 03       		.uleb128 0x3
+ 317 008d 75010000 		.4byte	.LASF12
+ 318 0091 03       		.byte	0x3
+ 319 0092 18       		.byte	0x18
+ 320 0093 2C000000 		.4byte	0x2c
+ 321 0097 05       		.uleb128 0x5
+ 322 0098 8C000000 		.4byte	0x8c
+ 323 009c 03       		.uleb128 0x3
+ 324 009d 5A030000 		.4byte	.LASF13
+ 325 00a1 03       		.byte	0x3
+ 326 00a2 2C       		.byte	0x2c
+ 327 00a3 4C000000 		.4byte	0x4c
+ 328 00a7 06       		.uleb128 0x6
+ 329 00a8 9C000000 		.4byte	0x9c
+ 330 00ac 03       		.uleb128 0x3
+ 331 00ad DA020000 		.4byte	.LASF14
+ 332 00b1 03       		.byte	0x3
+ 333 00b2 30       		.byte	0x30
+ 334 00b3 5E000000 		.4byte	0x5e
+ 335 00b7 07       		.uleb128 0x7
+ 336 00b8 21040000 		.4byte	.LASF15
+ 337 00bc 04       		.byte	0x4
+ 338 00bd 4007     		.2byte	0x740
+ 339 00bf A7000000 		.4byte	0xa7
+ 340 00c3 08       		.uleb128 0x8
+ 341 00c4 9B030000 		.4byte	.LASF16
+ 342 00c8 05       		.byte	0x5
+ARM GAS  C:\Users\Pearl\AppData\Local\Temp\cce0Cewi.s 			page 7
+
+
+ 343 00c9 45       		.byte	0x45
+ 344 00ca AC000000 		.4byte	0xac
+ 345 00ce 09       		.uleb128 0x9
+ 346 00cf 97000000 		.4byte	0x97
+ 347 00d3 DE000000 		.4byte	0xde
+ 348 00d7 0A       		.uleb128 0xa
+ 349 00d8 85000000 		.4byte	0x85
+ 350 00dc 0F       		.byte	0xf
+ 351 00dd 00       		.byte	0
+ 352 00de 05       		.uleb128 0x5
+ 353 00df CE000000 		.4byte	0xce
+ 354 00e3 08       		.uleb128 0x8
+ 355 00e4 CC030000 		.4byte	.LASF17
+ 356 00e8 05       		.byte	0x5
+ 357 00e9 46       		.byte	0x46
+ 358 00ea DE000000 		.4byte	0xde
+ 359 00ee 09       		.uleb128 0x9
+ 360 00ef 97000000 		.4byte	0x97
+ 361 00f3 FE000000 		.4byte	0xfe
+ 362 00f7 0A       		.uleb128 0xa
+ 363 00f8 85000000 		.4byte	0x85
+ 364 00fc 07       		.byte	0x7
+ 365 00fd 00       		.byte	0
+ 366 00fe 05       		.uleb128 0x5
+ 367 00ff EE000000 		.4byte	0xee
+ 368 0103 08       		.uleb128 0x8
+ 369 0104 A9020000 		.4byte	.LASF18
+ 370 0108 05       		.byte	0x5
+ 371 0109 47       		.byte	0x47
+ 372 010a FE000000 		.4byte	0xfe
+ 373 010e 0B       		.uleb128 0xb
+ 374 010f 10       		.byte	0x10
+ 375 0110 01       		.byte	0x1
+ 376 0111 35       		.byte	0x35
+ 377 0112 47010000 		.4byte	0x147
+ 378 0116 0C       		.uleb128 0xc
+ 379 0117 91040000 		.4byte	.LASF19
+ 380 011b 01       		.byte	0x1
+ 381 011c 36       		.byte	0x36
+ 382 011d 47010000 		.4byte	0x147
+ 383 0121 00       		.byte	0
+ 384 0122 0C       		.uleb128 0xc
+ 385 0123 87040000 		.4byte	.LASF20
+ 386 0127 01       		.byte	0x1
+ 387 0128 37       		.byte	0x37
+ 388 0129 47010000 		.4byte	0x147
+ 389 012d 04       		.byte	0x4
+ 390 012e 0C       		.uleb128 0xc
+ 391 012f F4000000 		.4byte	.LASF21
+ 392 0133 01       		.byte	0x1
+ 393 0134 38       		.byte	0x38
+ 394 0135 47010000 		.4byte	0x147
+ 395 0139 08       		.byte	0x8
+ 396 013a 0C       		.uleb128 0xc
+ 397 013b E1010000 		.4byte	.LASF22
+ 398 013f 01       		.byte	0x1
+ 399 0140 39       		.byte	0x39
+ARM GAS  C:\Users\Pearl\AppData\Local\Temp\cce0Cewi.s 			page 8
+
+
+ 400 0141 47010000 		.4byte	0x147
+ 401 0145 0C       		.byte	0xc
+ 402 0146 00       		.byte	0
+ 403 0147 0D       		.uleb128 0xd
+ 404 0148 04       		.byte	0x4
+ 405 0149 AC000000 		.4byte	0xac
+ 406 014d 03       		.uleb128 0x3
+ 407 014e EE010000 		.4byte	.LASF23
+ 408 0152 01       		.byte	0x1
+ 409 0153 3A       		.byte	0x3a
+ 410 0154 0E010000 		.4byte	0x10e
+ 411 0158 05       		.uleb128 0x5
+ 412 0159 4D010000 		.4byte	0x14d
+ 413 015d 08       		.uleb128 0x8
+ 414 015e 88030000 		.4byte	.LASF24
+ 415 0162 01       		.byte	0x1
+ 416 0163 41       		.byte	0x41
+ 417 0164 AC000000 		.4byte	0xac
+ 418 0168 08       		.uleb128 0x8
+ 419 0169 D8000000 		.4byte	.LASF25
+ 420 016d 01       		.byte	0x1
+ 421 016e 41       		.byte	0x41
+ 422 016f AC000000 		.4byte	0xac
+ 423 0173 08       		.uleb128 0x8
+ 424 0174 DA030000 		.4byte	.LASF26
+ 425 0178 01       		.byte	0x1
+ 426 0179 41       		.byte	0x41
+ 427 017a AC000000 		.4byte	0xac
+ 428 017e 08       		.uleb128 0x8
+ 429 017f 99020000 		.4byte	.LASF27
+ 430 0183 01       		.byte	0x1
+ 431 0184 41       		.byte	0x41
+ 432 0185 AC000000 		.4byte	0xac
+ 433 0189 08       		.uleb128 0x8
+ 434 018a 69020000 		.4byte	.LASF28
+ 435 018e 01       		.byte	0x1
+ 436 018f 44       		.byte	0x44
+ 437 0190 AC000000 		.4byte	0xac
+ 438 0194 08       		.uleb128 0x8
+ 439 0195 FE010000 		.4byte	.LASF29
+ 440 0199 01       		.byte	0x1
+ 441 019a 44       		.byte	0x44
+ 442 019b AC000000 		.4byte	0xac
+ 443 019f 08       		.uleb128 0x8
+ 444 01a0 31020000 		.4byte	.LASF30
+ 445 01a4 01       		.byte	0x1
+ 446 01a5 44       		.byte	0x44
+ 447 01a6 AC000000 		.4byte	0xac
+ 448 01aa 08       		.uleb128 0x8
+ 449 01ab 48040000 		.4byte	.LASF31
+ 450 01af 01       		.byte	0x1
+ 451 01b0 44       		.byte	0x44
+ 452 01b1 AC000000 		.4byte	0xac
+ 453 01b5 08       		.uleb128 0x8
+ 454 01b6 B9030000 		.4byte	.LASF32
+ 455 01ba 01       		.byte	0x1
+ 456 01bb 47       		.byte	0x47
+ARM GAS  C:\Users\Pearl\AppData\Local\Temp\cce0Cewi.s 			page 9
+
+
+ 457 01bc AC000000 		.4byte	0xac
+ 458 01c0 08       		.uleb128 0x8
+ 459 01c1 AB030000 		.4byte	.LASF33
+ 460 01c5 01       		.byte	0x1
+ 461 01c6 47       		.byte	0x47
+ 462 01c7 AC000000 		.4byte	0xac
+ 463 01cb 08       		.uleb128 0x8
+ 464 01cc 5A020000 		.4byte	.LASF34
+ 465 01d0 01       		.byte	0x1
+ 466 01d1 47       		.byte	0x47
+ 467 01d2 AC000000 		.4byte	0xac
+ 468 01d6 08       		.uleb128 0x8
+ 469 01d7 B4010000 		.4byte	.LASF35
+ 470 01db 01       		.byte	0x1
+ 471 01dc 47       		.byte	0x47
+ 472 01dd AC000000 		.4byte	0xac
+ 473 01e1 08       		.uleb128 0x8
+ 474 01e2 74040000 		.4byte	.LASF36
+ 475 01e6 01       		.byte	0x1
+ 476 01e7 4A       		.byte	0x4a
+ 477 01e8 AC000000 		.4byte	0xac
+ 478 01ec 08       		.uleb128 0x8
+ 479 01ed E6000000 		.4byte	.LASF37
+ 480 01f1 01       		.byte	0x1
+ 481 01f2 4A       		.byte	0x4a
+ 482 01f3 AC000000 		.4byte	0xac
+ 483 01f7 08       		.uleb128 0x8
+ 484 01f8 8A020000 		.4byte	.LASF38
+ 485 01fc 01       		.byte	0x1
+ 486 01fd 4A       		.byte	0x4a
+ 487 01fe AC000000 		.4byte	0xac
+ 488 0202 08       		.uleb128 0x8
+ 489 0203 25010000 		.4byte	.LASF39
+ 490 0207 01       		.byte	0x1
+ 491 0208 4A       		.byte	0x4a
+ 492 0209 AC000000 		.4byte	0xac
+ 493 020d 08       		.uleb128 0x8
+ 494 020e E9030000 		.4byte	.LASF40
+ 495 0212 01       		.byte	0x1
+ 496 0213 4D       		.byte	0x4d
+ 497 0214 AC000000 		.4byte	0xac
+ 498 0218 08       		.uleb128 0x8
+ 499 0219 58040000 		.4byte	.LASF41
+ 500 021d 01       		.byte	0x1
+ 501 021e 4D       		.byte	0x4d
+ 502 021f AC000000 		.4byte	0xac
+ 503 0223 08       		.uleb128 0x8
+ 504 0224 35010000 		.4byte	.LASF42
+ 505 0228 01       		.byte	0x1
+ 506 0229 4D       		.byte	0x4d
+ 507 022a AC000000 		.4byte	0xac
+ 508 022e 08       		.uleb128 0x8
+ 509 022f 20030000 		.4byte	.LASF43
+ 510 0233 01       		.byte	0x1
+ 511 0234 4D       		.byte	0x4d
+ 512 0235 AC000000 		.4byte	0xac
+ 513 0239 08       		.uleb128 0x8
+ARM GAS  C:\Users\Pearl\AppData\Local\Temp\cce0Cewi.s 			page 10
+
+
+ 514 023a C5000000 		.4byte	.LASF44
+ 515 023e 01       		.byte	0x1
+ 516 023f 50       		.byte	0x50
+ 517 0240 AC000000 		.4byte	0xac
+ 518 0244 08       		.uleb128 0x8
+ 519 0245 7D010000 		.4byte	.LASF45
+ 520 0249 01       		.byte	0x1
+ 521 024a 50       		.byte	0x50
+ 522 024b AC000000 		.4byte	0xac
+ 523 024f 08       		.uleb128 0x8
+ 524 0250 E3020000 		.4byte	.LASF46
+ 525 0254 01       		.byte	0x1
+ 526 0255 50       		.byte	0x50
+ 527 0256 AC000000 		.4byte	0xac
+ 528 025a 08       		.uleb128 0x8
+ 529 025b 4A020000 		.4byte	.LASF47
+ 530 025f 01       		.byte	0x1
+ 531 0260 50       		.byte	0x50
+ 532 0261 AC000000 		.4byte	0xac
+ 533 0265 08       		.uleb128 0x8
+ 534 0266 A1010000 		.4byte	.LASF48
+ 535 026a 01       		.byte	0x1
+ 536 026b 53       		.byte	0x53
+ 537 026c AC000000 		.4byte	0xac
+ 538 0270 08       		.uleb128 0x8
+ 539 0271 30030000 		.4byte	.LASF49
+ 540 0275 01       		.byte	0x1
+ 541 0276 53       		.byte	0x53
+ 542 0277 AC000000 		.4byte	0xac
+ 543 027b 08       		.uleb128 0x8
+ 544 027c 11030000 		.4byte	.LASF50
+ 545 0280 01       		.byte	0x1
+ 546 0281 53       		.byte	0x53
+ 547 0282 AC000000 		.4byte	0xac
+ 548 0286 08       		.uleb128 0x8
+ 549 0287 21020000 		.4byte	.LASF51
+ 550 028b 01       		.byte	0x1
+ 551 028c 53       		.byte	0x53
+ 552 028d AC000000 		.4byte	0xac
+ 553 0291 08       		.uleb128 0x8
+ 554 0292 75030000 		.4byte	.LASF52
+ 555 0296 01       		.byte	0x1
+ 556 0297 56       		.byte	0x56
+ 557 0298 AC000000 		.4byte	0xac
+ 558 029c 08       		.uleb128 0x8
+ 559 029d 66040000 		.4byte	.LASF53
+ 560 02a1 01       		.byte	0x1
+ 561 02a2 56       		.byte	0x56
+ 562 02a3 AC000000 		.4byte	0xac
+ 563 02a7 08       		.uleb128 0x8
+ 564 02a8 3E030000 		.4byte	.LASF54
+ 565 02ac 01       		.byte	0x1
+ 566 02ad 56       		.byte	0x56
+ 567 02ae AC000000 		.4byte	0xac
+ 568 02b2 08       		.uleb128 0x8
+ 569 02b3 2E040000 		.4byte	.LASF55
+ 570 02b7 01       		.byte	0x1
+ARM GAS  C:\Users\Pearl\AppData\Local\Temp\cce0Cewi.s 			page 11
+
+
+ 571 02b8 56       		.byte	0x56
+ 572 02b9 AC000000 		.4byte	0xac
+ 573 02bd 09       		.uleb128 0x9
+ 574 02be 58010000 		.4byte	0x158
+ 575 02c2 CD020000 		.4byte	0x2cd
+ 576 02c6 0A       		.uleb128 0xa
+ 577 02c7 85000000 		.4byte	0x85
+ 578 02cb 07       		.byte	0x7
+ 579 02cc 00       		.byte	0
+ 580 02cd 05       		.uleb128 0x5
+ 581 02ce BD020000 		.4byte	0x2bd
+ 582 02d2 0E       		.uleb128 0xe
+ 583 02d3 8B010000 		.4byte	.LASF56
+ 584 02d7 01       		.byte	0x1
+ 585 02d8 5D       		.byte	0x5d
+ 586 02d9 CD020000 		.4byte	0x2cd
+ 587 02dd 05       		.uleb128 0x5
+ 588 02de 03       		.byte	0x3
+ 589 02df 00000000 		.4byte	ram_areas
+ 590 02e3 0F       		.uleb128 0xf
+ 591 02e4 09010000 		.4byte	.LASF62
+ 592 02e8 01       		.byte	0x1
+ 593 02e9 C1       		.byte	0xc1
+ 594 02ea 00000000 		.4byte	.LFB67
+ 595 02ee 68000000 		.4byte	.LFE67-.LFB67
+ 596 02f2 01       		.uleb128 0x1
+ 597 02f3 9C       		.byte	0x9c
+ 598 02f4 29030000 		.4byte	0x329
+ 599 02f8 10       		.uleb128 0x10
+ 600 02f9 72617000 		.ascii	"rap\000"
+ 601 02fd 01       		.byte	0x1
+ 602 02fe C3       		.byte	0xc3
+ 603 02ff 29030000 		.4byte	0x329
+ 604 0303 00000000 		.4byte	.LLST0
+ 605 0307 11       		.uleb128 0x11
+ 606 0308 00000000 		.4byte	.Ldebug_ranges0+0
+ 607 030c 10       		.uleb128 0x10
+ 608 030d 747000   		.ascii	"tp\000"
+ 609 0310 01       		.byte	0x1
+ 610 0311 C6       		.byte	0xc6
+ 611 0312 47010000 		.4byte	0x147
+ 612 0316 48000000 		.4byte	.LLST1
+ 613 031a 10       		.uleb128 0x10
+ 614 031b 7000     		.ascii	"p\000"
+ 615 031d 01       		.byte	0x1
+ 616 031e C7       		.byte	0xc7
+ 617 031f 47010000 		.4byte	0x147
+ 618 0323 81000000 		.4byte	.LLST2
+ 619 0327 00       		.byte	0
+ 620 0328 00       		.byte	0
+ 621 0329 0D       		.uleb128 0xd
+ 622 032a 04       		.byte	0x4
+ 623 032b 58010000 		.4byte	0x158
+ 624 032f 12       		.uleb128 0x12
+ 625 0330 D2010000 		.4byte	.LASF63
+ 626 0334 01       		.byte	0x1
+ 627 0335 B7       		.byte	0xb7
+ARM GAS  C:\Users\Pearl\AppData\Local\Temp\cce0Cewi.s 			page 12
+
+
+ 628 0336 00000000 		.4byte	.LFB66
+ 629 033a 02000000 		.4byte	.LFE66-.LFB66
+ 630 033e 01       		.uleb128 0x1
+ 631 033f 9C       		.byte	0x9c
+ 632 0340 13       		.uleb128 0x13
+ 633 0341 15020000 		.4byte	.LASF57
+ 634 0345 01       		.byte	0x1
+ 635 0346 AA       		.byte	0xaa
+ 636 0347 13       		.uleb128 0x13
+ 637 0348 4D030000 		.4byte	.LASF58
+ 638 034c 01       		.byte	0x1
+ 639 034d 9C       		.byte	0x9c
+ 640 034e 14       		.uleb128 0x14
+ 641 034f 95010000 		.4byte	.LASF64
+ 642 0353 01       		.byte	0x1
+ 643 0354 89       		.byte	0x89
+ 644 0355 01       		.byte	0x1
+ 645 0356 15       		.uleb128 0x15
+ 646 0357 4E030000 		.4byte	0x34e
+ 647 035b 00000000 		.4byte	.LFB63
+ 648 035f 02000000 		.4byte	.LFE63-.LFB63
+ 649 0363 01       		.uleb128 0x1
+ 650 0364 9C       		.byte	0x9c
+ 651 0365 00       		.byte	0
+ 652              		.section	.debug_abbrev,"",%progbits
+ 653              	.Ldebug_abbrev0:
+ 654 0000 01       		.uleb128 0x1
+ 655 0001 11       		.uleb128 0x11
+ 656 0002 01       		.byte	0x1
+ 657 0003 25       		.uleb128 0x25
+ 658 0004 0E       		.uleb128 0xe
+ 659 0005 13       		.uleb128 0x13
+ 660 0006 0B       		.uleb128 0xb
+ 661 0007 03       		.uleb128 0x3
+ 662 0008 0E       		.uleb128 0xe
+ 663 0009 1B       		.uleb128 0x1b
+ 664 000a 0E       		.uleb128 0xe
+ 665 000b 55       		.uleb128 0x55
+ 666 000c 17       		.uleb128 0x17
+ 667 000d 11       		.uleb128 0x11
+ 668 000e 01       		.uleb128 0x1
+ 669 000f 10       		.uleb128 0x10
+ 670 0010 17       		.uleb128 0x17
+ 671 0011 00       		.byte	0
+ 672 0012 00       		.byte	0
+ 673 0013 02       		.uleb128 0x2
+ 674 0014 24       		.uleb128 0x24
+ 675 0015 00       		.byte	0
+ 676 0016 0B       		.uleb128 0xb
+ 677 0017 0B       		.uleb128 0xb
+ 678 0018 3E       		.uleb128 0x3e
+ 679 0019 0B       		.uleb128 0xb
+ 680 001a 03       		.uleb128 0x3
+ 681 001b 0E       		.uleb128 0xe
+ 682 001c 00       		.byte	0
+ 683 001d 00       		.byte	0
+ 684 001e 03       		.uleb128 0x3
+ARM GAS  C:\Users\Pearl\AppData\Local\Temp\cce0Cewi.s 			page 13
+
+
+ 685 001f 16       		.uleb128 0x16
+ 686 0020 00       		.byte	0
+ 687 0021 03       		.uleb128 0x3
+ 688 0022 0E       		.uleb128 0xe
+ 689 0023 3A       		.uleb128 0x3a
+ 690 0024 0B       		.uleb128 0xb
+ 691 0025 3B       		.uleb128 0x3b
+ 692 0026 0B       		.uleb128 0xb
+ 693 0027 49       		.uleb128 0x49
+ 694 0028 13       		.uleb128 0x13
+ 695 0029 00       		.byte	0
+ 696 002a 00       		.byte	0
+ 697 002b 04       		.uleb128 0x4
+ 698 002c 24       		.uleb128 0x24
+ 699 002d 00       		.byte	0
+ 700 002e 0B       		.uleb128 0xb
+ 701 002f 0B       		.uleb128 0xb
+ 702 0030 3E       		.uleb128 0x3e
+ 703 0031 0B       		.uleb128 0xb
+ 704 0032 03       		.uleb128 0x3
+ 705 0033 08       		.uleb128 0x8
+ 706 0034 00       		.byte	0
+ 707 0035 00       		.byte	0
+ 708 0036 05       		.uleb128 0x5
+ 709 0037 26       		.uleb128 0x26
+ 710 0038 00       		.byte	0
+ 711 0039 49       		.uleb128 0x49
+ 712 003a 13       		.uleb128 0x13
+ 713 003b 00       		.byte	0
+ 714 003c 00       		.byte	0
+ 715 003d 06       		.uleb128 0x6
+ 716 003e 35       		.uleb128 0x35
+ 717 003f 00       		.byte	0
+ 718 0040 49       		.uleb128 0x49
+ 719 0041 13       		.uleb128 0x13
+ 720 0042 00       		.byte	0
+ 721 0043 00       		.byte	0
+ 722 0044 07       		.uleb128 0x7
+ 723 0045 34       		.uleb128 0x34
+ 724 0046 00       		.byte	0
+ 725 0047 03       		.uleb128 0x3
+ 726 0048 0E       		.uleb128 0xe
+ 727 0049 3A       		.uleb128 0x3a
+ 728 004a 0B       		.uleb128 0xb
+ 729 004b 3B       		.uleb128 0x3b
+ 730 004c 05       		.uleb128 0x5
+ 731 004d 49       		.uleb128 0x49
+ 732 004e 13       		.uleb128 0x13
+ 733 004f 3F       		.uleb128 0x3f
+ 734 0050 19       		.uleb128 0x19
+ 735 0051 3C       		.uleb128 0x3c
+ 736 0052 19       		.uleb128 0x19
+ 737 0053 00       		.byte	0
+ 738 0054 00       		.byte	0
+ 739 0055 08       		.uleb128 0x8
+ 740 0056 34       		.uleb128 0x34
+ 741 0057 00       		.byte	0
+ARM GAS  C:\Users\Pearl\AppData\Local\Temp\cce0Cewi.s 			page 14
+
+
+ 742 0058 03       		.uleb128 0x3
+ 743 0059 0E       		.uleb128 0xe
+ 744 005a 3A       		.uleb128 0x3a
+ 745 005b 0B       		.uleb128 0xb
+ 746 005c 3B       		.uleb128 0x3b
+ 747 005d 0B       		.uleb128 0xb
+ 748 005e 49       		.uleb128 0x49
+ 749 005f 13       		.uleb128 0x13
+ 750 0060 3F       		.uleb128 0x3f
+ 751 0061 19       		.uleb128 0x19
+ 752 0062 3C       		.uleb128 0x3c
+ 753 0063 19       		.uleb128 0x19
+ 754 0064 00       		.byte	0
+ 755 0065 00       		.byte	0
+ 756 0066 09       		.uleb128 0x9
+ 757 0067 01       		.uleb128 0x1
+ 758 0068 01       		.byte	0x1
+ 759 0069 49       		.uleb128 0x49
+ 760 006a 13       		.uleb128 0x13
+ 761 006b 01       		.uleb128 0x1
+ 762 006c 13       		.uleb128 0x13
+ 763 006d 00       		.byte	0
+ 764 006e 00       		.byte	0
+ 765 006f 0A       		.uleb128 0xa
+ 766 0070 21       		.uleb128 0x21
+ 767 0071 00       		.byte	0
+ 768 0072 49       		.uleb128 0x49
+ 769 0073 13       		.uleb128 0x13
+ 770 0074 2F       		.uleb128 0x2f
+ 771 0075 0B       		.uleb128 0xb
+ 772 0076 00       		.byte	0
+ 773 0077 00       		.byte	0
+ 774 0078 0B       		.uleb128 0xb
+ 775 0079 13       		.uleb128 0x13
+ 776 007a 01       		.byte	0x1
+ 777 007b 0B       		.uleb128 0xb
+ 778 007c 0B       		.uleb128 0xb
+ 779 007d 3A       		.uleb128 0x3a
+ 780 007e 0B       		.uleb128 0xb
+ 781 007f 3B       		.uleb128 0x3b
+ 782 0080 0B       		.uleb128 0xb
+ 783 0081 01       		.uleb128 0x1
+ 784 0082 13       		.uleb128 0x13
+ 785 0083 00       		.byte	0
+ 786 0084 00       		.byte	0
+ 787 0085 0C       		.uleb128 0xc
+ 788 0086 0D       		.uleb128 0xd
+ 789 0087 00       		.byte	0
+ 790 0088 03       		.uleb128 0x3
+ 791 0089 0E       		.uleb128 0xe
+ 792 008a 3A       		.uleb128 0x3a
+ 793 008b 0B       		.uleb128 0xb
+ 794 008c 3B       		.uleb128 0x3b
+ 795 008d 0B       		.uleb128 0xb
+ 796 008e 49       		.uleb128 0x49
+ 797 008f 13       		.uleb128 0x13
+ 798 0090 38       		.uleb128 0x38
+ARM GAS  C:\Users\Pearl\AppData\Local\Temp\cce0Cewi.s 			page 15
+
+
+ 799 0091 0B       		.uleb128 0xb
+ 800 0092 00       		.byte	0
+ 801 0093 00       		.byte	0
+ 802 0094 0D       		.uleb128 0xd
+ 803 0095 0F       		.uleb128 0xf
+ 804 0096 00       		.byte	0
+ 805 0097 0B       		.uleb128 0xb
+ 806 0098 0B       		.uleb128 0xb
+ 807 0099 49       		.uleb128 0x49
+ 808 009a 13       		.uleb128 0x13
+ 809 009b 00       		.byte	0
+ 810 009c 00       		.byte	0
+ 811 009d 0E       		.uleb128 0xe
+ 812 009e 34       		.uleb128 0x34
+ 813 009f 00       		.byte	0
+ 814 00a0 03       		.uleb128 0x3
+ 815 00a1 0E       		.uleb128 0xe
+ 816 00a2 3A       		.uleb128 0x3a
+ 817 00a3 0B       		.uleb128 0xb
+ 818 00a4 3B       		.uleb128 0x3b
+ 819 00a5 0B       		.uleb128 0xb
+ 820 00a6 49       		.uleb128 0x49
+ 821 00a7 13       		.uleb128 0x13
+ 822 00a8 02       		.uleb128 0x2
+ 823 00a9 18       		.uleb128 0x18
+ 824 00aa 00       		.byte	0
+ 825 00ab 00       		.byte	0
+ 826 00ac 0F       		.uleb128 0xf
+ 827 00ad 2E       		.uleb128 0x2e
+ 828 00ae 01       		.byte	0x1
+ 829 00af 3F       		.uleb128 0x3f
+ 830 00b0 19       		.uleb128 0x19
+ 831 00b1 03       		.uleb128 0x3
+ 832 00b2 0E       		.uleb128 0xe
+ 833 00b3 3A       		.uleb128 0x3a
+ 834 00b4 0B       		.uleb128 0xb
+ 835 00b5 3B       		.uleb128 0x3b
+ 836 00b6 0B       		.uleb128 0xb
+ 837 00b7 27       		.uleb128 0x27
+ 838 00b8 19       		.uleb128 0x19
+ 839 00b9 11       		.uleb128 0x11
+ 840 00ba 01       		.uleb128 0x1
+ 841 00bb 12       		.uleb128 0x12
+ 842 00bc 06       		.uleb128 0x6
+ 843 00bd 40       		.uleb128 0x40
+ 844 00be 18       		.uleb128 0x18
+ 845 00bf 9742     		.uleb128 0x2117
+ 846 00c1 19       		.uleb128 0x19
+ 847 00c2 01       		.uleb128 0x1
+ 848 00c3 13       		.uleb128 0x13
+ 849 00c4 00       		.byte	0
+ 850 00c5 00       		.byte	0
+ 851 00c6 10       		.uleb128 0x10
+ 852 00c7 34       		.uleb128 0x34
+ 853 00c8 00       		.byte	0
+ 854 00c9 03       		.uleb128 0x3
+ 855 00ca 08       		.uleb128 0x8
+ARM GAS  C:\Users\Pearl\AppData\Local\Temp\cce0Cewi.s 			page 16
+
+
+ 856 00cb 3A       		.uleb128 0x3a
+ 857 00cc 0B       		.uleb128 0xb
+ 858 00cd 3B       		.uleb128 0x3b
+ 859 00ce 0B       		.uleb128 0xb
+ 860 00cf 49       		.uleb128 0x49
+ 861 00d0 13       		.uleb128 0x13
+ 862 00d1 02       		.uleb128 0x2
+ 863 00d2 17       		.uleb128 0x17
+ 864 00d3 00       		.byte	0
+ 865 00d4 00       		.byte	0
+ 866 00d5 11       		.uleb128 0x11
+ 867 00d6 0B       		.uleb128 0xb
+ 868 00d7 01       		.byte	0x1
+ 869 00d8 55       		.uleb128 0x55
+ 870 00d9 17       		.uleb128 0x17
+ 871 00da 00       		.byte	0
+ 872 00db 00       		.byte	0
+ 873 00dc 12       		.uleb128 0x12
+ 874 00dd 2E       		.uleb128 0x2e
+ 875 00de 00       		.byte	0
+ 876 00df 3F       		.uleb128 0x3f
+ 877 00e0 19       		.uleb128 0x19
+ 878 00e1 03       		.uleb128 0x3
+ 879 00e2 0E       		.uleb128 0xe
+ 880 00e3 3A       		.uleb128 0x3a
+ 881 00e4 0B       		.uleb128 0xb
+ 882 00e5 3B       		.uleb128 0x3b
+ 883 00e6 0B       		.uleb128 0xb
+ 884 00e7 27       		.uleb128 0x27
+ 885 00e8 19       		.uleb128 0x19
+ 886 00e9 8701     		.uleb128 0x87
+ 887 00eb 19       		.uleb128 0x19
+ 888 00ec 11       		.uleb128 0x11
+ 889 00ed 01       		.uleb128 0x1
+ 890 00ee 12       		.uleb128 0x12
+ 891 00ef 06       		.uleb128 0x6
+ 892 00f0 40       		.uleb128 0x40
+ 893 00f1 18       		.uleb128 0x18
+ 894 00f2 9742     		.uleb128 0x2117
+ 895 00f4 19       		.uleb128 0x19
+ 896 00f5 00       		.byte	0
+ 897 00f6 00       		.byte	0
+ 898 00f7 13       		.uleb128 0x13
+ 899 00f8 2E       		.uleb128 0x2e
+ 900 00f9 00       		.byte	0
+ 901 00fa 3F       		.uleb128 0x3f
+ 902 00fb 19       		.uleb128 0x19
+ 903 00fc 03       		.uleb128 0x3
+ 904 00fd 0E       		.uleb128 0xe
+ 905 00fe 3A       		.uleb128 0x3a
+ 906 00ff 0B       		.uleb128 0xb
+ 907 0100 3B       		.uleb128 0x3b
+ 908 0101 0B       		.uleb128 0xb
+ 909 0102 27       		.uleb128 0x27
+ 910 0103 19       		.uleb128 0x19
+ 911 0104 00       		.byte	0
+ 912 0105 00       		.byte	0
+ARM GAS  C:\Users\Pearl\AppData\Local\Temp\cce0Cewi.s 			page 17
+
+
+ 913 0106 14       		.uleb128 0x14
+ 914 0107 2E       		.uleb128 0x2e
+ 915 0108 00       		.byte	0
+ 916 0109 3F       		.uleb128 0x3f
+ 917 010a 19       		.uleb128 0x19
+ 918 010b 03       		.uleb128 0x3
+ 919 010c 0E       		.uleb128 0xe
+ 920 010d 3A       		.uleb128 0x3a
+ 921 010e 0B       		.uleb128 0xb
+ 922 010f 3B       		.uleb128 0x3b
+ 923 0110 0B       		.uleb128 0xb
+ 924 0111 27       		.uleb128 0x27
+ 925 0112 19       		.uleb128 0x19
+ 926 0113 20       		.uleb128 0x20
+ 927 0114 0B       		.uleb128 0xb
+ 928 0115 00       		.byte	0
+ 929 0116 00       		.byte	0
+ 930 0117 15       		.uleb128 0x15
+ 931 0118 2E       		.uleb128 0x2e
+ 932 0119 00       		.byte	0
+ 933 011a 31       		.uleb128 0x31
+ 934 011b 13       		.uleb128 0x13
+ 935 011c 11       		.uleb128 0x11
+ 936 011d 01       		.uleb128 0x1
+ 937 011e 12       		.uleb128 0x12
+ 938 011f 06       		.uleb128 0x6
+ 939 0120 40       		.uleb128 0x40
+ 940 0121 18       		.uleb128 0x18
+ 941 0122 9742     		.uleb128 0x2117
+ 942 0124 19       		.uleb128 0x19
+ 943 0125 00       		.byte	0
+ 944 0126 00       		.byte	0
+ 945 0127 00       		.byte	0
+ 946              		.section	.debug_loc,"",%progbits
+ 947              	.Ldebug_loc0:
+ 948              	.LLST0:
+ 949 0000 00000000 		.4byte	.LVL0
+ 950 0004 12000000 		.4byte	.LVL1
+ 951 0008 0600     		.2byte	0x6
+ 952 000a 03       		.byte	0x3
+ 953 000b 00000000 		.4byte	ram_areas
+ 954 000f 9F       		.byte	0x9f
+ 955 0010 12000000 		.4byte	.LVL1
+ 956 0014 3E000000 		.4byte	.LVL9
+ 957 0018 0100     		.2byte	0x1
+ 958 001a 56       		.byte	0x56
+ 959 001b 3E000000 		.4byte	.LVL9
+ 960 001f 4C000000 		.4byte	.LVL11
+ 961 0023 0300     		.2byte	0x3
+ 962 0025 76       		.byte	0x76
+ 963 0026 10       		.sleb128 16
+ 964 0027 9F       		.byte	0x9f
+ 965 0028 4C000000 		.4byte	.LVL11
+ 966 002c 4E000000 		.4byte	.LVL12
+ 967 0030 0100     		.2byte	0x1
+ 968 0032 56       		.byte	0x56
+ 969 0033 4E000000 		.4byte	.LVL12
+ARM GAS  C:\Users\Pearl\AppData\Local\Temp\cce0Cewi.s 			page 18
+
+
+ 970 0037 50000000 		.4byte	.LVL13
+ 971 003b 0300     		.2byte	0x3
+ 972 003d 76       		.byte	0x76
+ 973 003e 10       		.sleb128 16
+ 974 003f 9F       		.byte	0x9f
+ 975 0040 00000000 		.4byte	0
+ 976 0044 00000000 		.4byte	0
+ 977              	.LLST1:
+ 978 0048 12000000 		.4byte	.LVL1
+ 979 004c 1A000000 		.4byte	.LVL2
+ 980 0050 0200     		.2byte	0x2
+ 981 0052 76       		.byte	0x76
+ 982 0053 00       		.sleb128 0
+ 983 0054 1A000000 		.4byte	.LVL2
+ 984 0058 1E000000 		.4byte	.LVL3
+ 985 005c 0300     		.2byte	0x3
+ 986 005e 71       		.byte	0x71
+ 987 005f 04       		.sleb128 4
+ 988 0060 9F       		.byte	0x9f
+ 989 0061 1E000000 		.4byte	.LVL3
+ 990 0065 22000000 		.4byte	.LVL4
+ 991 0069 0100     		.2byte	0x1
+ 992 006b 51       		.byte	0x51
+ 993 006c 22000000 		.4byte	.LVL4
+ 994 0070 36000000 		.4byte	.LVL7
+ 995 0074 0300     		.2byte	0x3
+ 996 0076 71       		.byte	0x71
+ 997 0077 04       		.sleb128 4
+ 998 0078 9F       		.byte	0x9f
+ 999 0079 00000000 		.4byte	0
+ 1000 007d 00000000 		.4byte	0
+ 1001              	.LLST2:
+ 1002 0081 12000000 		.4byte	.LVL1
+ 1003 0085 1A000000 		.4byte	.LVL2
+ 1004 0089 0200     		.2byte	0x2
+ 1005 008b 76       		.byte	0x76
+ 1006 008c 04       		.sleb128 4
+ 1007 008d 1A000000 		.4byte	.LVL2
+ 1008 0091 28000000 		.4byte	.LVL5
+ 1009 0095 0100     		.2byte	0x1
+ 1010 0097 52       		.byte	0x52
+ 1011 0098 32000000 		.4byte	.LVL6
+ 1012 009c 46000000 		.4byte	.LVL10
+ 1013 00a0 0100     		.2byte	0x1
+ 1014 00a2 53       		.byte	0x53
+ 1015 00a3 4E000000 		.4byte	.LVL12
+ 1016 00a7 68000000 		.4byte	.LFE67
+ 1017 00ab 0100     		.2byte	0x1
+ 1018 00ad 53       		.byte	0x53
+ 1019 00ae 00000000 		.4byte	0
+ 1020 00b2 00000000 		.4byte	0
+ 1021              		.section	.debug_aranges,"",%progbits
+ 1022 0000 2C000000 		.4byte	0x2c
+ 1023 0004 0200     		.2byte	0x2
+ 1024 0006 00000000 		.4byte	.Ldebug_info0
+ 1025 000a 04       		.byte	0x4
+ 1026 000b 00       		.byte	0
+ARM GAS  C:\Users\Pearl\AppData\Local\Temp\cce0Cewi.s 			page 19
+
+
+ 1027 000c 0000     		.2byte	0
+ 1028 000e 0000     		.2byte	0
+ 1029 0010 00000000 		.4byte	.LFB63
+ 1030 0014 02000000 		.4byte	.LFE63-.LFB63
+ 1031 0018 00000000 		.4byte	.LFB66
+ 1032 001c 02000000 		.4byte	.LFE66-.LFB66
+ 1033 0020 00000000 		.4byte	.LFB67
+ 1034 0024 68000000 		.4byte	.LFE67-.LFB67
+ 1035 0028 00000000 		.4byte	0
+ 1036 002c 00000000 		.4byte	0
+ 1037              		.section	.debug_ranges,"",%progbits
+ 1038              	.Ldebug_ranges0:
+ 1039 0000 02000000 		.4byte	.LBB2
+ 1040 0004 06000000 		.4byte	.LBE2
+ 1041 0008 12000000 		.4byte	.LBB3
+ 1042 000c 3E000000 		.4byte	.LBE3
+ 1043 0010 00000000 		.4byte	0
+ 1044 0014 00000000 		.4byte	0
+ 1045 0018 00000000 		.4byte	.LFB63
+ 1046 001c 02000000 		.4byte	.LFE63
+ 1047 0020 00000000 		.4byte	.LFB66
+ 1048 0024 02000000 		.4byte	.LFE66
+ 1049 0028 00000000 		.4byte	.LFB67
+ 1050 002c 68000000 		.4byte	.LFE67
+ 1051 0030 00000000 		.4byte	0
+ 1052 0034 00000000 		.4byte	0
+ 1053              		.section	.debug_line,"",%progbits
+ 1054              	.Ldebug_line0:
+ 1055 0000 C0010000 		.section	.debug_str,"MS",%progbits,1
+ 1055      02007801 
+ 1055      00000201 
+ 1055      FB0E0D00 
+ 1055      01010101 
+ 1056              	.LASF59:
+ 1057 0000 474E5520 		.ascii	"GNU C11 7.2.1 20170904 (release) [ARM/embedded-7-br"
+ 1057      43313120 
+ 1057      372E322E 
+ 1057      31203230 
+ 1057      31373039 
+ 1058 0033 616E6368 		.ascii	"anch revision 255204] -mcpu=cortex-m3 -mthumb -ggdb"
+ 1058      20726576 
+ 1058      6973696F 
+ 1058      6E203235 
+ 1058      35323034 
+ 1059 0066 202D4F32 		.ascii	" -O2 -fomit-frame-pointer -falign-functions=16 -ffu"
+ 1059      202D666F 
+ 1059      6D69742D 
+ 1059      6672616D 
+ 1059      652D706F 
+ 1060 0099 6E637469 		.ascii	"nction-sections -fdata-sections -fno-common\000"
+ 1060      6F6E2D73 
+ 1060      65637469 
+ 1060      6F6E7320 
+ 1060      2D666461 
+ 1061              	.LASF44:
+ 1062 00c5 5F5F7261 		.ascii	"__ram5_init_text__\000"
+ 1062      6D355F69 
+ARM GAS  C:\Users\Pearl\AppData\Local\Temp\cce0Cewi.s 			page 20
+
+
+ 1062      6E69745F 
+ 1062      74657874 
+ 1062      5F5F00
+ 1063              	.LASF25:
+ 1064 00d8 5F5F7261 		.ascii	"__ram0_init__\000"
+ 1064      6D305F69 
+ 1064      6E69745F 
+ 1064      5F00
+ 1065              	.LASF37:
+ 1066 00e6 5F5F7261 		.ascii	"__ram3_init__\000"
+ 1066      6D335F69 
+ 1066      6E69745F 
+ 1066      5F00
+ 1067              	.LASF21:
+ 1068 00f4 636C6561 		.ascii	"clear_area\000"
+ 1068      725F6172 
+ 1068      656100
+ 1069              	.LASF2:
+ 1070 00ff 73686F72 		.ascii	"short int\000"
+ 1070      7420696E 
+ 1070      7400
+ 1071              	.LASF62:
+ 1072 0109 5F5F696E 		.ascii	"__init_ram_areas\000"
+ 1072      69745F72 
+ 1072      616D5F61 
+ 1072      72656173 
+ 1072      00
+ 1073              	.LASF7:
+ 1074 011a 5F5F7569 		.ascii	"__uint32_t\000"
+ 1074      6E743332 
+ 1074      5F7400
+ 1075              	.LASF39:
+ 1076 0125 5F5F7261 		.ascii	"__ram3_noinit__\000"
+ 1076      6D335F6E 
+ 1076      6F696E69 
+ 1076      745F5F00 
+ 1077              	.LASF42:
+ 1078 0135 5F5F7261 		.ascii	"__ram4_clear__\000"
+ 1078      6D345F63 
+ 1078      6C656172 
+ 1078      5F5F00
+ 1079              	.LASF60:
+ 1080 0144 2E2F2F6F 		.ascii	".//os/common/startup/ARMCMx/compilers/GCC/crt1.c\000"
+ 1080      732F636F 
+ 1080      6D6D6F6E 
+ 1080      2F737461 
+ 1080      72747570 
+ 1081              	.LASF12:
+ 1082 0175 75696E74 		.ascii	"uint8_t\000"
+ 1082      385F7400 
+ 1083              	.LASF45:
+ 1084 017d 5F5F7261 		.ascii	"__ram5_init__\000"
+ 1084      6D355F69 
+ 1084      6E69745F 
+ 1084      5F00
+ 1085              	.LASF56:
+ 1086 018b 72616D5F 		.ascii	"ram_areas\000"
+ARM GAS  C:\Users\Pearl\AppData\Local\Temp\cce0Cewi.s 			page 21
+
+
+ 1086      61726561 
+ 1086      7300
+ 1087              	.LASF64:
+ 1088 0195 5F5F636F 		.ascii	"__core_init\000"
+ 1088      72655F69 
+ 1088      6E697400 
+ 1089              	.LASF48:
+ 1090 01a1 5F5F7261 		.ascii	"__ram6_init_text__\000"
+ 1090      6D365F69 
+ 1090      6E69745F 
+ 1090      74657874 
+ 1090      5F5F00
+ 1091              	.LASF35:
+ 1092 01b4 5F5F7261 		.ascii	"__ram2_noinit__\000"
+ 1092      6D325F6E 
+ 1092      6F696E69 
+ 1092      745F5F00 
+ 1093              	.LASF9:
+ 1094 01c4 6C6F6E67 		.ascii	"long long int\000"
+ 1094      206C6F6E 
+ 1094      6720696E 
+ 1094      7400
+ 1095              	.LASF63:
+ 1096 01d2 5F5F6465 		.ascii	"__default_exit\000"
+ 1096      6661756C 
+ 1096      745F6578 
+ 1096      697400
+ 1097              	.LASF22:
+ 1098 01e1 6E6F5F69 		.ascii	"no_init_area\000"
+ 1098      6E69745F 
+ 1098      61726561 
+ 1098      00
+ 1099              	.LASF23:
+ 1100 01ee 72616D5F 		.ascii	"ram_init_area_t\000"
+ 1100      696E6974 
+ 1100      5F617265 
+ 1100      615F7400 
+ 1101              	.LASF29:
+ 1102 01fe 5F5F7261 		.ascii	"__ram1_init__\000"
+ 1102      6D315F69 
+ 1102      6E69745F 
+ 1102      5F00
+ 1103              	.LASF6:
+ 1104 020c 6C6F6E67 		.ascii	"long int\000"
+ 1104      20696E74 
+ 1104      00
+ 1105              	.LASF57:
+ 1106 0215 5F5F6C61 		.ascii	"__late_init\000"
+ 1106      74655F69 
+ 1106      6E697400 
+ 1107              	.LASF51:
+ 1108 0221 5F5F7261 		.ascii	"__ram6_noinit__\000"
+ 1108      6D365F6E 
+ 1108      6F696E69 
+ 1108      745F5F00 
+ 1109              	.LASF30:
+ 1110 0231 5F5F7261 		.ascii	"__ram1_clear__\000"
+ARM GAS  C:\Users\Pearl\AppData\Local\Temp\cce0Cewi.s 			page 22
+
+
+ 1110      6D315F63 
+ 1110      6C656172 
+ 1110      5F5F00
+ 1111              	.LASF4:
+ 1112 0240 5F5F7569 		.ascii	"__uint8_t\000"
+ 1112      6E74385F 
+ 1112      7400
+ 1113              	.LASF47:
+ 1114 024a 5F5F7261 		.ascii	"__ram5_noinit__\000"
+ 1114      6D355F6E 
+ 1114      6F696E69 
+ 1114      745F5F00 
+ 1115              	.LASF34:
+ 1116 025a 5F5F7261 		.ascii	"__ram2_clear__\000"
+ 1116      6D325F63 
+ 1116      6C656172 
+ 1116      5F5F00
+ 1117              	.LASF28:
+ 1118 0269 5F5F7261 		.ascii	"__ram1_init_text__\000"
+ 1118      6D315F69 
+ 1118      6E69745F 
+ 1118      74657874 
+ 1118      5F5F00
+ 1119              	.LASF1:
+ 1120 027c 756E7369 		.ascii	"unsigned char\000"
+ 1120      676E6564 
+ 1120      20636861 
+ 1120      7200
+ 1121              	.LASF38:
+ 1122 028a 5F5F7261 		.ascii	"__ram3_clear__\000"
+ 1122      6D335F63 
+ 1122      6C656172 
+ 1122      5F5F00
+ 1123              	.LASF27:
+ 1124 0299 5F5F7261 		.ascii	"__ram0_noinit__\000"
+ 1124      6D305F6E 
+ 1124      6F696E69 
+ 1124      745F5F00 
+ 1125              	.LASF18:
+ 1126 02a9 41504250 		.ascii	"APBPrescTable\000"
+ 1126      72657363 
+ 1126      5461626C 
+ 1126      6500
+ 1127              	.LASF0:
+ 1128 02b7 7369676E 		.ascii	"signed char\000"
+ 1128      65642063 
+ 1128      68617200 
+ 1129              	.LASF10:
+ 1130 02c3 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 1130      206C6F6E 
+ 1130      6720756E 
+ 1130      7369676E 
+ 1130      65642069 
+ 1131              	.LASF14:
+ 1132 02da 75696E74 		.ascii	"uint32_t\000"
+ 1132      33325F74 
+ 1132      00
+ARM GAS  C:\Users\Pearl\AppData\Local\Temp\cce0Cewi.s 			page 23
+
+
+ 1133              	.LASF46:
+ 1134 02e3 5F5F7261 		.ascii	"__ram5_clear__\000"
+ 1134      6D355F63 
+ 1134      6C656172 
+ 1134      5F5F00
+ 1135              	.LASF11:
+ 1136 02f2 756E7369 		.ascii	"unsigned int\000"
+ 1136      676E6564 
+ 1136      20696E74 
+ 1136      00
+ 1137              	.LASF8:
+ 1138 02ff 6C6F6E67 		.ascii	"long unsigned int\000"
+ 1138      20756E73 
+ 1138      69676E65 
+ 1138      6420696E 
+ 1138      7400
+ 1139              	.LASF50:
+ 1140 0311 5F5F7261 		.ascii	"__ram6_clear__\000"
+ 1140      6D365F63 
+ 1140      6C656172 
+ 1140      5F5F00
+ 1141              	.LASF43:
+ 1142 0320 5F5F7261 		.ascii	"__ram4_noinit__\000"
+ 1142      6D345F6E 
+ 1142      6F696E69 
+ 1142      745F5F00 
+ 1143              	.LASF49:
+ 1144 0330 5F5F7261 		.ascii	"__ram6_init__\000"
+ 1144      6D365F69 
+ 1144      6E69745F 
+ 1144      5F00
+ 1145              	.LASF54:
+ 1146 033e 5F5F7261 		.ascii	"__ram7_clear__\000"
+ 1146      6D375F63 
+ 1146      6C656172 
+ 1146      5F5F00
+ 1147              	.LASF58:
+ 1148 034d 5F5F6561 		.ascii	"__early_init\000"
+ 1148      726C795F 
+ 1148      696E6974 
+ 1148      00
+ 1149              	.LASF13:
+ 1150 035a 696E7433 		.ascii	"int32_t\000"
+ 1150      325F7400 
+ 1151              	.LASF3:
+ 1152 0362 73686F72 		.ascii	"short unsigned int\000"
+ 1152      7420756E 
+ 1152      7369676E 
+ 1152      65642069 
+ 1152      6E7400
+ 1153              	.LASF52:
+ 1154 0375 5F5F7261 		.ascii	"__ram7_init_text__\000"
+ 1154      6D375F69 
+ 1154      6E69745F 
+ 1154      74657874 
+ 1154      5F5F00
+ 1155              	.LASF24:
+ARM GAS  C:\Users\Pearl\AppData\Local\Temp\cce0Cewi.s 			page 24
+
+
+ 1156 0388 5F5F7261 		.ascii	"__ram0_init_text__\000"
+ 1156      6D305F69 
+ 1156      6E69745F 
+ 1156      74657874 
+ 1156      5F5F00
+ 1157              	.LASF16:
+ 1158 039b 53797374 		.ascii	"SystemCoreClock\000"
+ 1158      656D436F 
+ 1158      7265436C 
+ 1158      6F636B00 
+ 1159              	.LASF33:
+ 1160 03ab 5F5F7261 		.ascii	"__ram2_init__\000"
+ 1160      6D325F69 
+ 1160      6E69745F 
+ 1160      5F00
+ 1161              	.LASF32:
+ 1162 03b9 5F5F7261 		.ascii	"__ram2_init_text__\000"
+ 1162      6D325F69 
+ 1162      6E69745F 
+ 1162      74657874 
+ 1162      5F5F00
+ 1163              	.LASF17:
+ 1164 03cc 41484250 		.ascii	"AHBPrescTable\000"
+ 1164      72657363 
+ 1164      5461626C 
+ 1164      6500
+ 1165              	.LASF26:
+ 1166 03da 5F5F7261 		.ascii	"__ram0_clear__\000"
+ 1166      6D305F63 
+ 1166      6C656172 
+ 1166      5F5F00
+ 1167              	.LASF40:
+ 1168 03e9 5F5F7261 		.ascii	"__ram4_init_text__\000"
+ 1168      6D345F69 
+ 1168      6E69745F 
+ 1168      74657874 
+ 1168      5F5F00
+ 1169              	.LASF61:
+ 1170 03fc 433A5C55 		.ascii	"C:\\Users\\Pearl\\RM\\assignment2-master\000"
+ 1170      73657273 
+ 1170      5C506561 
+ 1170      726C5C52 
+ 1170      4D5C6173 
+ 1171              	.LASF15:
+ 1172 0421 49544D5F 		.ascii	"ITM_RxBuffer\000"
+ 1172      52784275 
+ 1172      66666572 
+ 1172      00
+ 1173              	.LASF55:
+ 1174 042e 5F5F7261 		.ascii	"__ram7_noinit__\000"
+ 1174      6D375F6E 
+ 1174      6F696E69 
+ 1174      745F5F00 
+ 1175              	.LASF5:
+ 1176 043e 5F5F696E 		.ascii	"__int32_t\000"
+ 1176      7433325F 
+ 1176      7400
+ARM GAS  C:\Users\Pearl\AppData\Local\Temp\cce0Cewi.s 			page 25
+
+
+ 1177              	.LASF31:
+ 1178 0448 5F5F7261 		.ascii	"__ram1_noinit__\000"
+ 1178      6D315F6E 
+ 1178      6F696E69 
+ 1178      745F5F00 
+ 1179              	.LASF41:
+ 1180 0458 5F5F7261 		.ascii	"__ram4_init__\000"
+ 1180      6D345F69 
+ 1180      6E69745F 
+ 1180      5F00
+ 1181              	.LASF53:
+ 1182 0466 5F5F7261 		.ascii	"__ram7_init__\000"
+ 1182      6D375F69 
+ 1182      6E69745F 
+ 1182      5F00
+ 1183              	.LASF36:
+ 1184 0474 5F5F7261 		.ascii	"__ram3_init_text__\000"
+ 1184      6D335F69 
+ 1184      6E69745F 
+ 1184      74657874 
+ 1184      5F5F00
+ 1185              	.LASF20:
+ 1186 0487 696E6974 		.ascii	"init_area\000"
+ 1186      5F617265 
+ 1186      6100
+ 1187              	.LASF19:
+ 1188 0491 696E6974 		.ascii	"init_text_area\000"
+ 1188      5F746578 
+ 1188      745F6172 
+ 1188      656100
+ 1189              		.ident	"GCC: (GNU Tools for Arm Embedded Processors 7-2017-q4-major) 7.2.1 20170904 (release) [ARM
+ARM GAS  C:\Users\Pearl\AppData\Local\Temp\cce0Cewi.s 			page 26
+
+
+DEFINED SYMBOLS
+                            *ABS*:00000000 crt1.c
+C:\Users\Pearl\AppData\Local\Temp\cce0Cewi.s:16     .text.__core_init:00000000 $t
+C:\Users\Pearl\AppData\Local\Temp\cce0Cewi.s:24     .text.__core_init:00000000 __core_init
+C:\Users\Pearl\AppData\Local\Temp\cce0Cewi.s:38     .text.__early_init:00000000 $t
+C:\Users\Pearl\AppData\Local\Temp\cce0Cewi.s:46     .text.__early_init:00000000 __early_init
+C:\Users\Pearl\AppData\Local\Temp\cce0Cewi.s:57     .text.__late_init:00000000 $t
+C:\Users\Pearl\AppData\Local\Temp\cce0Cewi.s:65     .text.__late_init:00000000 __late_init
+C:\Users\Pearl\AppData\Local\Temp\cce0Cewi.s:76     .text.__default_exit:00000000 $t
+C:\Users\Pearl\AppData\Local\Temp\cce0Cewi.s:84     .text.__default_exit:00000000 __default_exit
+C:\Users\Pearl\AppData\Local\Temp\cce0Cewi.s:98     .text.__init_ram_areas:00000000 $t
+C:\Users\Pearl\AppData\Local\Temp\cce0Cewi.s:106    .text.__init_ram_areas:00000000 __init_ram_areas
+C:\Users\Pearl\AppData\Local\Temp\cce0Cewi.s:195    .text.__init_ram_areas:00000054 $d
+C:\Users\Pearl\AppData\Local\Temp\cce0Cewi.s:204    .rodata.ram_areas:00000000 $d
+C:\Users\Pearl\AppData\Local\Temp\cce0Cewi.s:208    .rodata.ram_areas:00000000 ram_areas
+
+UNDEFINED SYMBOLS
+__ram0_noinit__
+__ram0_clear__
+__ram0_init__
+__ram0_init_text__
+__ram1_init_text__
+__ram1_init__
+__ram1_clear__
+__ram1_noinit__
+__ram2_init_text__
+__ram2_init__
+__ram2_clear__
+__ram2_noinit__
+__ram3_init_text__
+__ram3_init__
+__ram3_clear__
+__ram3_noinit__
+__ram4_init_text__
+__ram4_init__
+__ram4_clear__
+__ram4_noinit__
+__ram5_init_text__
+__ram5_init__
+__ram5_clear__
+__ram5_noinit__
+__ram6_init_text__
+__ram6_init__
+__ram6_clear__
+__ram6_noinit__
+__ram7_init_text__
+__ram7_init__
+__ram7_clear__
+__ram7_noinit__

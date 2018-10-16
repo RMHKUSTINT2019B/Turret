@@ -1,0 +1,3655 @@
+ARM GAS  C:\Users\Pearl\AppData\Local\Temp\ccefFgns.s 			page 1
+
+
+   1              		.cpu cortex-m3
+   2              		.eabi_attribute 20, 1
+   3              		.eabi_attribute 21, 1
+   4              		.eabi_attribute 23, 3
+   5              		.eabi_attribute 24, 1
+   6              		.eabi_attribute 25, 1
+   7              		.eabi_attribute 26, 1
+   8              		.eabi_attribute 30, 2
+   9              		.eabi_attribute 34, 1
+  10              		.eabi_attribute 18, 4
+  11              		.file	"chmemcore.c"
+  12              		.text
+  13              	.Ltext0:
+  14              		.cfi_sections	.debug_frame
+  15              		.section	.text._core_init,"ax",%progbits
+  16              		.align	1
+  17              		.p2align 4,,15
+  18              		.global	_core_init
+  19              		.syntax unified
+  20              		.thumb
+  21              		.thumb_func
+  22              		.fpu softvfp
+  23              		.type	_core_init, %function
+  24              	_core_init:
+  25              	.LFB220:
+  26              		.file 1 ".//os/lib/src/chmemcore.c"
+  27              		.loc 1 81 0
+  28              		.cfi_startproc
+  29              		@ args = 0, pretend = 0, frame = 0
+  30              		@ frame_needed = 0, uses_anonymous_args = 0
+  31              		@ link register save eliminated.
+  32              		.loc 1 87 0
+  33 0000 024B     		ldr	r3, .L3
+  34 0002 0349     		ldr	r1, .L3+4
+  35              		.loc 1 88 0
+  36 0004 034A     		ldr	r2, .L3+8
+  37 0006 C3E90012 		strd	r1, r2, [r3]
+  38              		.loc 1 96 0
+  39 000a 7047     		bx	lr
+  40              	.L4:
+  41              		.align	2
+  42              	.L3:
+  43 000c 00000000 		.word	.LANCHOR0
+  44 0010 00000000 		.word	__heap_base__
+  45 0014 00000000 		.word	__heap_end__
+  46              		.cfi_endproc
+  47              	.LFE220:
+  48              		.size	_core_init, .-_core_init
+  49              		.section	.text.chCoreAllocAlignedWithOffsetI,"ax",%progbits
+  50              		.align	1
+  51              		.p2align 4,,15
+  52              		.global	chCoreAllocAlignedWithOffsetI
+  53              		.syntax unified
+  54              		.thumb
+  55              		.thumb_func
+  56              		.fpu softvfp
+  57              		.type	chCoreAllocAlignedWithOffsetI, %function
+ARM GAS  C:\Users\Pearl\AppData\Local\Temp\ccefFgns.s 			page 2
+
+
+  58              	chCoreAllocAlignedWithOffsetI:
+  59              	.LFB221:
+  60              		.loc 1 114 0
+  61              		.cfi_startproc
+  62              		@ args = 0, pretend = 0, frame = 0
+  63              		@ frame_needed = 0, uses_anonymous_args = 0
+  64              		@ link register save eliminated.
+  65              	.LVL0:
+  66 0000 30B4     		push	{r4, r5}
+  67              		.cfi_def_cfa_offset 8
+  68              		.cfi_offset 4, -8
+  69              		.cfi_offset 5, -4
+  70              		.loc 1 121 0
+  71 0002 0B4C     		ldr	r4, .L10
+  72              		.loc 1 120 0
+  73 0004 0138     		subs	r0, r0, #1
+  74              	.LVL1:
+  75              		.loc 1 121 0
+  76 0006 2568     		ldr	r5, [r4]
+  77              		.loc 1 120 0
+  78 0008 4318     		adds	r3, r0, r1
+  79              		.loc 1 121 0
+  80 000a A818     		adds	r0, r5, r2
+  81              	.LVL2:
+  82 000c 0138     		subs	r0, r0, #1
+  83 000e 0844     		add	r0, r0, r1
+  84              		.loc 1 120 0
+  85 0010 4942     		negs	r1, r1
+  86              	.LVL3:
+  87              		.loc 1 121 0
+  88 0012 0840     		ands	r0, r0, r1
+  89              	.LVL4:
+  90              		.loc 1 120 0
+  91 0014 1940     		ands	r1, r1, r3
+  92              	.LVL5:
+  93              		.loc 1 125 0
+  94 0016 6368     		ldr	r3, [r4, #4]
+  95              		.loc 1 122 0
+  96 0018 0144     		add	r1, r1, r0
+  97              	.LVL6:
+  98              		.loc 1 125 0
+  99 001a 8B42     		cmp	r3, r1
+ 100 001c 04D3     		bcc	.L8
+ 101              		.loc 1 125 0 is_stmt 0 discriminator 1
+ 102 001e 8D42     		cmp	r5, r1
+ 103 0020 02D8     		bhi	.L8
+ 104              		.loc 1 129 0 is_stmt 1
+ 105 0022 2160     		str	r1, [r4]
+ 106              		.loc 1 132 0
+ 107 0024 30BC     		pop	{r4, r5}
+ 108              		.cfi_remember_state
+ 109              		.cfi_restore 5
+ 110              		.cfi_restore 4
+ 111              		.cfi_def_cfa_offset 0
+ 112 0026 7047     		bx	lr
+ 113              	.L8:
+ 114              		.cfi_restore_state
+ARM GAS  C:\Users\Pearl\AppData\Local\Temp\ccefFgns.s 			page 3
+
+
+ 115              		.loc 1 126 0
+ 116 0028 0020     		movs	r0, #0
+ 117              	.LVL7:
+ 118              		.loc 1 132 0
+ 119 002a 30BC     		pop	{r4, r5}
+ 120              		.cfi_restore 5
+ 121              		.cfi_restore 4
+ 122              		.cfi_def_cfa_offset 0
+ 123              	.LVL8:
+ 124 002c 7047     		bx	lr
+ 125              	.L11:
+ 126 002e 00BF     		.align	2
+ 127              	.L10:
+ 128 0030 00000000 		.word	.LANCHOR0
+ 129              		.cfi_endproc
+ 130              	.LFE221:
+ 131              		.size	chCoreAllocAlignedWithOffsetI, .-chCoreAllocAlignedWithOffsetI
+ 132              		.section	.text.chCoreAllocAlignedWithOffset,"ax",%progbits
+ 133              		.align	1
+ 134              		.p2align 4,,15
+ 135              		.global	chCoreAllocAlignedWithOffset
+ 136              		.syntax unified
+ 137              		.thumb
+ 138              		.thumb_func
+ 139              		.fpu softvfp
+ 140              		.type	chCoreAllocAlignedWithOffset, %function
+ 141              	chCoreAllocAlignedWithOffset:
+ 142              	.LFB222:
+ 143              		.loc 1 150 0
+ 144              		.cfi_startproc
+ 145              		@ args = 0, pretend = 0, frame = 0
+ 146              		@ frame_needed = 0, uses_anonymous_args = 0
+ 147              		@ link register save eliminated.
+ 148              	.LVL9:
+ 149 0000 70B4     		push	{r4, r5, r6}
+ 150              		.cfi_def_cfa_offset 12
+ 151              		.cfi_offset 4, -12
+ 152              		.cfi_offset 5, -8
+ 153              		.cfi_offset 6, -4
+ 154              	.LBB26:
+ 155              	.LBB27:
+ 156              	.LBB28:
+ 157              	.LBB29:
+ 158              		.file 2 ".//os/common/ext/ARM/CMSIS/Core/Include/cmsis_gcc.h"
+ 159              		.loc 2 493 0
+ 160 0002 2023     		movs	r3, #32
+ 161              		.syntax unified
+ 162              	@ 493 ".//os/common/ext/ARM/CMSIS/Core/Include/cmsis_gcc.h" 1
+ 163 0004 83F31188 		MSR basepri, r3
+ 164              	@ 0 "" 2
+ 165              	.LVL10:
+ 166              		.thumb
+ 167              		.syntax unified
+ 168              	.LBE29:
+ 169              	.LBE28:
+ 170              	.LBE27:
+ 171              	.LBE26:
+ARM GAS  C:\Users\Pearl\AppData\Local\Temp\ccefFgns.s 			page 4
+
+
+ 172              	.LBB30:
+ 173              	.LBB31:
+ 174              		.loc 1 121 0
+ 175 0008 0D4C     		ldr	r4, .L17
+ 176 000a 4D1E     		subs	r5, r1, #1
+ 177 000c 2668     		ldr	r6, [r4]
+ 178              		.loc 1 120 0
+ 179 000e 4319     		adds	r3, r0, r5
+ 180              		.loc 1 121 0
+ 181 0010 B018     		adds	r0, r6, r2
+ 182              	.LVL11:
+ 183              		.loc 1 120 0
+ 184 0012 4942     		negs	r1, r1
+ 185              	.LVL12:
+ 186              		.loc 1 121 0
+ 187 0014 2844     		add	r0, r0, r5
+ 188              		.loc 1 120 0
+ 189 0016 0B40     		ands	r3, r3, r1
+ 190              		.loc 1 121 0
+ 191 0018 0840     		ands	r0, r0, r1
+ 192              	.LVL13:
+ 193              		.loc 1 125 0
+ 194 001a 6268     		ldr	r2, [r4, #4]
+ 195              	.LVL14:
+ 196              		.loc 1 122 0
+ 197 001c 0344     		add	r3, r3, r0
+ 198              	.LVL15:
+ 199              		.loc 1 125 0
+ 200 001e 9342     		cmp	r3, r2
+ 201 0020 07D8     		bhi	.L15
+ 202 0022 9E42     		cmp	r6, r3
+ 203 0024 05D8     		bhi	.L15
+ 204              		.loc 1 129 0
+ 205 0026 2360     		str	r3, [r4]
+ 206              	.LVL16:
+ 207              	.LBE31:
+ 208              	.LBE30:
+ 209              	.LBB33:
+ 210              	.LBB34:
+ 211              	.LBB35:
+ 212              	.LBB36:
+ 213              	.LBB37:
+ 214              		.loc 2 493 0
+ 215 0028 0023     		movs	r3, #0
+ 216              		.syntax unified
+ 217              	@ 493 ".//os/common/ext/ARM/CMSIS/Core/Include/cmsis_gcc.h" 1
+ 218 002a 83F31188 		MSR basepri, r3
+ 219              	@ 0 "" 2
+ 220              	.LVL17:
+ 221              		.thumb
+ 222              		.syntax unified
+ 223              	.LBE37:
+ 224              	.LBE36:
+ 225              	.LBE35:
+ 226              	.LBE34:
+ 227              	.LBE33:
+ 228              		.loc 1 158 0
+ARM GAS  C:\Users\Pearl\AppData\Local\Temp\ccefFgns.s 			page 5
+
+
+ 229 002e 70BC     		pop	{r4, r5, r6}
+ 230              		.cfi_remember_state
+ 231              		.cfi_restore 6
+ 232              		.cfi_restore 5
+ 233              		.cfi_restore 4
+ 234              		.cfi_def_cfa_offset 0
+ 235 0030 7047     		bx	lr
+ 236              	.LVL18:
+ 237              	.L15:
+ 238              		.cfi_restore_state
+ 239              	.LBB42:
+ 240              	.LBB32:
+ 241              		.loc 1 126 0
+ 242 0032 0020     		movs	r0, #0
+ 243              	.LVL19:
+ 244              	.LBE32:
+ 245              	.LBE42:
+ 246              	.LBB43:
+ 247              	.LBB41:
+ 248              	.LBB40:
+ 249              	.LBB39:
+ 250              	.LBB38:
+ 251              		.loc 2 493 0
+ 252 0034 0023     		movs	r3, #0
+ 253              		.syntax unified
+ 254              	@ 493 ".//os/common/ext/ARM/CMSIS/Core/Include/cmsis_gcc.h" 1
+ 255 0036 83F31188 		MSR basepri, r3
+ 256              	@ 0 "" 2
+ 257              	.LVL20:
+ 258              		.thumb
+ 259              		.syntax unified
+ 260              	.LBE38:
+ 261              	.LBE39:
+ 262              	.LBE40:
+ 263              	.LBE41:
+ 264              	.LBE43:
+ 265              		.loc 1 158 0
+ 266 003a 70BC     		pop	{r4, r5, r6}
+ 267              		.cfi_restore 6
+ 268              		.cfi_restore 5
+ 269              		.cfi_restore 4
+ 270              		.cfi_def_cfa_offset 0
+ 271 003c 7047     		bx	lr
+ 272              	.L18:
+ 273 003e 00BF     		.align	2
+ 274              	.L17:
+ 275 0040 00000000 		.word	.LANCHOR0
+ 276              		.cfi_endproc
+ 277              	.LFE222:
+ 278              		.size	chCoreAllocAlignedWithOffset, .-chCoreAllocAlignedWithOffset
+ 279              		.section	.text.chCoreGetStatusX,"ax",%progbits
+ 280              		.align	1
+ 281              		.p2align 4,,15
+ 282              		.global	chCoreGetStatusX
+ 283              		.syntax unified
+ 284              		.thumb
+ 285              		.thumb_func
+ARM GAS  C:\Users\Pearl\AppData\Local\Temp\ccefFgns.s 			page 6
+
+
+ 286              		.fpu softvfp
+ 287              		.type	chCoreGetStatusX, %function
+ 288              	chCoreGetStatusX:
+ 289              	.LFB223:
+ 290              		.loc 1 167 0
+ 291              		.cfi_startproc
+ 292              		@ args = 0, pretend = 0, frame = 0
+ 293              		@ frame_needed = 0, uses_anonymous_args = 0
+ 294              		@ link register save eliminated.
+ 295              		.loc 1 170 0
+ 296 0000 024B     		ldr	r3, .L20
+ 297 0002 5868     		ldr	r0, [r3, #4]
+ 298 0004 1B68     		ldr	r3, [r3]
+ 299              		.loc 1 172 0
+ 300 0006 C01A     		subs	r0, r0, r3
+ 301 0008 7047     		bx	lr
+ 302              	.L21:
+ 303 000a 00BF     		.align	2
+ 304              	.L20:
+ 305 000c 00000000 		.word	.LANCHOR0
+ 306              		.cfi_endproc
+ 307              	.LFE223:
+ 308              		.size	chCoreGetStatusX, .-chCoreGetStatusX
+ 309              		.global	ch_memcore
+ 310              		.section	.bss.ch_memcore,"aw",%nobits
+ 311              		.align	2
+ 312              		.set	.LANCHOR0,. + 0
+ 313              		.type	ch_memcore, %object
+ 314              		.size	ch_memcore, 8
+ 315              	ch_memcore:
+ 316 0000 00000000 		.space	8
+ 316      00000000 
+ 317              		.text
+ 318              	.Letext0:
+ 319              		.file 3 "c:\\chibistudio\\tools\\gnu tools arm embedded\\7.0 2017q4\\lib\\gcc\\arm-none-eabi\\7.2.
+ 320              		.file 4 "c:\\chibistudio\\tools\\gnu tools arm embedded\\7.0 2017q4\\arm-none-eabi\\include\\machi
+ 321              		.file 5 "c:\\chibistudio\\tools\\gnu tools arm embedded\\7.0 2017q4\\arm-none-eabi\\include\\sys\\
+ 322              		.file 6 ".//os/common/ports/ARMCMx/compilers/GCC/chtypes.h"
+ 323              		.file 7 ".//os/rt/include/chsystypes.h"
+ 324              		.file 8 ".//os/rt/include/chschd.h"
+ 325              		.file 9 ".//os/rt/include/chtime.h"
+ 326              		.file 10 ".//os/common/ext/ARM/CMSIS/Core/Include/core_cm3.h"
+ 327              		.file 11 ".//os/common/ext/ST/STM32F1xx/system_stm32f1xx.h"
+ 328              		.file 12 ".//os/common/ports/ARMCMx/chcore.h"
+ 329              		.file 13 ".//os/common/ports/ARMCMx/chcore_v7m.h"
+ 330              		.file 14 ".//os/rt/include/chsem.h"
+ 331              		.file 15 ".//os/rt/include/chmtx.h"
+ 332              		.file 16 ".//os/rt/include/chsys.h"
+ 333              		.file 17 ".//os/rt/include/chregistry.h"
+ 334              		.file 18 ".//os/lib/include/chmemcore.h"
+ 335              		.file 19 ".//os/lib/include/chmempools.h"
+ 336              		.file 20 ".//os/lib/include/chfactory.h"
+ 337              		.section	.debug_info,"",%progbits
+ 338              	.Ldebug_info0:
+ 339 0000 D30B0000 		.4byte	0xbd3
+ 340 0004 0400     		.2byte	0x4
+ 341 0006 00000000 		.4byte	.Ldebug_abbrev0
+ARM GAS  C:\Users\Pearl\AppData\Local\Temp\ccefFgns.s 			page 7
+
+
+ 342 000a 04       		.byte	0x4
+ 343 000b 01       		.uleb128 0x1
+ 344 000c F5040000 		.4byte	.LASF152
+ 345 0010 0C       		.byte	0xc
+ 346 0011 F7010000 		.4byte	.LASF153
+ 347 0015 E0020000 		.4byte	.LASF154
+ 348 0019 30000000 		.4byte	.Ldebug_ranges0+0x30
+ 349 001d 00000000 		.4byte	0
+ 350 0021 00000000 		.4byte	.Ldebug_line0
+ 351 0025 02       		.uleb128 0x2
+ 352 0026 04       		.byte	0x4
+ 353 0027 05       		.byte	0x5
+ 354 0028 696E7400 		.ascii	"int\000"
+ 355 002c 03       		.uleb128 0x3
+ 356 002d B9020000 		.4byte	.LASF4
+ 357 0031 03       		.byte	0x3
+ 358 0032 D8       		.byte	0xd8
+ 359 0033 37000000 		.4byte	0x37
+ 360 0037 04       		.uleb128 0x4
+ 361 0038 04       		.byte	0x4
+ 362 0039 07       		.byte	0x7
+ 363 003a 7E000000 		.4byte	.LASF0
+ 364 003e 04       		.uleb128 0x4
+ 365 003f 08       		.byte	0x8
+ 366 0040 05       		.byte	0x5
+ 367 0041 F9030000 		.4byte	.LASF1
+ 368 0045 04       		.uleb128 0x4
+ 369 0046 08       		.byte	0x8
+ 370 0047 04       		.byte	0x4
+ 371 0048 81040000 		.4byte	.LASF2
+ 372 004c 04       		.uleb128 0x4
+ 373 004d 01       		.byte	0x1
+ 374 004e 06       		.byte	0x6
+ 375 004f D6060000 		.4byte	.LASF3
+ 376 0053 03       		.uleb128 0x3
+ 377 0054 DB050000 		.4byte	.LASF5
+ 378 0058 04       		.byte	0x4
+ 379 0059 2B       		.byte	0x2b
+ 380 005a 5E000000 		.4byte	0x5e
+ 381 005e 04       		.uleb128 0x4
+ 382 005f 01       		.byte	0x1
+ 383 0060 08       		.byte	0x8
+ 384 0061 64060000 		.4byte	.LASF6
+ 385 0065 04       		.uleb128 0x4
+ 386 0066 02       		.byte	0x2
+ 387 0067 05       		.byte	0x5
+ 388 0068 B4040000 		.4byte	.LASF7
+ 389 006c 03       		.uleb128 0x3
+ 390 006d 28020000 		.4byte	.LASF8
+ 391 0071 04       		.byte	0x4
+ 392 0072 39       		.byte	0x39
+ 393 0073 77000000 		.4byte	0x77
+ 394 0077 04       		.uleb128 0x4
+ 395 0078 02       		.byte	0x2
+ 396 0079 07       		.byte	0x7
+ 397 007a E8060000 		.4byte	.LASF9
+ 398 007e 03       		.uleb128 0x3
+ARM GAS  C:\Users\Pearl\AppData\Local\Temp\ccefFgns.s 			page 8
+
+
+ 399 007f B0000000 		.4byte	.LASF10
+ 400 0083 04       		.byte	0x4
+ 401 0084 4D       		.byte	0x4d
+ 402 0085 89000000 		.4byte	0x89
+ 403 0089 04       		.uleb128 0x4
+ 404 008a 04       		.byte	0x4
+ 405 008b 05       		.byte	0x5
+ 406 008c BE040000 		.4byte	.LASF11
+ 407 0090 03       		.uleb128 0x3
+ 408 0091 72060000 		.4byte	.LASF12
+ 409 0095 04       		.byte	0x4
+ 410 0096 4F       		.byte	0x4f
+ 411 0097 9B000000 		.4byte	0x9b
+ 412 009b 04       		.uleb128 0x4
+ 413 009c 04       		.byte	0x4
+ 414 009d 07       		.byte	0x7
+ 415 009e 22060000 		.4byte	.LASF13
+ 416 00a2 03       		.uleb128 0x3
+ 417 00a3 20030000 		.4byte	.LASF14
+ 418 00a7 04       		.byte	0x4
+ 419 00a8 69       		.byte	0x69
+ 420 00a9 AD000000 		.4byte	0xad
+ 421 00ad 04       		.uleb128 0x4
+ 422 00ae 08       		.byte	0x8
+ 423 00af 07       		.byte	0x7
+ 424 00b0 11020000 		.4byte	.LASF15
+ 425 00b4 03       		.uleb128 0x3
+ 426 00b5 AB030000 		.4byte	.LASF16
+ 427 00b9 05       		.byte	0x5
+ 428 00ba 18       		.byte	0x18
+ 429 00bb 53000000 		.4byte	0x53
+ 430 00bf 05       		.uleb128 0x5
+ 431 00c0 B4000000 		.4byte	0xb4
+ 432 00c4 03       		.uleb128 0x3
+ 433 00c5 8D040000 		.4byte	.LASF17
+ 434 00c9 05       		.byte	0x5
+ 435 00ca 24       		.byte	0x24
+ 436 00cb 6C000000 		.4byte	0x6c
+ 437 00cf 03       		.uleb128 0x3
+ 438 00d0 47060000 		.4byte	.LASF18
+ 439 00d4 05       		.byte	0x5
+ 440 00d5 2C       		.byte	0x2c
+ 441 00d6 7E000000 		.4byte	0x7e
+ 442 00da 06       		.uleb128 0x6
+ 443 00db CF000000 		.4byte	0xcf
+ 444 00df 03       		.uleb128 0x3
+ 445 00e0 81010000 		.4byte	.LASF19
+ 446 00e4 05       		.byte	0x5
+ 447 00e5 30       		.byte	0x30
+ 448 00e6 90000000 		.4byte	0x90
+ 449 00ea 03       		.uleb128 0x3
+ 450 00eb CC050000 		.4byte	.LASF20
+ 451 00ef 05       		.byte	0x5
+ 452 00f0 3C       		.byte	0x3c
+ 453 00f1 A2000000 		.4byte	0xa2
+ 454 00f5 03       		.uleb128 0x3
+ 455 00f6 67040000 		.4byte	.LASF21
+ARM GAS  C:\Users\Pearl\AppData\Local\Temp\ccefFgns.s 			page 9
+
+
+ 456 00fa 06       		.byte	0x6
+ 457 00fb 2A       		.byte	0x2a
+ 458 00fc B4000000 		.4byte	0xb4
+ 459 0100 03       		.uleb128 0x3
+ 460 0101 A2030000 		.4byte	.LASF22
+ 461 0105 06       		.byte	0x6
+ 462 0106 2B       		.byte	0x2b
+ 463 0107 B4000000 		.4byte	0xb4
+ 464 010b 03       		.uleb128 0x3
+ 465 010c 1A060000 		.4byte	.LASF23
+ 466 0110 06       		.byte	0x6
+ 467 0111 2C       		.byte	0x2c
+ 468 0112 B4000000 		.4byte	0xb4
+ 469 0116 03       		.uleb128 0x3
+ 470 0117 B6010000 		.4byte	.LASF24
+ 471 011b 06       		.byte	0x6
+ 472 011c 2E       		.byte	0x2e
+ 473 011d DF000000 		.4byte	0xdf
+ 474 0121 03       		.uleb128 0x3
+ 475 0122 0C040000 		.4byte	.LASF25
+ 476 0126 06       		.byte	0x6
+ 477 0127 2F       		.byte	0x2f
+ 478 0128 CF000000 		.4byte	0xcf
+ 479 012c 03       		.uleb128 0x3
+ 480 012d 92010000 		.4byte	.LASF26
+ 481 0131 06       		.byte	0x6
+ 482 0132 31       		.byte	0x31
+ 483 0133 DF000000 		.4byte	0xdf
+ 484 0137 03       		.uleb128 0x3
+ 485 0138 33020000 		.4byte	.LASF27
+ 486 013c 06       		.byte	0x6
+ 487 013d 33       		.byte	0x33
+ 488 013e CF000000 		.4byte	0xcf
+ 489 0142 03       		.uleb128 0x3
+ 490 0143 6F040000 		.4byte	.LASF28
+ 491 0147 06       		.byte	0x6
+ 492 0148 34       		.byte	0x34
+ 493 0149 DF000000 		.4byte	0xdf
+ 494 014d 03       		.uleb128 0x3
+ 495 014e 83020000 		.4byte	.LASF29
+ 496 0152 07       		.byte	0x7
+ 497 0153 34       		.byte	0x34
+ 498 0154 58010000 		.4byte	0x158
+ 499 0158 07       		.uleb128 0x7
+ 500 0159 CB030000 		.4byte	.LASF47
+ 501 015d 44       		.byte	0x44
+ 502 015e 08       		.byte	0x8
+ 503 015f 8E       		.byte	0x8e
+ 504 0160 36020000 		.4byte	0x236
+ 505 0164 08       		.uleb128 0x8
+ 506 0165 41060000 		.4byte	.LASF30
+ 507 0169 08       		.byte	0x8
+ 508 016a 8F       		.byte	0x8f
+ 509 016b 6B020000 		.4byte	0x26b
+ 510 016f 00       		.byte	0
+ 511 0170 08       		.uleb128 0x8
+ 512 0171 63030000 		.4byte	.LASF31
+ARM GAS  C:\Users\Pearl\AppData\Local\Temp\ccefFgns.s 			page 10
+
+
+ 513 0175 08       		.byte	0x8
+ 514 0176 90       		.byte	0x90
+ 515 0177 16010000 		.4byte	0x116
+ 516 017b 08       		.byte	0x8
+ 517 017c 09       		.uleb128 0x9
+ 518 017d 63747800 		.ascii	"ctx\000"
+ 519 0181 08       		.byte	0x8
+ 520 0182 91       		.byte	0x91
+ 521 0183 BD040000 		.4byte	0x4bd
+ 522 0187 0C       		.byte	0xc
+ 523 0188 08       		.uleb128 0x8
+ 524 0189 5E060000 		.4byte	.LASF32
+ 525 018d 08       		.byte	0x8
+ 526 018e 93       		.byte	0x93
+ 527 018f 41020000 		.4byte	0x241
+ 528 0193 10       		.byte	0x10
+ 529 0194 08       		.uleb128 0x8
+ 530 0195 42070000 		.4byte	.LASF33
+ 531 0199 08       		.byte	0x8
+ 532 019a 94       		.byte	0x94
+ 533 019b 41020000 		.4byte	0x241
+ 534 019f 14       		.byte	0x14
+ 535 01a0 08       		.uleb128 0x8
+ 536 01a1 F2050000 		.4byte	.LASF34
+ 537 01a5 08       		.byte	0x8
+ 538 01a6 9B       		.byte	0x9b
+ 539 01a7 21060000 		.4byte	0x621
+ 540 01ab 18       		.byte	0x18
+ 541 01ac 08       		.uleb128 0x8
+ 542 01ad 89030000 		.4byte	.LASF35
+ 543 01b1 08       		.byte	0x8
+ 544 01b2 A4       		.byte	0xa4
+ 545 01b3 38060000 		.4byte	0x638
+ 546 01b7 1C       		.byte	0x1c
+ 547 01b8 08       		.uleb128 0x8
+ 548 01b9 B2060000 		.4byte	.LASF36
+ 549 01bd 08       		.byte	0x8
+ 550 01be A9       		.byte	0xa9
+ 551 01bf 00010000 		.4byte	0x100
+ 552 01c3 20       		.byte	0x20
+ 553 01c4 08       		.uleb128 0x8
+ 554 01c5 5C000000 		.4byte	.LASF37
+ 555 01c9 08       		.byte	0x8
+ 556 01ca AD       		.byte	0xad
+ 557 01cb F5000000 		.4byte	0xf5
+ 558 01cf 21       		.byte	0x21
+ 559 01d0 08       		.uleb128 0x8
+ 560 01d1 BA000000 		.4byte	.LASF38
+ 561 01d5 08       		.byte	0x8
+ 562 01d6 B2       		.byte	0xb2
+ 563 01d7 0B010000 		.4byte	0x10b
+ 564 01db 22       		.byte	0x22
+ 565 01dc 0A       		.uleb128 0xa
+ 566 01dd 7500     		.ascii	"u\000"
+ 567 01df 08       		.byte	0x8
+ 568 01e0 0301     		.2byte	0x103
+ 569 01e2 57050000 		.4byte	0x557
+ARM GAS  C:\Users\Pearl\AppData\Local\Temp\ccefFgns.s 			page 11
+
+
+ 570 01e6 24       		.byte	0x24
+ 571 01e7 0B       		.uleb128 0xb
+ 572 01e8 7D060000 		.4byte	.LASF39
+ 573 01ec 08       		.byte	0x8
+ 574 01ed 0801     		.2byte	0x108
+ 575 01ef 47020000 		.4byte	0x247
+ 576 01f3 28       		.byte	0x28
+ 577 01f4 0B       		.uleb128 0xb
+ 578 01f5 C2030000 		.4byte	.LASF40
+ 579 01f9 08       		.byte	0x8
+ 580 01fa 0E01     		.2byte	0x10e
+ 581 01fc 6B020000 		.4byte	0x26b
+ 582 0200 2C       		.byte	0x2c
+ 583 0201 0B       		.uleb128 0xb
+ 584 0202 75000000 		.4byte	.LASF41
+ 585 0206 08       		.byte	0x8
+ 586 0207 1401     		.2byte	0x114
+ 587 0209 2C010000 		.4byte	0x12c
+ 588 020d 34       		.byte	0x34
+ 589 020e 0B       		.uleb128 0xb
+ 590 020f 5C020000 		.4byte	.LASF42
+ 591 0213 08       		.byte	0x8
+ 592 0214 1B01     		.2byte	0x11b
+ 593 0216 1B060000 		.4byte	0x61b
+ 594 021a 38       		.byte	0x38
+ 595 021b 0B       		.uleb128 0xb
+ 596 021c 6C000000 		.4byte	.LASF43
+ 597 0220 08       		.byte	0x8
+ 598 0221 1F01     		.2byte	0x11f
+ 599 0223 16010000 		.4byte	0x116
+ 600 0227 3C       		.byte	0x3c
+ 601 0228 0B       		.uleb128 0xb
+ 602 0229 6F070000 		.4byte	.LASF44
+ 603 022d 08       		.byte	0x8
+ 604 022e 2601     		.2byte	0x126
+ 605 0230 1E030000 		.4byte	0x31e
+ 606 0234 40       		.byte	0x40
+ 607 0235 00       		.byte	0
+ 608 0236 03       		.uleb128 0x3
+ 609 0237 76030000 		.4byte	.LASF45
+ 610 023b 07       		.byte	0x7
+ 611 023c 39       		.byte	0x39
+ 612 023d 41020000 		.4byte	0x241
+ 613 0241 0C       		.uleb128 0xc
+ 614 0242 04       		.byte	0x4
+ 615 0243 4D010000 		.4byte	0x14d
+ 616 0247 03       		.uleb128 0x3
+ 617 0248 98000000 		.4byte	.LASF46
+ 618 024c 07       		.byte	0x7
+ 619 024d 3E       		.byte	0x3e
+ 620 024e 52020000 		.4byte	0x252
+ 621 0252 07       		.uleb128 0x7
+ 622 0253 00000000 		.4byte	.LASF48
+ 623 0257 04       		.byte	0x4
+ 624 0258 08       		.byte	0x8
+ 625 0259 7C       		.byte	0x7c
+ 626 025a 6B020000 		.4byte	0x26b
+ARM GAS  C:\Users\Pearl\AppData\Local\Temp\ccefFgns.s 			page 12
+
+
+ 627 025e 08       		.uleb128 0x8
+ 628 025f 8B000000 		.4byte	.LASF49
+ 629 0263 08       		.byte	0x8
+ 630 0264 7D       		.byte	0x7d
+ 631 0265 41020000 		.4byte	0x241
+ 632 0269 00       		.byte	0
+ 633 026a 00       		.byte	0
+ 634 026b 03       		.uleb128 0x3
+ 635 026c 4C020000 		.4byte	.LASF50
+ 636 0270 07       		.byte	0x7
+ 637 0271 45       		.byte	0x45
+ 638 0272 76020000 		.4byte	0x276
+ 639 0276 07       		.uleb128 0x7
+ 640 0277 29010000 		.4byte	.LASF51
+ 641 027b 08       		.byte	0x8
+ 642 027c 08       		.byte	0x8
+ 643 027d 83       		.byte	0x83
+ 644 027e 9B020000 		.4byte	0x29b
+ 645 0282 08       		.uleb128 0x8
+ 646 0283 8B000000 		.4byte	.LASF49
+ 647 0287 08       		.byte	0x8
+ 648 0288 84       		.byte	0x84
+ 649 0289 41020000 		.4byte	0x241
+ 650 028d 00       		.byte	0
+ 651 028e 08       		.uleb128 0x8
+ 652 028f 24010000 		.4byte	.LASF52
+ 653 0293 08       		.byte	0x8
+ 654 0294 85       		.byte	0x85
+ 655 0295 41020000 		.4byte	0x241
+ 656 0299 04       		.byte	0x4
+ 657 029a 00       		.byte	0
+ 658 029b 03       		.uleb128 0x3
+ 659 029c 34060000 		.4byte	.LASF53
+ 660 02a0 07       		.byte	0x7
+ 661 02a1 4C       		.byte	0x4c
+ 662 02a2 A6020000 		.4byte	0x2a6
+ 663 02a6 0D       		.uleb128 0xd
+ 664 02a7 0A010000 		.4byte	.LASF54
+ 665 02ab 1C       		.byte	0x1c
+ 666 02ac 08       		.byte	0x8
+ 667 02ad 5E01     		.2byte	0x15e
+ 668 02af 02030000 		.4byte	0x302
+ 669 02b3 0B       		.uleb128 0xb
+ 670 02b4 41060000 		.4byte	.LASF30
+ 671 02b8 08       		.byte	0x8
+ 672 02b9 5F01     		.2byte	0x15f
+ 673 02bb 6B020000 		.4byte	0x26b
+ 674 02bf 00       		.byte	0
+ 675 02c0 0B       		.uleb128 0xb
+ 676 02c1 63030000 		.4byte	.LASF31
+ 677 02c5 08       		.byte	0x8
+ 678 02c6 6001     		.2byte	0x160
+ 679 02c8 16010000 		.4byte	0x116
+ 680 02cc 08       		.byte	0x8
+ 681 02cd 0A       		.uleb128 0xa
+ 682 02ce 63747800 		.ascii	"ctx\000"
+ 683 02d2 08       		.byte	0x8
+ARM GAS  C:\Users\Pearl\AppData\Local\Temp\ccefFgns.s 			page 13
+
+
+ 684 02d3 6201     		.2byte	0x162
+ 685 02d5 BD040000 		.4byte	0x4bd
+ 686 02d9 0C       		.byte	0xc
+ 687 02da 0B       		.uleb128 0xb
+ 688 02db 5E060000 		.4byte	.LASF32
+ 689 02df 08       		.byte	0x8
+ 690 02e0 6501     		.2byte	0x165
+ 691 02e2 41020000 		.4byte	0x241
+ 692 02e6 10       		.byte	0x10
+ 693 02e7 0B       		.uleb128 0xb
+ 694 02e8 42070000 		.4byte	.LASF33
+ 695 02ec 08       		.byte	0x8
+ 696 02ed 6601     		.2byte	0x166
+ 697 02ef 41020000 		.4byte	0x241
+ 698 02f3 14       		.byte	0x14
+ 699 02f4 0B       		.uleb128 0xb
+ 700 02f5 16070000 		.4byte	.LASF55
+ 701 02f9 08       		.byte	0x8
+ 702 02fa 6901     		.2byte	0x169
+ 703 02fc 41020000 		.4byte	0x241
+ 704 0300 18       		.byte	0x18
+ 705 0301 00       		.byte	0
+ 706 0302 03       		.uleb128 0x3
+ 707 0303 57010000 		.4byte	.LASF56
+ 708 0307 07       		.byte	0x7
+ 709 0308 51       		.byte	0x51
+ 710 0309 0D030000 		.4byte	0x30d
+ 711 030d 0C       		.uleb128 0xc
+ 712 030e 04       		.byte	0x4
+ 713 030f 13030000 		.4byte	0x313
+ 714 0313 0E       		.uleb128 0xe
+ 715 0314 1E030000 		.4byte	0x31e
+ 716 0318 0F       		.uleb128 0xf
+ 717 0319 1E030000 		.4byte	0x31e
+ 718 031d 00       		.byte	0
+ 719 031e 10       		.uleb128 0x10
+ 720 031f 04       		.byte	0x4
+ 721 0320 03       		.uleb128 0x3
+ 722 0321 1B040000 		.4byte	.LASF57
+ 723 0325 07       		.byte	0x7
+ 724 0326 56       		.byte	0x56
+ 725 0327 2B030000 		.4byte	0x32b
+ 726 032b 0D       		.uleb128 0xd
+ 727 032c BE010000 		.4byte	.LASF58
+ 728 0330 14       		.byte	0x14
+ 729 0331 08       		.byte	0x8
+ 730 0332 3901     		.2byte	0x139
+ 731 0334 7A030000 		.4byte	0x37a
+ 732 0338 0B       		.uleb128 0xb
+ 733 0339 8B000000 		.4byte	.LASF49
+ 734 033d 08       		.byte	0x8
+ 735 033e 3A01     		.2byte	0x13a
+ 736 0340 3E060000 		.4byte	0x63e
+ 737 0344 00       		.byte	0
+ 738 0345 0B       		.uleb128 0xb
+ 739 0346 24010000 		.4byte	.LASF52
+ 740 034a 08       		.byte	0x8
+ARM GAS  C:\Users\Pearl\AppData\Local\Temp\ccefFgns.s 			page 14
+
+
+ 741 034b 3B01     		.2byte	0x13b
+ 742 034d 3E060000 		.4byte	0x63e
+ 743 0351 04       		.byte	0x4
+ 744 0352 0B       		.uleb128 0xb
+ 745 0353 E2060000 		.4byte	.LASF59
+ 746 0357 08       		.byte	0x8
+ 747 0358 3C01     		.2byte	0x13c
+ 748 035a 45040000 		.4byte	0x445
+ 749 035e 08       		.byte	0x8
+ 750 035f 0B       		.uleb128 0xb
+ 751 0360 18010000 		.4byte	.LASF60
+ 752 0364 08       		.byte	0x8
+ 753 0365 3D01     		.2byte	0x13d
+ 754 0367 02030000 		.4byte	0x302
+ 755 036b 0C       		.byte	0xc
+ 756 036c 0A       		.uleb128 0xa
+ 757 036d 70617200 		.ascii	"par\000"
+ 758 0371 08       		.byte	0x8
+ 759 0372 3F01     		.2byte	0x13f
+ 760 0374 1E030000 		.4byte	0x31e
+ 761 0378 10       		.byte	0x10
+ 762 0379 00       		.byte	0
+ 763 037a 03       		.uleb128 0x3
+ 764 037b 85060000 		.4byte	.LASF61
+ 765 037f 07       		.byte	0x7
+ 766 0380 5B       		.byte	0x5b
+ 767 0381 85030000 		.4byte	0x385
+ 768 0385 0D       		.uleb128 0xd
+ 769 0386 64020000 		.4byte	.LASF62
+ 770 038a 10       		.byte	0x10
+ 771 038b 08       		.byte	0x8
+ 772 038c 4901     		.2byte	0x149
+ 773 038e C7030000 		.4byte	0x3c7
+ 774 0392 0B       		.uleb128 0xb
+ 775 0393 8B000000 		.4byte	.LASF49
+ 776 0397 08       		.byte	0x8
+ 777 0398 4A01     		.2byte	0x14a
+ 778 039a 3E060000 		.4byte	0x63e
+ 779 039e 00       		.byte	0
+ 780 039f 0B       		.uleb128 0xb
+ 781 03a0 24010000 		.4byte	.LASF52
+ 782 03a4 08       		.byte	0x8
+ 783 03a5 4C01     		.2byte	0x14c
+ 784 03a7 3E060000 		.4byte	0x63e
+ 785 03ab 04       		.byte	0x4
+ 786 03ac 0B       		.uleb128 0xb
+ 787 03ad E2060000 		.4byte	.LASF59
+ 788 03b1 08       		.byte	0x8
+ 789 03b2 4E01     		.2byte	0x14e
+ 790 03b4 45040000 		.4byte	0x445
+ 791 03b8 08       		.byte	0x8
+ 792 03b9 0B       		.uleb128 0xb
+ 793 03ba C3050000 		.4byte	.LASF63
+ 794 03be 08       		.byte	0x8
+ 795 03bf 5601     		.2byte	0x156
+ 796 03c1 3A040000 		.4byte	0x43a
+ 797 03c5 0C       		.byte	0xc
+ARM GAS  C:\Users\Pearl\AppData\Local\Temp\ccefFgns.s 			page 15
+
+
+ 798 03c6 00       		.byte	0
+ 799 03c7 03       		.uleb128 0x3
+ 800 03c8 EA030000 		.4byte	.LASF64
+ 801 03cc 07       		.byte	0x7
+ 802 03cd 60       		.byte	0x60
+ 803 03ce D2030000 		.4byte	0x3d2
+ 804 03d2 0D       		.uleb128 0xd
+ 805 03d3 71010000 		.4byte	.LASF65
+ 806 03d7 04       		.byte	0x4
+ 807 03d8 08       		.byte	0x8
+ 808 03d9 7001     		.2byte	0x170
+ 809 03db ED030000 		.4byte	0x3ed
+ 810 03df 0B       		.uleb128 0xb
+ 811 03e0 5D040000 		.4byte	.LASF66
+ 812 03e4 08       		.byte	0x8
+ 813 03e5 7801     		.2byte	0x178
+ 814 03e7 27060000 		.4byte	0x627
+ 815 03eb 00       		.byte	0
+ 816 03ec 00       		.byte	0
+ 817 03ed 03       		.uleb128 0x3
+ 818 03ee C4060000 		.4byte	.LASF67
+ 819 03f2 07       		.byte	0x7
+ 820 03f3 65       		.byte	0x65
+ 821 03f4 F8030000 		.4byte	0x3f8
+ 822 03f8 0D       		.uleb128 0xd
+ 823 03f9 EB040000 		.4byte	.LASF68
+ 824 03fd 74       		.byte	0x74
+ 825 03fe 08       		.byte	0x8
+ 826 03ff 9001     		.2byte	0x190
+ 827 0401 3A040000 		.4byte	0x43a
+ 828 0405 0B       		.uleb128 0xb
+ 829 0406 D5050000 		.4byte	.LASF69
+ 830 040a 08       		.byte	0x8
+ 831 040b 9401     		.2byte	0x194
+ 832 040d 9B020000 		.4byte	0x29b
+ 833 0411 00       		.byte	0
+ 834 0412 0B       		.uleb128 0xb
+ 835 0413 F6000000 		.4byte	.LASF70
+ 836 0417 08       		.byte	0x8
+ 837 0418 9801     		.2byte	0x198
+ 838 041a 7A030000 		.4byte	0x37a
+ 839 041e 1C       		.byte	0x1c
+ 840 041f 0A       		.uleb128 0xa
+ 841 0420 64626700 		.ascii	"dbg\000"
+ 842 0424 08       		.byte	0x8
+ 843 0425 9C01     		.2byte	0x19c
+ 844 0427 C7030000 		.4byte	0x3c7
+ 845 042b 2C       		.byte	0x2c
+ 846 042c 0B       		.uleb128 0xb
+ 847 042d 76040000 		.4byte	.LASF71
+ 848 0431 08       		.byte	0x8
+ 849 0432 A001     		.2byte	0x1a0
+ 850 0434 4D010000 		.4byte	0x14d
+ 851 0438 30       		.byte	0x30
+ 852 0439 00       		.byte	0
+ 853 043a 03       		.uleb128 0x3
+ 854 043b 62000000 		.4byte	.LASF72
+ARM GAS  C:\Users\Pearl\AppData\Local\Temp\ccefFgns.s 			page 16
+
+
+ 855 043f 09       		.byte	0x9
+ 856 0440 6F       		.byte	0x6f
+ 857 0441 C4000000 		.4byte	0xc4
+ 858 0445 03       		.uleb128 0x3
+ 859 0446 46040000 		.4byte	.LASF73
+ 860 044a 09       		.byte	0x9
+ 861 044b 79       		.byte	0x79
+ 862 044c DF000000 		.4byte	0xdf
+ 863 0450 11       		.uleb128 0x11
+ 864 0451 D3040000 		.4byte	.LASF74
+ 865 0455 0A       		.byte	0xa
+ 866 0456 4007     		.2byte	0x740
+ 867 0458 DA000000 		.4byte	0xda
+ 868 045c 12       		.uleb128 0x12
+ 869 045d 19000000 		.4byte	.LASF75
+ 870 0461 0B       		.byte	0xb
+ 871 0462 45       		.byte	0x45
+ 872 0463 DF000000 		.4byte	0xdf
+ 873 0467 13       		.uleb128 0x13
+ 874 0468 BF000000 		.4byte	0xbf
+ 875 046c 77040000 		.4byte	0x477
+ 876 0470 14       		.uleb128 0x14
+ 877 0471 37000000 		.4byte	0x37
+ 878 0475 0F       		.byte	0xf
+ 879 0476 00       		.byte	0
+ 880 0477 05       		.uleb128 0x5
+ 881 0478 67040000 		.4byte	0x467
+ 882 047c 12       		.uleb128 0x12
+ 883 047d 38040000 		.4byte	.LASF76
+ 884 0481 0B       		.byte	0xb
+ 885 0482 46       		.byte	0x46
+ 886 0483 77040000 		.4byte	0x477
+ 887 0487 13       		.uleb128 0x13
+ 888 0488 BF000000 		.4byte	0xbf
+ 889 048c 97040000 		.4byte	0x497
+ 890 0490 14       		.uleb128 0x14
+ 891 0491 37000000 		.4byte	0x37
+ 892 0495 07       		.byte	0x7
+ 893 0496 00       		.byte	0
+ 894 0497 05       		.uleb128 0x5
+ 895 0498 87040000 		.4byte	0x487
+ 896 049c 12       		.uleb128 0x12
+ 897 049d 2B030000 		.4byte	.LASF77
+ 898 04a1 0B       		.byte	0xb
+ 899 04a2 47       		.byte	0x47
+ 900 04a3 97040000 		.4byte	0x497
+ 901 04a7 03       		.uleb128 0x3
+ 902 04a8 48000000 		.4byte	.LASF78
+ 903 04ac 0C       		.byte	0xc
+ 904 04ad 65       		.byte	0x65
+ 905 04ae 1E030000 		.4byte	0x31e
+ 906 04b2 03       		.uleb128 0x3
+ 907 04b3 FB060000 		.4byte	.LASF79
+ 908 04b7 0C       		.byte	0xc
+ 909 04b8 6D       		.byte	0x6d
+ 910 04b9 EA000000 		.4byte	0xea
+ 911 04bd 07       		.uleb128 0x7
+ARM GAS  C:\Users\Pearl\AppData\Local\Temp\ccefFgns.s 			page 17
+
+
+ 912 04be FD000000 		.4byte	.LASF80
+ 913 04c2 04       		.byte	0x4
+ 914 04c3 0C       		.byte	0xc
+ 915 04c4 89       		.byte	0x89
+ 916 04c5 D5040000 		.4byte	0x4d5
+ 917 04c9 09       		.uleb128 0x9
+ 918 04ca 737000   		.ascii	"sp\000"
+ 919 04cd 0C       		.byte	0xc
+ 920 04ce 8A       		.byte	0x8a
+ 921 04cf 51050000 		.4byte	0x551
+ 922 04d3 00       		.byte	0
+ 923 04d4 00       		.byte	0
+ 924 04d5 0D       		.uleb128 0xd
+ 925 04d6 C7040000 		.4byte	.LASF81
+ 926 04da 24       		.byte	0x24
+ 927 04db 0D       		.byte	0xd
+ 928 04dc 5901     		.2byte	0x159
+ 929 04de 51050000 		.4byte	0x551
+ 930 04e2 0A       		.uleb128 0xa
+ 931 04e3 723400   		.ascii	"r4\000"
+ 932 04e6 0D       		.byte	0xd
+ 933 04e7 6C01     		.2byte	0x16c
+ 934 04e9 A7040000 		.4byte	0x4a7
+ 935 04ed 00       		.byte	0
+ 936 04ee 0A       		.uleb128 0xa
+ 937 04ef 723500   		.ascii	"r5\000"
+ 938 04f2 0D       		.byte	0xd
+ 939 04f3 6D01     		.2byte	0x16d
+ 940 04f5 A7040000 		.4byte	0x4a7
+ 941 04f9 04       		.byte	0x4
+ 942 04fa 0A       		.uleb128 0xa
+ 943 04fb 723600   		.ascii	"r6\000"
+ 944 04fe 0D       		.byte	0xd
+ 945 04ff 6E01     		.2byte	0x16e
+ 946 0501 A7040000 		.4byte	0x4a7
+ 947 0505 08       		.byte	0x8
+ 948 0506 0A       		.uleb128 0xa
+ 949 0507 723700   		.ascii	"r7\000"
+ 950 050a 0D       		.byte	0xd
+ 951 050b 6F01     		.2byte	0x16f
+ 952 050d A7040000 		.4byte	0x4a7
+ 953 0511 0C       		.byte	0xc
+ 954 0512 0A       		.uleb128 0xa
+ 955 0513 723800   		.ascii	"r8\000"
+ 956 0516 0D       		.byte	0xd
+ 957 0517 7001     		.2byte	0x170
+ 958 0519 A7040000 		.4byte	0x4a7
+ 959 051d 10       		.byte	0x10
+ 960 051e 0A       		.uleb128 0xa
+ 961 051f 723900   		.ascii	"r9\000"
+ 962 0522 0D       		.byte	0xd
+ 963 0523 7101     		.2byte	0x171
+ 964 0525 A7040000 		.4byte	0x4a7
+ 965 0529 14       		.byte	0x14
+ 966 052a 0A       		.uleb128 0xa
+ 967 052b 72313000 		.ascii	"r10\000"
+ 968 052f 0D       		.byte	0xd
+ARM GAS  C:\Users\Pearl\AppData\Local\Temp\ccefFgns.s 			page 18
+
+
+ 969 0530 7201     		.2byte	0x172
+ 970 0532 A7040000 		.4byte	0x4a7
+ 971 0536 18       		.byte	0x18
+ 972 0537 0A       		.uleb128 0xa
+ 973 0538 72313100 		.ascii	"r11\000"
+ 974 053c 0D       		.byte	0xd
+ 975 053d 7301     		.2byte	0x173
+ 976 053f A7040000 		.4byte	0x4a7
+ 977 0543 1C       		.byte	0x1c
+ 978 0544 0A       		.uleb128 0xa
+ 979 0545 6C7200   		.ascii	"lr\000"
+ 980 0548 0D       		.byte	0xd
+ 981 0549 7401     		.2byte	0x174
+ 982 054b A7040000 		.4byte	0x4a7
+ 983 054f 20       		.byte	0x20
+ 984 0550 00       		.byte	0
+ 985 0551 0C       		.uleb128 0xc
+ 986 0552 04       		.byte	0x4
+ 987 0553 D5040000 		.4byte	0x4d5
+ 988 0557 15       		.uleb128 0x15
+ 989 0558 04       		.byte	0x4
+ 990 0559 08       		.byte	0x8
+ 991 055a C6       		.byte	0xc6
+ 992 055b B9050000 		.4byte	0x5b9
+ 993 055f 16       		.uleb128 0x16
+ 994 0560 C0020000 		.4byte	.LASF82
+ 995 0564 08       		.byte	0x8
+ 996 0565 CD       		.byte	0xcd
+ 997 0566 21010000 		.4byte	0x121
+ 998 056a 16       		.uleb128 0x16
+ 999 056b 50070000 		.4byte	.LASF83
+ 1000 056f 08       		.byte	0x8
+ 1001 0570 D4       		.byte	0xd4
+ 1002 0571 21010000 		.4byte	0x121
+ 1003 0575 16       		.uleb128 0x16
+ 1004 0576 E5000000 		.4byte	.LASF84
+ 1005 057a 08       		.byte	0x8
+ 1006 057b DB       		.byte	0xdb
+ 1007 057c 1E030000 		.4byte	0x31e
+ 1008 0580 16       		.uleb128 0x16
+ 1009 0581 D0060000 		.4byte	.LASF85
+ 1010 0585 08       		.byte	0x8
+ 1011 0586 E2       		.byte	0xe2
+ 1012 0587 B9050000 		.4byte	0x5b9
+ 1013 058b 16       		.uleb128 0x16
+ 1014 058c 8A010000 		.4byte	.LASF86
+ 1015 0590 08       		.byte	0x8
+ 1016 0591 E7       		.byte	0xe7
+ 1017 0592 21010000 		.4byte	0x121
+ 1018 0596 16       		.uleb128 0x16
+ 1019 0597 4F060000 		.4byte	.LASF87
+ 1020 059b 08       		.byte	0x8
+ 1021 059c F0       		.byte	0xf0
+ 1022 059d E4050000 		.4byte	0x5e4
+ 1023 05a1 16       		.uleb128 0x16
+ 1024 05a2 29000000 		.4byte	.LASF88
+ 1025 05a6 08       		.byte	0x8
+ARM GAS  C:\Users\Pearl\AppData\Local\Temp\ccefFgns.s 			page 19
+
+
+ 1026 05a7 F9       		.byte	0xf9
+ 1027 05a8 1B060000 		.4byte	0x61b
+ 1028 05ac 17       		.uleb128 0x17
+ 1029 05ad 1D010000 		.4byte	.LASF89
+ 1030 05b1 08       		.byte	0x8
+ 1031 05b2 0101     		.2byte	0x101
+ 1032 05b4 2C010000 		.4byte	0x12c
+ 1033 05b8 00       		.byte	0
+ 1034 05b9 0C       		.uleb128 0xc
+ 1035 05ba 04       		.byte	0x4
+ 1036 05bb 36020000 		.4byte	0x236
+ 1037 05bf 07       		.uleb128 0x7
+ 1038 05c0 A9010000 		.4byte	.LASF90
+ 1039 05c4 0C       		.byte	0xc
+ 1040 05c5 0E       		.byte	0xe
+ 1041 05c6 34       		.byte	0x34
+ 1042 05c7 E4050000 		.4byte	0x5e4
+ 1043 05cb 08       		.uleb128 0x8
+ 1044 05cc 41060000 		.4byte	.LASF30
+ 1045 05d0 0E       		.byte	0xe
+ 1046 05d1 35       		.byte	0x35
+ 1047 05d2 6B020000 		.4byte	0x26b
+ 1048 05d6 00       		.byte	0
+ 1049 05d7 09       		.uleb128 0x9
+ 1050 05d8 636E7400 		.ascii	"cnt\000"
+ 1051 05dc 0E       		.byte	0xe
+ 1052 05dd 37       		.byte	0x37
+ 1053 05de 37010000 		.4byte	0x137
+ 1054 05e2 08       		.byte	0x8
+ 1055 05e3 00       		.byte	0
+ 1056 05e4 0C       		.uleb128 0xc
+ 1057 05e5 04       		.byte	0x4
+ 1058 05e6 BF050000 		.4byte	0x5bf
+ 1059 05ea 07       		.uleb128 0x7
+ 1060 05eb 17030000 		.4byte	.LASF91
+ 1061 05ef 10       		.byte	0x10
+ 1062 05f0 0F       		.byte	0xf
+ 1063 05f1 39       		.byte	0x39
+ 1064 05f2 1B060000 		.4byte	0x61b
+ 1065 05f6 08       		.uleb128 0x8
+ 1066 05f7 41060000 		.4byte	.LASF30
+ 1067 05fb 0F       		.byte	0xf
+ 1068 05fc 3A       		.byte	0x3a
+ 1069 05fd 6B020000 		.4byte	0x26b
+ 1070 0601 00       		.byte	0
+ 1071 0602 08       		.uleb128 0x8
+ 1072 0603 46020000 		.4byte	.LASF92
+ 1073 0607 0F       		.byte	0xf
+ 1074 0608 3C       		.byte	0x3c
+ 1075 0609 41020000 		.4byte	0x241
+ 1076 060d 08       		.byte	0x8
+ 1077 060e 08       		.uleb128 0x8
+ 1078 060f 8B000000 		.4byte	.LASF49
+ 1079 0613 0F       		.byte	0xf
+ 1080 0614 3E       		.byte	0x3e
+ 1081 0615 7D070000 		.4byte	0x77d
+ 1082 0619 0C       		.byte	0xc
+ARM GAS  C:\Users\Pearl\AppData\Local\Temp\ccefFgns.s 			page 20
+
+
+ 1083 061a 00       		.byte	0
+ 1084 061b 0C       		.uleb128 0xc
+ 1085 061c 04       		.byte	0x4
+ 1086 061d EA050000 		.4byte	0x5ea
+ 1087 0621 0C       		.uleb128 0xc
+ 1088 0622 04       		.byte	0x4
+ 1089 0623 33060000 		.4byte	0x633
+ 1090 0627 06       		.uleb128 0x6
+ 1091 0628 21060000 		.4byte	0x621
+ 1092 062c 04       		.uleb128 0x4
+ 1093 062d 01       		.byte	0x1
+ 1094 062e 08       		.byte	0x8
+ 1095 062f 71030000 		.4byte	.LASF93
+ 1096 0633 05       		.uleb128 0x5
+ 1097 0634 2C060000 		.4byte	0x62c
+ 1098 0638 0C       		.uleb128 0xc
+ 1099 0639 04       		.byte	0x4
+ 1100 063a B2040000 		.4byte	0x4b2
+ 1101 063e 0C       		.uleb128 0xc
+ 1102 063f 04       		.byte	0x4
+ 1103 0640 20030000 		.4byte	0x320
+ 1104 0644 18       		.uleb128 0x18
+ 1105 0645 636800   		.ascii	"ch\000"
+ 1106 0648 08       		.byte	0x8
+ 1107 0649 C701     		.2byte	0x1c7
+ 1108 064b ED030000 		.4byte	0x3ed
+ 1109 064f 13       		.uleb128 0x13
+ 1110 0650 B2040000 		.4byte	0x4b2
+ 1111 0654 5A060000 		.4byte	0x65a
+ 1112 0658 19       		.uleb128 0x19
+ 1113 0659 00       		.byte	0
+ 1114 065a 11       		.uleb128 0x11
+ 1115 065b 90030000 		.4byte	.LASF94
+ 1116 065f 10       		.byte	0x10
+ 1117 0660 1701     		.2byte	0x117
+ 1118 0662 4F060000 		.4byte	0x64f
+ 1119 0666 1A       		.uleb128 0x1a
+ 1120 0667 16       		.byte	0x16
+ 1121 0668 11       		.byte	0x11
+ 1122 0669 34       		.byte	0x34
+ 1123 066a 47070000 		.4byte	0x747
+ 1124 066e 08       		.uleb128 0x8
+ 1125 066f F7050000 		.4byte	.LASF95
+ 1126 0673 11       		.byte	0x11
+ 1127 0674 35       		.byte	0x35
+ 1128 0675 47070000 		.4byte	0x747
+ 1129 0679 00       		.byte	0
+ 1130 067a 08       		.uleb128 0x8
+ 1131 067b 07040000 		.4byte	.LASF96
+ 1132 067f 11       		.byte	0x11
+ 1133 0680 36       		.byte	0x36
+ 1134 0681 B4000000 		.4byte	0xb4
+ 1135 0685 04       		.byte	0x4
+ 1136 0686 08       		.uleb128 0x8
+ 1137 0687 2B040000 		.4byte	.LASF97
+ 1138 068b 11       		.byte	0x11
+ 1139 068c 37       		.byte	0x37
+ARM GAS  C:\Users\Pearl\AppData\Local\Temp\ccefFgns.s 			page 21
+
+
+ 1140 068d B4000000 		.4byte	0xb4
+ 1141 0691 05       		.byte	0x5
+ 1142 0692 08       		.uleb128 0x8
+ 1143 0693 90000000 		.4byte	.LASF98
+ 1144 0697 11       		.byte	0x11
+ 1145 0698 38       		.byte	0x38
+ 1146 0699 C4000000 		.4byte	0xc4
+ 1147 069d 06       		.byte	0x6
+ 1148 069e 08       		.uleb128 0x8
+ 1149 069f 30040000 		.4byte	.LASF99
+ 1150 06a3 11       		.byte	0x11
+ 1151 06a4 39       		.byte	0x39
+ 1152 06a5 B4000000 		.4byte	0xb4
+ 1153 06a9 08       		.byte	0x8
+ 1154 06aa 08       		.uleb128 0x8
+ 1155 06ab 10000000 		.4byte	.LASF100
+ 1156 06af 11       		.byte	0x11
+ 1157 06b0 3A       		.byte	0x3a
+ 1158 06b1 B4000000 		.4byte	0xb4
+ 1159 06b5 09       		.byte	0x9
+ 1160 06b6 08       		.uleb128 0x8
+ 1161 06b7 9E010000 		.4byte	.LASF101
+ 1162 06bb 11       		.byte	0x11
+ 1163 06bc 3B       		.byte	0x3b
+ 1164 06bd B4000000 		.4byte	0xb4
+ 1165 06c1 0A       		.byte	0xa
+ 1166 06c2 08       		.uleb128 0x8
+ 1167 06c3 A0040000 		.4byte	.LASF102
+ 1168 06c7 11       		.byte	0x11
+ 1169 06c8 3C       		.byte	0x3c
+ 1170 06c9 B4000000 		.4byte	0xb4
+ 1171 06cd 0B       		.byte	0xb
+ 1172 06ce 08       		.uleb128 0x8
+ 1173 06cf 39030000 		.4byte	.LASF103
+ 1174 06d3 11       		.byte	0x11
+ 1175 06d4 3D       		.byte	0x3d
+ 1176 06d5 B4000000 		.4byte	0xb4
+ 1177 06d9 0C       		.byte	0xc
+ 1178 06da 08       		.uleb128 0x8
+ 1179 06db 4D010000 		.4byte	.LASF104
+ 1180 06df 11       		.byte	0x11
+ 1181 06e0 3E       		.byte	0x3e
+ 1182 06e1 B4000000 		.4byte	0xb4
+ 1183 06e5 0D       		.byte	0xd
+ 1184 06e6 08       		.uleb128 0x8
+ 1185 06e7 97020000 		.4byte	.LASF105
+ 1186 06eb 11       		.byte	0x11
+ 1187 06ec 3F       		.byte	0x3f
+ 1188 06ed B4000000 		.4byte	0xb4
+ 1189 06f1 0E       		.byte	0xe
+ 1190 06f2 08       		.uleb128 0x8
+ 1191 06f3 E1030000 		.4byte	.LASF106
+ 1192 06f7 11       		.byte	0x11
+ 1193 06f8 40       		.byte	0x40
+ 1194 06f9 B4000000 		.4byte	0xb4
+ 1195 06fd 0F       		.byte	0xf
+ 1196 06fe 08       		.uleb128 0x8
+ARM GAS  C:\Users\Pearl\AppData\Local\Temp\ccefFgns.s 			page 22
+
+
+ 1197 06ff 39020000 		.4byte	.LASF107
+ 1198 0703 11       		.byte	0x11
+ 1199 0704 41       		.byte	0x41
+ 1200 0705 B4000000 		.4byte	0xb4
+ 1201 0709 10       		.byte	0x10
+ 1202 070a 08       		.uleb128 0x8
+ 1203 070b A1020000 		.4byte	.LASF108
+ 1204 070f 11       		.byte	0x11
+ 1205 0710 42       		.byte	0x42
+ 1206 0711 B4000000 		.4byte	0xb4
+ 1207 0715 11       		.byte	0x11
+ 1208 0716 08       		.uleb128 0x8
+ 1209 0717 59030000 		.4byte	.LASF109
+ 1210 071b 11       		.byte	0x11
+ 1211 071c 43       		.byte	0x43
+ 1212 071d B4000000 		.4byte	0xb4
+ 1213 0721 12       		.byte	0x12
+ 1214 0722 08       		.uleb128 0x8
+ 1215 0723 06070000 		.4byte	.LASF110
+ 1216 0727 11       		.byte	0x11
+ 1217 0728 44       		.byte	0x44
+ 1218 0729 B4000000 		.4byte	0xb4
+ 1219 072d 13       		.byte	0x13
+ 1220 072e 08       		.uleb128 0x8
+ 1221 072f 02060000 		.4byte	.LASF111
+ 1222 0733 11       		.byte	0x11
+ 1223 0734 45       		.byte	0x45
+ 1224 0735 B4000000 		.4byte	0xb4
+ 1225 0739 14       		.byte	0x14
+ 1226 073a 08       		.uleb128 0x8
+ 1227 073b DC000000 		.4byte	.LASF112
+ 1228 073f 11       		.byte	0x11
+ 1229 0740 46       		.byte	0x46
+ 1230 0741 B4000000 		.4byte	0xb4
+ 1231 0745 15       		.byte	0x15
+ 1232 0746 00       		.byte	0
+ 1233 0747 13       		.uleb128 0x13
+ 1234 0748 2C060000 		.4byte	0x62c
+ 1235 074c 57070000 		.4byte	0x757
+ 1236 0750 14       		.uleb128 0x14
+ 1237 0751 37000000 		.4byte	0x37
+ 1238 0755 03       		.byte	0x3
+ 1239 0756 00       		.byte	0
+ 1240 0757 03       		.uleb128 0x3
+ 1241 0758 96040000 		.4byte	.LASF113
+ 1242 075c 11       		.byte	0x11
+ 1243 075d 47       		.byte	0x47
+ 1244 075e 66060000 		.4byte	0x666
+ 1245 0762 05       		.uleb128 0x5
+ 1246 0763 57070000 		.4byte	0x757
+ 1247 0767 12       		.uleb128 0x12
+ 1248 0768 27070000 		.4byte	.LASF114
+ 1249 076c 11       		.byte	0x11
+ 1250 076d 6C       		.byte	0x6c
+ 1251 076e 62070000 		.4byte	0x762
+ 1252 0772 03       		.uleb128 0x3
+ 1253 0773 56060000 		.4byte	.LASF115
+ARM GAS  C:\Users\Pearl\AppData\Local\Temp\ccefFgns.s 			page 23
+
+
+ 1254 0777 0F       		.byte	0xf
+ 1255 0778 34       		.byte	0x34
+ 1256 0779 EA050000 		.4byte	0x5ea
+ 1257 077d 0C       		.uleb128 0xc
+ 1258 077e 04       		.byte	0x4
+ 1259 077f 72070000 		.4byte	0x772
+ 1260 0783 04       		.uleb128 0x4
+ 1261 0784 01       		.byte	0x1
+ 1262 0785 02       		.byte	0x2
+ 1263 0786 DA020000 		.4byte	.LASF116
+ 1264 078a 03       		.uleb128 0x3
+ 1265 078b E5050000 		.4byte	.LASF117
+ 1266 078f 12       		.byte	0x12
+ 1267 0790 47       		.byte	0x47
+ 1268 0791 95070000 		.4byte	0x795
+ 1269 0795 0C       		.uleb128 0xc
+ 1270 0796 04       		.byte	0x4
+ 1271 0797 9B070000 		.4byte	0x79b
+ 1272 079b 1B       		.uleb128 0x1b
+ 1273 079c 1E030000 		.4byte	0x31e
+ 1274 07a0 AF070000 		.4byte	0x7af
+ 1275 07a4 0F       		.uleb128 0xf
+ 1276 07a5 2C000000 		.4byte	0x2c
+ 1277 07a9 0F       		.uleb128 0xf
+ 1278 07aa 37000000 		.4byte	0x37
+ 1279 07ae 00       		.byte	0
+ 1280 07af 1A       		.uleb128 0x1a
+ 1281 07b0 08       		.byte	0x8
+ 1282 07b1 12       		.byte	0x12
+ 1283 07b2 51       		.byte	0x51
+ 1284 07b3 D0070000 		.4byte	0x7d0
+ 1285 07b7 08       		.uleb128 0x8
+ 1286 07b8 48070000 		.4byte	.LASF118
+ 1287 07bc 12       		.byte	0x12
+ 1288 07bd 55       		.byte	0x55
+ 1289 07be D0070000 		.4byte	0x7d0
+ 1290 07c2 00       		.byte	0
+ 1291 07c3 08       		.uleb128 0x8
+ 1292 07c4 0F070000 		.4byte	.LASF119
+ 1293 07c8 12       		.byte	0x12
+ 1294 07c9 59       		.byte	0x59
+ 1295 07ca D0070000 		.4byte	0x7d0
+ 1296 07ce 04       		.byte	0x4
+ 1297 07cf 00       		.byte	0
+ 1298 07d0 0C       		.uleb128 0xc
+ 1299 07d1 04       		.byte	0x4
+ 1300 07d2 B4000000 		.4byte	0xb4
+ 1301 07d6 03       		.uleb128 0x3
+ 1302 07d7 CF010000 		.4byte	.LASF120
+ 1303 07db 12       		.byte	0x12
+ 1304 07dc 5A       		.byte	0x5a
+ 1305 07dd AF070000 		.4byte	0x7af
+ 1306 07e1 12       		.uleb128 0x12
+ 1307 07e2 A9040000 		.4byte	.LASF121
+ 1308 07e6 12       		.byte	0x12
+ 1309 07e7 65       		.byte	0x65
+ 1310 07e8 D6070000 		.4byte	0x7d6
+ARM GAS  C:\Users\Pearl\AppData\Local\Temp\ccefFgns.s 			page 24
+
+
+ 1311 07ec 07       		.uleb128 0x7
+ 1312 07ed B8060000 		.4byte	.LASF122
+ 1313 07f1 04       		.byte	0x4
+ 1314 07f2 13       		.byte	0x13
+ 1315 07f3 38       		.byte	0x38
+ 1316 07f4 05080000 		.4byte	0x805
+ 1317 07f8 08       		.uleb128 0x8
+ 1318 07f9 8B000000 		.4byte	.LASF49
+ 1319 07fd 13       		.byte	0x13
+ 1320 07fe 39       		.byte	0x39
+ 1321 07ff 05080000 		.4byte	0x805
+ 1322 0803 00       		.byte	0
+ 1323 0804 00       		.byte	0
+ 1324 0805 0C       		.uleb128 0xc
+ 1325 0806 04       		.byte	0x4
+ 1326 0807 EC070000 		.4byte	0x7ec
+ 1327 080b 1A       		.uleb128 0x1a
+ 1328 080c 10       		.byte	0x10
+ 1329 080d 13       		.byte	0x13
+ 1330 080e 40       		.byte	0x40
+ 1331 080f 44080000 		.4byte	0x844
+ 1332 0813 08       		.uleb128 0x8
+ 1333 0814 8B000000 		.4byte	.LASF49
+ 1334 0818 13       		.byte	0x13
+ 1335 0819 41       		.byte	0x41
+ 1336 081a 05080000 		.4byte	0x805
+ 1337 081e 00       		.byte	0
+ 1338 081f 08       		.uleb128 0x8
+ 1339 0820 C7020000 		.4byte	.LASF123
+ 1340 0824 13       		.byte	0x13
+ 1341 0825 42       		.byte	0x42
+ 1342 0826 2C000000 		.4byte	0x2c
+ 1343 082a 04       		.byte	0x4
+ 1344 082b 08       		.uleb128 0x8
+ 1345 082c 3C070000 		.4byte	.LASF124
+ 1346 0830 13       		.byte	0x13
+ 1347 0831 44       		.byte	0x44
+ 1348 0832 37000000 		.4byte	0x37
+ 1349 0836 08       		.byte	0x8
+ 1350 0837 08       		.uleb128 0x8
+ 1351 0838 BA050000 		.4byte	.LASF125
+ 1352 083c 13       		.byte	0x13
+ 1353 083d 45       		.byte	0x45
+ 1354 083e 8A070000 		.4byte	0x78a
+ 1355 0842 0C       		.byte	0xc
+ 1356 0843 00       		.byte	0
+ 1357 0844 03       		.uleb128 0x3
+ 1358 0845 30000000 		.4byte	.LASF126
+ 1359 0849 13       		.byte	0x13
+ 1360 084a 47       		.byte	0x47
+ 1361 084b 0B080000 		.4byte	0x80b
+ 1362 084f 07       		.uleb128 0x7
+ 1363 0850 B3030000 		.4byte	.LASF127
+ 1364 0854 10       		.byte	0x10
+ 1365 0855 14       		.byte	0x14
+ 1366 0856 93       		.byte	0x93
+ 1367 0857 80080000 		.4byte	0x880
+ARM GAS  C:\Users\Pearl\AppData\Local\Temp\ccefFgns.s 			page 25
+
+
+ 1368 085b 08       		.uleb128 0x8
+ 1369 085c 8B000000 		.4byte	.LASF49
+ 1370 0860 14       		.byte	0x14
+ 1371 0861 97       		.byte	0x97
+ 1372 0862 80080000 		.4byte	0x880
+ 1373 0866 00       		.byte	0
+ 1374 0867 08       		.uleb128 0x8
+ 1375 0868 BA000000 		.4byte	.LASF38
+ 1376 086c 14       		.byte	0x14
+ 1377 086d 9B       		.byte	0x9b
+ 1378 086e 42010000 		.4byte	0x142
+ 1379 0872 04       		.byte	0x4
+ 1380 0873 08       		.uleb128 0x8
+ 1381 0874 F2050000 		.4byte	.LASF34
+ 1382 0878 14       		.byte	0x14
+ 1383 0879 9D       		.byte	0x9d
+ 1384 087a 86080000 		.4byte	0x886
+ 1385 087e 08       		.byte	0x8
+ 1386 087f 00       		.byte	0
+ 1387 0880 0C       		.uleb128 0xc
+ 1388 0881 04       		.byte	0x4
+ 1389 0882 4F080000 		.4byte	0x84f
+ 1390 0886 13       		.uleb128 0x13
+ 1391 0887 2C060000 		.4byte	0x62c
+ 1392 088b 96080000 		.4byte	0x896
+ 1393 088f 14       		.uleb128 0x14
+ 1394 0890 37000000 		.4byte	0x37
+ 1395 0894 07       		.byte	0x7
+ 1396 0895 00       		.byte	0
+ 1397 0896 03       		.uleb128 0x3
+ 1398 0897 9B060000 		.4byte	.LASF128
+ 1399 089b 14       		.byte	0x14
+ 1400 089c A1       		.byte	0xa1
+ 1401 089d 4F080000 		.4byte	0x84f
+ 1402 08a1 07       		.uleb128 0x7
+ 1403 08a2 D5030000 		.4byte	.LASF129
+ 1404 08a6 04       		.byte	0x4
+ 1405 08a7 14       		.byte	0x14
+ 1406 08a8 A6       		.byte	0xa6
+ 1407 08a9 BA080000 		.4byte	0x8ba
+ 1408 08ad 08       		.uleb128 0x8
+ 1409 08ae 8B000000 		.4byte	.LASF49
+ 1410 08b2 14       		.byte	0x14
+ 1411 08b3 A7       		.byte	0xa7
+ 1412 08b4 BA080000 		.4byte	0x8ba
+ 1413 08b8 00       		.byte	0
+ 1414 08b9 00       		.byte	0
+ 1415 08ba 0C       		.uleb128 0xc
+ 1416 08bb 04       		.byte	0x4
+ 1417 08bc 96080000 		.4byte	0x896
+ 1418 08c0 03       		.uleb128 0x3
+ 1419 08c1 51000000 		.4byte	.LASF130
+ 1420 08c5 14       		.byte	0x14
+ 1421 08c6 A8       		.byte	0xa8
+ 1422 08c7 A1080000 		.4byte	0x8a1
+ 1423 08cb 0D       		.uleb128 0xd
+ 1424 08cc 3A010000 		.4byte	.LASF131
+ARM GAS  C:\Users\Pearl\AppData\Local\Temp\ccefFgns.s 			page 26
+
+
+ 1425 08d0 44       		.byte	0x44
+ 1426 08d1 14       		.byte	0x14
+ 1427 08d2 1101     		.2byte	0x111
+ 1428 08d4 41090000 		.4byte	0x941
+ 1429 08d8 0A       		.uleb128 0xa
+ 1430 08d9 6D747800 		.ascii	"mtx\000"
+ 1431 08dd 14       		.byte	0x14
+ 1432 08de 1601     		.2byte	0x116
+ 1433 08e0 72070000 		.4byte	0x772
+ 1434 08e4 00       		.byte	0
+ 1435 08e5 0B       		.uleb128 0xb
+ 1436 08e6 A7000000 		.4byte	.LASF132
+ 1437 08ea 14       		.byte	0x14
+ 1438 08eb 1D01     		.2byte	0x11d
+ 1439 08ed C0080000 		.4byte	0x8c0
+ 1440 08f1 10       		.byte	0x10
+ 1441 08f2 0B       		.uleb128 0xb
+ 1442 08f3 12040000 		.4byte	.LASF133
+ 1443 08f7 14       		.byte	0x14
+ 1444 08f8 2101     		.2byte	0x121
+ 1445 08fa 44080000 		.4byte	0x844
+ 1446 08fe 14       		.byte	0x14
+ 1447 08ff 0B       		.uleb128 0xb
+ 1448 0900 54040000 		.4byte	.LASF134
+ 1449 0904 14       		.byte	0x14
+ 1450 0905 2601     		.2byte	0x126
+ 1451 0907 C0080000 		.4byte	0x8c0
+ 1452 090b 24       		.byte	0x24
+ 1453 090c 0B       		.uleb128 0xb
+ 1454 090d 66070000 		.4byte	.LASF135
+ 1455 0911 14       		.byte	0x14
+ 1456 0912 2C01     		.2byte	0x12c
+ 1457 0914 C0080000 		.4byte	0x8c0
+ 1458 0918 28       		.byte	0x28
+ 1459 0919 0B       		.uleb128 0xb
+ 1460 091a 68030000 		.4byte	.LASF136
+ 1461 091e 14       		.byte	0x14
+ 1462 091f 3001     		.2byte	0x130
+ 1463 0921 44080000 		.4byte	0x844
+ 1464 0925 2C       		.byte	0x2c
+ 1465 0926 0B       		.uleb128 0xb
+ 1466 0927 A9060000 		.4byte	.LASF137
+ 1467 092b 14       		.byte	0x14
+ 1468 092c 3601     		.2byte	0x136
+ 1469 092e C0080000 		.4byte	0x8c0
+ 1470 0932 3C       		.byte	0x3c
+ 1471 0933 0B       		.uleb128 0xb
+ 1472 0934 3E000000 		.4byte	.LASF138
+ 1473 0938 14       		.byte	0x14
+ 1474 0939 3C01     		.2byte	0x13c
+ 1475 093b C0080000 		.4byte	0x8c0
+ 1476 093f 40       		.byte	0x40
+ 1477 0940 00       		.byte	0
+ 1478 0941 1C       		.uleb128 0x1c
+ 1479 0942 05030000 		.4byte	.LASF139
+ 1480 0946 14       		.byte	0x14
+ 1481 0947 3E01     		.2byte	0x13e
+ARM GAS  C:\Users\Pearl\AppData\Local\Temp\ccefFgns.s 			page 27
+
+
+ 1482 0949 CB080000 		.4byte	0x8cb
+ 1483 094d 11       		.uleb128 0x11
+ 1484 094e E0040000 		.4byte	.LASF140
+ 1485 0952 14       		.byte	0x14
+ 1486 0953 4901     		.2byte	0x149
+ 1487 0955 41090000 		.4byte	0x941
+ 1488 0959 1D       		.uleb128 0x1d
+ 1489 095a E1070000 		.4byte	0x7e1
+ 1490 095e 01       		.byte	0x1
+ 1491 095f 3A       		.byte	0x3a
+ 1492 0960 05       		.uleb128 0x5
+ 1493 0961 03       		.byte	0x3
+ 1494 0962 00000000 		.4byte	ch_memcore
+ 1495 0966 1E       		.uleb128 0x1e
+ 1496 0967 60010000 		.4byte	.LASF155
+ 1497 096b 01       		.byte	0x1
+ 1498 096c A7       		.byte	0xa7
+ 1499 096d 2C000000 		.4byte	0x2c
+ 1500 0971 00000000 		.4byte	.LFB223
+ 1501 0975 10000000 		.4byte	.LFE223-.LFB223
+ 1502 0979 01       		.uleb128 0x1
+ 1503 097a 9C       		.byte	0x9c
+ 1504 097b 1F       		.uleb128 0x1f
+ 1505 097c BF000000 		.4byte	.LASF156
+ 1506 0980 01       		.byte	0x1
+ 1507 0981 94       		.byte	0x94
+ 1508 0982 1E030000 		.4byte	0x31e
+ 1509 0986 00000000 		.4byte	.LFB222
+ 1510 098a 44000000 		.4byte	.LFE222-.LFB222
+ 1511 098e 01       		.uleb128 0x1
+ 1512 098f 9C       		.byte	0x9c
+ 1513 0990 940A0000 		.4byte	0xa94
+ 1514 0994 20       		.uleb128 0x20
+ 1515 0995 2B040000 		.4byte	.LASF97
+ 1516 0999 01       		.byte	0x1
+ 1517 099a 94       		.byte	0x94
+ 1518 099b 2C000000 		.4byte	0x2c
+ 1519 099f 00000000 		.4byte	.LLST3
+ 1520 09a3 20       		.uleb128 0x20
+ 1521 09a4 3C070000 		.4byte	.LASF124
+ 1522 09a8 01       		.byte	0x1
+ 1523 09a9 95       		.byte	0x95
+ 1524 09aa 37000000 		.4byte	0x37
+ 1525 09ae 21000000 		.4byte	.LLST4
+ 1526 09b2 20       		.uleb128 0x20
+ 1527 09b3 D3020000 		.4byte	.LASF141
+ 1528 09b7 01       		.byte	0x1
+ 1529 09b8 96       		.byte	0x96
+ 1530 09b9 2C000000 		.4byte	0x2c
+ 1531 09bd 42000000 		.4byte	.LLST5
+ 1532 09c1 21       		.uleb128 0x21
+ 1533 09c2 7000     		.ascii	"p\000"
+ 1534 09c4 01       		.byte	0x1
+ 1535 09c5 97       		.byte	0x97
+ 1536 09c6 1E030000 		.4byte	0x31e
+ 1537 09ca 22       		.uleb128 0x22
+ 1538 09cb 630B0000 		.4byte	0xb63
+ARM GAS  C:\Users\Pearl\AppData\Local\Temp\ccefFgns.s 			page 28
+
+
+ 1539 09cf 02000000 		.4byte	.LBB26
+ 1540 09d3 06000000 		.4byte	.LBE26-.LBB26
+ 1541 09d7 01       		.byte	0x1
+ 1542 09d8 99       		.byte	0x99
+ 1543 09d9 090A0000 		.4byte	0xa09
+ 1544 09dd 23       		.uleb128 0x23
+ 1545 09de 750B0000 		.4byte	0xb75
+ 1546 09e2 02000000 		.4byte	.LBB27
+ 1547 09e6 06000000 		.4byte	.LBE27-.LBB27
+ 1548 09ea 10       		.byte	0x10
+ 1549 09eb 6301     		.2byte	0x163
+ 1550 09ed 23       		.uleb128 0x23
+ 1551 09ee 7E0B0000 		.4byte	0xb7e
+ 1552 09f2 02000000 		.4byte	.LBB28
+ 1553 09f6 06000000 		.4byte	.LBE28-.LBB28
+ 1554 09fa 0D       		.byte	0xd
+ 1555 09fb 5A02     		.2byte	0x25a
+ 1556 09fd 24       		.uleb128 0x24
+ 1557 09fe 8B0B0000 		.4byte	0xb8b
+ 1558 0a02 63000000 		.4byte	.LLST6
+ 1559 0a06 00       		.byte	0
+ 1560 0a07 00       		.byte	0
+ 1561 0a08 00       		.byte	0
+ 1562 0a09 25       		.uleb128 0x25
+ 1563 0a0a 940A0000 		.4byte	0xa94
+ 1564 0a0e 08000000 		.4byte	.LBB30
+ 1565 0a12 00000000 		.4byte	.Ldebug_ranges0+0
+ 1566 0a16 01       		.byte	0x1
+ 1567 0a17 9A       		.byte	0x9a
+ 1568 0a18 4D0A0000 		.4byte	0xa4d
+ 1569 0a1c 24       		.uleb128 0x24
+ 1570 0a1d BA0A0000 		.4byte	0xaba
+ 1571 0a21 78000000 		.4byte	.LLST7
+ 1572 0a25 24       		.uleb128 0x24
+ 1573 0a26 AF0A0000 		.4byte	0xaaf
+ 1574 0a2a A7000000 		.4byte	.LLST8
+ 1575 0a2e 24       		.uleb128 0x24
+ 1576 0a2f A40A0000 		.4byte	0xaa4
+ 1577 0a33 D6000000 		.4byte	.LLST9
+ 1578 0a37 26       		.uleb128 0x26
+ 1579 0a38 00000000 		.4byte	.Ldebug_ranges0+0
+ 1580 0a3c 27       		.uleb128 0x27
+ 1581 0a3d C00B0000 		.4byte	0xbc0
+ 1582 0a41 27       		.uleb128 0x27
+ 1583 0a42 C90B0000 		.4byte	0xbc9
+ 1584 0a46 27       		.uleb128 0x27
+ 1585 0a47 D00B0000 		.4byte	0xbd0
+ 1586 0a4b 00       		.byte	0
+ 1587 0a4c 00       		.byte	0
+ 1588 0a4d 28       		.uleb128 0x28
+ 1589 0a4e 330B0000 		.4byte	0xb33
+ 1590 0a52 28000000 		.4byte	.LBB33
+ 1591 0a56 18000000 		.4byte	.Ldebug_ranges0+0x18
+ 1592 0a5a 01       		.byte	0x1
+ 1593 0a5b 9B       		.byte	0x9b
+ 1594 0a5c 26       		.uleb128 0x26
+ 1595 0a5d 18000000 		.4byte	.Ldebug_ranges0+0x18
+ARM GAS  C:\Users\Pearl\AppData\Local\Temp\ccefFgns.s 			page 29
+
+
+ 1596 0a61 27       		.uleb128 0x27
+ 1597 0a62 400B0000 		.4byte	0xb40
+ 1598 0a66 29       		.uleb128 0x29
+ 1599 0a67 6C0B0000 		.4byte	0xb6c
+ 1600 0a6b 28000000 		.4byte	.LBB35
+ 1601 0a6f 18000000 		.4byte	.Ldebug_ranges0+0x18
+ 1602 0a73 10       		.byte	0x10
+ 1603 0a74 7A01     		.2byte	0x17a
+ 1604 0a76 29       		.uleb128 0x29
+ 1605 0a77 7E0B0000 		.4byte	0xb7e
+ 1606 0a7b 28000000 		.4byte	.LBB36
+ 1607 0a7f 18000000 		.4byte	.Ldebug_ranges0+0x18
+ 1608 0a83 0D       		.byte	0xd
+ 1609 0a84 6D02     		.2byte	0x26d
+ 1610 0a86 24       		.uleb128 0x24
+ 1611 0a87 8B0B0000 		.4byte	0xb8b
+ 1612 0a8b 1F010000 		.4byte	.LLST10
+ 1613 0a8f 00       		.byte	0
+ 1614 0a90 00       		.byte	0
+ 1615 0a91 00       		.byte	0
+ 1616 0a92 00       		.byte	0
+ 1617 0a93 00       		.byte	0
+ 1618 0a94 2A       		.uleb128 0x2a
+ 1619 0a95 D9010000 		.4byte	.LASF145
+ 1620 0a99 01       		.byte	0x1
+ 1621 0a9a 70       		.byte	0x70
+ 1622 0a9b 1E030000 		.4byte	0x31e
+ 1623 0a9f 01       		.byte	0x1
+ 1624 0aa0 E70A0000 		.4byte	0xae7
+ 1625 0aa4 2B       		.uleb128 0x2b
+ 1626 0aa5 2B040000 		.4byte	.LASF97
+ 1627 0aa9 01       		.byte	0x1
+ 1628 0aaa 70       		.byte	0x70
+ 1629 0aab 2C000000 		.4byte	0x2c
+ 1630 0aaf 2B       		.uleb128 0x2b
+ 1631 0ab0 3C070000 		.4byte	.LASF124
+ 1632 0ab4 01       		.byte	0x1
+ 1633 0ab5 71       		.byte	0x71
+ 1634 0ab6 37000000 		.4byte	0x37
+ 1635 0aba 2B       		.uleb128 0x2b
+ 1636 0abb D3020000 		.4byte	.LASF141
+ 1637 0abf 01       		.byte	0x1
+ 1638 0ac0 72       		.byte	0x72
+ 1639 0ac1 2C000000 		.4byte	0x2c
+ 1640 0ac5 21       		.uleb128 0x21
+ 1641 0ac6 7000     		.ascii	"p\000"
+ 1642 0ac8 01       		.byte	0x1
+ 1643 0ac9 73       		.byte	0x73
+ 1644 0aca D0070000 		.4byte	0x7d0
+ 1645 0ace 2C       		.uleb128 0x2c
+ 1646 0acf 8B000000 		.4byte	.LASF49
+ 1647 0ad3 01       		.byte	0x1
+ 1648 0ad4 73       		.byte	0x73
+ 1649 0ad5 D0070000 		.4byte	0x7d0
+ 1650 0ad9 2D       		.uleb128 0x2d
+ 1651 0ada 1E070000 		.4byte	.LASF142
+ 1652 0ade F70A0000 		.4byte	0xaf7
+ARM GAS  C:\Users\Pearl\AppData\Local\Temp\ccefFgns.s 			page 30
+
+
+ 1653 0ae2 D9010000 		.4byte	.LASF145
+ 1654 0ae6 00       		.byte	0
+ 1655 0ae7 13       		.uleb128 0x13
+ 1656 0ae8 33060000 		.4byte	0x633
+ 1657 0aec F70A0000 		.4byte	0xaf7
+ 1658 0af0 14       		.uleb128 0x14
+ 1659 0af1 37000000 		.4byte	0x37
+ 1660 0af5 1D       		.byte	0x1d
+ 1661 0af6 00       		.byte	0
+ 1662 0af7 05       		.uleb128 0x5
+ 1663 0af8 E70A0000 		.4byte	0xae7
+ 1664 0afc 2E       		.uleb128 0x2e
+ 1665 0afd 8C020000 		.4byte	.LASF157
+ 1666 0b01 01       		.byte	0x1
+ 1667 0b02 51       		.byte	0x51
+ 1668 0b03 00000000 		.4byte	.LFB220
+ 1669 0b07 18000000 		.4byte	.LFE220-.LFB220
+ 1670 0b0b 01       		.uleb128 0x1
+ 1671 0b0c 9C       		.byte	0x9c
+ 1672 0b0d 280B0000 		.4byte	0xb28
+ 1673 0b11 12       		.uleb128 0x12
+ 1674 0b12 AB020000 		.4byte	.LASF143
+ 1675 0b16 01       		.byte	0x1
+ 1676 0b17 53       		.byte	0x53
+ 1677 0b18 280B0000 		.4byte	0xb28
+ 1678 0b1c 12       		.uleb128 0x12
+ 1679 0b1d 59070000 		.4byte	.LASF144
+ 1680 0b21 01       		.byte	0x1
+ 1681 0b22 54       		.byte	0x54
+ 1682 0b23 280B0000 		.4byte	0xb28
+ 1683 0b27 00       		.byte	0
+ 1684 0b28 13       		.uleb128 0x13
+ 1685 0b29 B4000000 		.4byte	0xb4
+ 1686 0b2d 330B0000 		.4byte	0xb33
+ 1687 0b31 19       		.uleb128 0x19
+ 1688 0b32 00       		.byte	0
+ 1689 0b33 2F       		.uleb128 0x2f
+ 1690 0b34 0E060000 		.4byte	.LASF146
+ 1691 0b38 10       		.byte	0x10
+ 1692 0b39 6D01     		.2byte	0x16d
+ 1693 0b3b 03       		.byte	0x3
+ 1694 0b3c 4E0B0000 		.4byte	0xb4e
+ 1695 0b40 2D       		.uleb128 0x2d
+ 1696 0b41 1E070000 		.4byte	.LASF142
+ 1697 0b45 5E0B0000 		.4byte	0xb5e
+ 1698 0b49 0E060000 		.4byte	.LASF146
+ 1699 0b4d 00       		.byte	0
+ 1700 0b4e 13       		.uleb128 0x13
+ 1701 0b4f 33060000 		.4byte	0x633
+ 1702 0b53 5E0B0000 		.4byte	0xb5e
+ 1703 0b57 14       		.uleb128 0x14
+ 1704 0b58 37000000 		.4byte	0x37
+ 1705 0b5c 0B       		.byte	0xb
+ 1706 0b5d 00       		.byte	0
+ 1707 0b5e 05       		.uleb128 0x5
+ 1708 0b5f 4E0B0000 		.4byte	0xb4e
+ 1709 0b63 30       		.uleb128 0x30
+ARM GAS  C:\Users\Pearl\AppData\Local\Temp\ccefFgns.s 			page 31
+
+
+ 1710 0b64 4F030000 		.4byte	.LASF147
+ 1711 0b68 10       		.byte	0x10
+ 1712 0b69 6101     		.2byte	0x161
+ 1713 0b6b 03       		.byte	0x3
+ 1714 0b6c 30       		.uleb128 0x30
+ 1715 0b6d 30070000 		.4byte	.LASF148
+ 1716 0b71 0D       		.byte	0xd
+ 1717 0b72 6A02     		.2byte	0x26a
+ 1718 0b74 03       		.byte	0x3
+ 1719 0b75 30       		.uleb128 0x30
+ 1720 0b76 EC000000 		.4byte	.LASF149
+ 1721 0b7a 0D       		.byte	0xd
+ 1722 0b7b 5202     		.2byte	0x252
+ 1723 0b7d 03       		.byte	0x3
+ 1724 0b7e 2F       		.uleb128 0x2f
+ 1725 0b7f 41030000 		.4byte	.LASF150
+ 1726 0b83 02       		.byte	0x2
+ 1727 0b84 EB01     		.2byte	0x1eb
+ 1728 0b86 03       		.byte	0x3
+ 1729 0b87 980B0000 		.4byte	0xb98
+ 1730 0b8b 31       		.uleb128 0x31
+ 1731 0b8c 7B020000 		.4byte	.LASF151
+ 1732 0b90 02       		.byte	0x2
+ 1733 0b91 EB01     		.2byte	0x1eb
+ 1734 0b93 DF000000 		.4byte	0xdf
+ 1735 0b97 00       		.byte	0
+ 1736 0b98 32       		.uleb128 0x32
+ 1737 0b99 940A0000 		.4byte	0xa94
+ 1738 0b9d 00000000 		.4byte	.LFB221
+ 1739 0ba1 34000000 		.4byte	.LFE221-.LFB221
+ 1740 0ba5 01       		.uleb128 0x1
+ 1741 0ba6 9C       		.byte	0x9c
+ 1742 0ba7 24       		.uleb128 0x24
+ 1743 0ba8 A40A0000 		.4byte	0xaa4
+ 1744 0bac 3F010000 		.4byte	.LLST0
+ 1745 0bb0 24       		.uleb128 0x24
+ 1746 0bb1 AF0A0000 		.4byte	0xaaf
+ 1747 0bb5 A1010000 		.4byte	.LLST1
+ 1748 0bb9 33       		.uleb128 0x33
+ 1749 0bba BA0A0000 		.4byte	0xaba
+ 1750 0bbe 01       		.uleb128 0x1
+ 1751 0bbf 52       		.byte	0x52
+ 1752 0bc0 34       		.uleb128 0x34
+ 1753 0bc1 C50A0000 		.4byte	0xac5
+ 1754 0bc5 D0010000 		.4byte	.LLST2
+ 1755 0bc9 35       		.uleb128 0x35
+ 1756 0bca CE0A0000 		.4byte	0xace
+ 1757 0bce 01       		.uleb128 0x1
+ 1758 0bcf 51       		.byte	0x51
+ 1759 0bd0 27       		.uleb128 0x27
+ 1760 0bd1 D90A0000 		.4byte	0xad9
+ 1761 0bd5 00       		.byte	0
+ 1762 0bd6 00       		.byte	0
+ 1763              		.section	.debug_abbrev,"",%progbits
+ 1764              	.Ldebug_abbrev0:
+ 1765 0000 01       		.uleb128 0x1
+ 1766 0001 11       		.uleb128 0x11
+ARM GAS  C:\Users\Pearl\AppData\Local\Temp\ccefFgns.s 			page 32
+
+
+ 1767 0002 01       		.byte	0x1
+ 1768 0003 25       		.uleb128 0x25
+ 1769 0004 0E       		.uleb128 0xe
+ 1770 0005 13       		.uleb128 0x13
+ 1771 0006 0B       		.uleb128 0xb
+ 1772 0007 03       		.uleb128 0x3
+ 1773 0008 0E       		.uleb128 0xe
+ 1774 0009 1B       		.uleb128 0x1b
+ 1775 000a 0E       		.uleb128 0xe
+ 1776 000b 55       		.uleb128 0x55
+ 1777 000c 17       		.uleb128 0x17
+ 1778 000d 11       		.uleb128 0x11
+ 1779 000e 01       		.uleb128 0x1
+ 1780 000f 10       		.uleb128 0x10
+ 1781 0010 17       		.uleb128 0x17
+ 1782 0011 00       		.byte	0
+ 1783 0012 00       		.byte	0
+ 1784 0013 02       		.uleb128 0x2
+ 1785 0014 24       		.uleb128 0x24
+ 1786 0015 00       		.byte	0
+ 1787 0016 0B       		.uleb128 0xb
+ 1788 0017 0B       		.uleb128 0xb
+ 1789 0018 3E       		.uleb128 0x3e
+ 1790 0019 0B       		.uleb128 0xb
+ 1791 001a 03       		.uleb128 0x3
+ 1792 001b 08       		.uleb128 0x8
+ 1793 001c 00       		.byte	0
+ 1794 001d 00       		.byte	0
+ 1795 001e 03       		.uleb128 0x3
+ 1796 001f 16       		.uleb128 0x16
+ 1797 0020 00       		.byte	0
+ 1798 0021 03       		.uleb128 0x3
+ 1799 0022 0E       		.uleb128 0xe
+ 1800 0023 3A       		.uleb128 0x3a
+ 1801 0024 0B       		.uleb128 0xb
+ 1802 0025 3B       		.uleb128 0x3b
+ 1803 0026 0B       		.uleb128 0xb
+ 1804 0027 49       		.uleb128 0x49
+ 1805 0028 13       		.uleb128 0x13
+ 1806 0029 00       		.byte	0
+ 1807 002a 00       		.byte	0
+ 1808 002b 04       		.uleb128 0x4
+ 1809 002c 24       		.uleb128 0x24
+ 1810 002d 00       		.byte	0
+ 1811 002e 0B       		.uleb128 0xb
+ 1812 002f 0B       		.uleb128 0xb
+ 1813 0030 3E       		.uleb128 0x3e
+ 1814 0031 0B       		.uleb128 0xb
+ 1815 0032 03       		.uleb128 0x3
+ 1816 0033 0E       		.uleb128 0xe
+ 1817 0034 00       		.byte	0
+ 1818 0035 00       		.byte	0
+ 1819 0036 05       		.uleb128 0x5
+ 1820 0037 26       		.uleb128 0x26
+ 1821 0038 00       		.byte	0
+ 1822 0039 49       		.uleb128 0x49
+ 1823 003a 13       		.uleb128 0x13
+ARM GAS  C:\Users\Pearl\AppData\Local\Temp\ccefFgns.s 			page 33
+
+
+ 1824 003b 00       		.byte	0
+ 1825 003c 00       		.byte	0
+ 1826 003d 06       		.uleb128 0x6
+ 1827 003e 35       		.uleb128 0x35
+ 1828 003f 00       		.byte	0
+ 1829 0040 49       		.uleb128 0x49
+ 1830 0041 13       		.uleb128 0x13
+ 1831 0042 00       		.byte	0
+ 1832 0043 00       		.byte	0
+ 1833 0044 07       		.uleb128 0x7
+ 1834 0045 13       		.uleb128 0x13
+ 1835 0046 01       		.byte	0x1
+ 1836 0047 03       		.uleb128 0x3
+ 1837 0048 0E       		.uleb128 0xe
+ 1838 0049 0B       		.uleb128 0xb
+ 1839 004a 0B       		.uleb128 0xb
+ 1840 004b 3A       		.uleb128 0x3a
+ 1841 004c 0B       		.uleb128 0xb
+ 1842 004d 3B       		.uleb128 0x3b
+ 1843 004e 0B       		.uleb128 0xb
+ 1844 004f 01       		.uleb128 0x1
+ 1845 0050 13       		.uleb128 0x13
+ 1846 0051 00       		.byte	0
+ 1847 0052 00       		.byte	0
+ 1848 0053 08       		.uleb128 0x8
+ 1849 0054 0D       		.uleb128 0xd
+ 1850 0055 00       		.byte	0
+ 1851 0056 03       		.uleb128 0x3
+ 1852 0057 0E       		.uleb128 0xe
+ 1853 0058 3A       		.uleb128 0x3a
+ 1854 0059 0B       		.uleb128 0xb
+ 1855 005a 3B       		.uleb128 0x3b
+ 1856 005b 0B       		.uleb128 0xb
+ 1857 005c 49       		.uleb128 0x49
+ 1858 005d 13       		.uleb128 0x13
+ 1859 005e 38       		.uleb128 0x38
+ 1860 005f 0B       		.uleb128 0xb
+ 1861 0060 00       		.byte	0
+ 1862 0061 00       		.byte	0
+ 1863 0062 09       		.uleb128 0x9
+ 1864 0063 0D       		.uleb128 0xd
+ 1865 0064 00       		.byte	0
+ 1866 0065 03       		.uleb128 0x3
+ 1867 0066 08       		.uleb128 0x8
+ 1868 0067 3A       		.uleb128 0x3a
+ 1869 0068 0B       		.uleb128 0xb
+ 1870 0069 3B       		.uleb128 0x3b
+ 1871 006a 0B       		.uleb128 0xb
+ 1872 006b 49       		.uleb128 0x49
+ 1873 006c 13       		.uleb128 0x13
+ 1874 006d 38       		.uleb128 0x38
+ 1875 006e 0B       		.uleb128 0xb
+ 1876 006f 00       		.byte	0
+ 1877 0070 00       		.byte	0
+ 1878 0071 0A       		.uleb128 0xa
+ 1879 0072 0D       		.uleb128 0xd
+ 1880 0073 00       		.byte	0
+ARM GAS  C:\Users\Pearl\AppData\Local\Temp\ccefFgns.s 			page 34
+
+
+ 1881 0074 03       		.uleb128 0x3
+ 1882 0075 08       		.uleb128 0x8
+ 1883 0076 3A       		.uleb128 0x3a
+ 1884 0077 0B       		.uleb128 0xb
+ 1885 0078 3B       		.uleb128 0x3b
+ 1886 0079 05       		.uleb128 0x5
+ 1887 007a 49       		.uleb128 0x49
+ 1888 007b 13       		.uleb128 0x13
+ 1889 007c 38       		.uleb128 0x38
+ 1890 007d 0B       		.uleb128 0xb
+ 1891 007e 00       		.byte	0
+ 1892 007f 00       		.byte	0
+ 1893 0080 0B       		.uleb128 0xb
+ 1894 0081 0D       		.uleb128 0xd
+ 1895 0082 00       		.byte	0
+ 1896 0083 03       		.uleb128 0x3
+ 1897 0084 0E       		.uleb128 0xe
+ 1898 0085 3A       		.uleb128 0x3a
+ 1899 0086 0B       		.uleb128 0xb
+ 1900 0087 3B       		.uleb128 0x3b
+ 1901 0088 05       		.uleb128 0x5
+ 1902 0089 49       		.uleb128 0x49
+ 1903 008a 13       		.uleb128 0x13
+ 1904 008b 38       		.uleb128 0x38
+ 1905 008c 0B       		.uleb128 0xb
+ 1906 008d 00       		.byte	0
+ 1907 008e 00       		.byte	0
+ 1908 008f 0C       		.uleb128 0xc
+ 1909 0090 0F       		.uleb128 0xf
+ 1910 0091 00       		.byte	0
+ 1911 0092 0B       		.uleb128 0xb
+ 1912 0093 0B       		.uleb128 0xb
+ 1913 0094 49       		.uleb128 0x49
+ 1914 0095 13       		.uleb128 0x13
+ 1915 0096 00       		.byte	0
+ 1916 0097 00       		.byte	0
+ 1917 0098 0D       		.uleb128 0xd
+ 1918 0099 13       		.uleb128 0x13
+ 1919 009a 01       		.byte	0x1
+ 1920 009b 03       		.uleb128 0x3
+ 1921 009c 0E       		.uleb128 0xe
+ 1922 009d 0B       		.uleb128 0xb
+ 1923 009e 0B       		.uleb128 0xb
+ 1924 009f 3A       		.uleb128 0x3a
+ 1925 00a0 0B       		.uleb128 0xb
+ 1926 00a1 3B       		.uleb128 0x3b
+ 1927 00a2 05       		.uleb128 0x5
+ 1928 00a3 01       		.uleb128 0x1
+ 1929 00a4 13       		.uleb128 0x13
+ 1930 00a5 00       		.byte	0
+ 1931 00a6 00       		.byte	0
+ 1932 00a7 0E       		.uleb128 0xe
+ 1933 00a8 15       		.uleb128 0x15
+ 1934 00a9 01       		.byte	0x1
+ 1935 00aa 27       		.uleb128 0x27
+ 1936 00ab 19       		.uleb128 0x19
+ 1937 00ac 01       		.uleb128 0x1
+ARM GAS  C:\Users\Pearl\AppData\Local\Temp\ccefFgns.s 			page 35
+
+
+ 1938 00ad 13       		.uleb128 0x13
+ 1939 00ae 00       		.byte	0
+ 1940 00af 00       		.byte	0
+ 1941 00b0 0F       		.uleb128 0xf
+ 1942 00b1 05       		.uleb128 0x5
+ 1943 00b2 00       		.byte	0
+ 1944 00b3 49       		.uleb128 0x49
+ 1945 00b4 13       		.uleb128 0x13
+ 1946 00b5 00       		.byte	0
+ 1947 00b6 00       		.byte	0
+ 1948 00b7 10       		.uleb128 0x10
+ 1949 00b8 0F       		.uleb128 0xf
+ 1950 00b9 00       		.byte	0
+ 1951 00ba 0B       		.uleb128 0xb
+ 1952 00bb 0B       		.uleb128 0xb
+ 1953 00bc 00       		.byte	0
+ 1954 00bd 00       		.byte	0
+ 1955 00be 11       		.uleb128 0x11
+ 1956 00bf 34       		.uleb128 0x34
+ 1957 00c0 00       		.byte	0
+ 1958 00c1 03       		.uleb128 0x3
+ 1959 00c2 0E       		.uleb128 0xe
+ 1960 00c3 3A       		.uleb128 0x3a
+ 1961 00c4 0B       		.uleb128 0xb
+ 1962 00c5 3B       		.uleb128 0x3b
+ 1963 00c6 05       		.uleb128 0x5
+ 1964 00c7 49       		.uleb128 0x49
+ 1965 00c8 13       		.uleb128 0x13
+ 1966 00c9 3F       		.uleb128 0x3f
+ 1967 00ca 19       		.uleb128 0x19
+ 1968 00cb 3C       		.uleb128 0x3c
+ 1969 00cc 19       		.uleb128 0x19
+ 1970 00cd 00       		.byte	0
+ 1971 00ce 00       		.byte	0
+ 1972 00cf 12       		.uleb128 0x12
+ 1973 00d0 34       		.uleb128 0x34
+ 1974 00d1 00       		.byte	0
+ 1975 00d2 03       		.uleb128 0x3
+ 1976 00d3 0E       		.uleb128 0xe
+ 1977 00d4 3A       		.uleb128 0x3a
+ 1978 00d5 0B       		.uleb128 0xb
+ 1979 00d6 3B       		.uleb128 0x3b
+ 1980 00d7 0B       		.uleb128 0xb
+ 1981 00d8 49       		.uleb128 0x49
+ 1982 00d9 13       		.uleb128 0x13
+ 1983 00da 3F       		.uleb128 0x3f
+ 1984 00db 19       		.uleb128 0x19
+ 1985 00dc 3C       		.uleb128 0x3c
+ 1986 00dd 19       		.uleb128 0x19
+ 1987 00de 00       		.byte	0
+ 1988 00df 00       		.byte	0
+ 1989 00e0 13       		.uleb128 0x13
+ 1990 00e1 01       		.uleb128 0x1
+ 1991 00e2 01       		.byte	0x1
+ 1992 00e3 49       		.uleb128 0x49
+ 1993 00e4 13       		.uleb128 0x13
+ 1994 00e5 01       		.uleb128 0x1
+ARM GAS  C:\Users\Pearl\AppData\Local\Temp\ccefFgns.s 			page 36
+
+
+ 1995 00e6 13       		.uleb128 0x13
+ 1996 00e7 00       		.byte	0
+ 1997 00e8 00       		.byte	0
+ 1998 00e9 14       		.uleb128 0x14
+ 1999 00ea 21       		.uleb128 0x21
+ 2000 00eb 00       		.byte	0
+ 2001 00ec 49       		.uleb128 0x49
+ 2002 00ed 13       		.uleb128 0x13
+ 2003 00ee 2F       		.uleb128 0x2f
+ 2004 00ef 0B       		.uleb128 0xb
+ 2005 00f0 00       		.byte	0
+ 2006 00f1 00       		.byte	0
+ 2007 00f2 15       		.uleb128 0x15
+ 2008 00f3 17       		.uleb128 0x17
+ 2009 00f4 01       		.byte	0x1
+ 2010 00f5 0B       		.uleb128 0xb
+ 2011 00f6 0B       		.uleb128 0xb
+ 2012 00f7 3A       		.uleb128 0x3a
+ 2013 00f8 0B       		.uleb128 0xb
+ 2014 00f9 3B       		.uleb128 0x3b
+ 2015 00fa 0B       		.uleb128 0xb
+ 2016 00fb 01       		.uleb128 0x1
+ 2017 00fc 13       		.uleb128 0x13
+ 2018 00fd 00       		.byte	0
+ 2019 00fe 00       		.byte	0
+ 2020 00ff 16       		.uleb128 0x16
+ 2021 0100 0D       		.uleb128 0xd
+ 2022 0101 00       		.byte	0
+ 2023 0102 03       		.uleb128 0x3
+ 2024 0103 0E       		.uleb128 0xe
+ 2025 0104 3A       		.uleb128 0x3a
+ 2026 0105 0B       		.uleb128 0xb
+ 2027 0106 3B       		.uleb128 0x3b
+ 2028 0107 0B       		.uleb128 0xb
+ 2029 0108 49       		.uleb128 0x49
+ 2030 0109 13       		.uleb128 0x13
+ 2031 010a 00       		.byte	0
+ 2032 010b 00       		.byte	0
+ 2033 010c 17       		.uleb128 0x17
+ 2034 010d 0D       		.uleb128 0xd
+ 2035 010e 00       		.byte	0
+ 2036 010f 03       		.uleb128 0x3
+ 2037 0110 0E       		.uleb128 0xe
+ 2038 0111 3A       		.uleb128 0x3a
+ 2039 0112 0B       		.uleb128 0xb
+ 2040 0113 3B       		.uleb128 0x3b
+ 2041 0114 05       		.uleb128 0x5
+ 2042 0115 49       		.uleb128 0x49
+ 2043 0116 13       		.uleb128 0x13
+ 2044 0117 00       		.byte	0
+ 2045 0118 00       		.byte	0
+ 2046 0119 18       		.uleb128 0x18
+ 2047 011a 34       		.uleb128 0x34
+ 2048 011b 00       		.byte	0
+ 2049 011c 03       		.uleb128 0x3
+ 2050 011d 08       		.uleb128 0x8
+ 2051 011e 3A       		.uleb128 0x3a
+ARM GAS  C:\Users\Pearl\AppData\Local\Temp\ccefFgns.s 			page 37
+
+
+ 2052 011f 0B       		.uleb128 0xb
+ 2053 0120 3B       		.uleb128 0x3b
+ 2054 0121 05       		.uleb128 0x5
+ 2055 0122 49       		.uleb128 0x49
+ 2056 0123 13       		.uleb128 0x13
+ 2057 0124 3F       		.uleb128 0x3f
+ 2058 0125 19       		.uleb128 0x19
+ 2059 0126 3C       		.uleb128 0x3c
+ 2060 0127 19       		.uleb128 0x19
+ 2061 0128 00       		.byte	0
+ 2062 0129 00       		.byte	0
+ 2063 012a 19       		.uleb128 0x19
+ 2064 012b 21       		.uleb128 0x21
+ 2065 012c 00       		.byte	0
+ 2066 012d 00       		.byte	0
+ 2067 012e 00       		.byte	0
+ 2068 012f 1A       		.uleb128 0x1a
+ 2069 0130 13       		.uleb128 0x13
+ 2070 0131 01       		.byte	0x1
+ 2071 0132 0B       		.uleb128 0xb
+ 2072 0133 0B       		.uleb128 0xb
+ 2073 0134 3A       		.uleb128 0x3a
+ 2074 0135 0B       		.uleb128 0xb
+ 2075 0136 3B       		.uleb128 0x3b
+ 2076 0137 0B       		.uleb128 0xb
+ 2077 0138 01       		.uleb128 0x1
+ 2078 0139 13       		.uleb128 0x13
+ 2079 013a 00       		.byte	0
+ 2080 013b 00       		.byte	0
+ 2081 013c 1B       		.uleb128 0x1b
+ 2082 013d 15       		.uleb128 0x15
+ 2083 013e 01       		.byte	0x1
+ 2084 013f 27       		.uleb128 0x27
+ 2085 0140 19       		.uleb128 0x19
+ 2086 0141 49       		.uleb128 0x49
+ 2087 0142 13       		.uleb128 0x13
+ 2088 0143 01       		.uleb128 0x1
+ 2089 0144 13       		.uleb128 0x13
+ 2090 0145 00       		.byte	0
+ 2091 0146 00       		.byte	0
+ 2092 0147 1C       		.uleb128 0x1c
+ 2093 0148 16       		.uleb128 0x16
+ 2094 0149 00       		.byte	0
+ 2095 014a 03       		.uleb128 0x3
+ 2096 014b 0E       		.uleb128 0xe
+ 2097 014c 3A       		.uleb128 0x3a
+ 2098 014d 0B       		.uleb128 0xb
+ 2099 014e 3B       		.uleb128 0x3b
+ 2100 014f 05       		.uleb128 0x5
+ 2101 0150 49       		.uleb128 0x49
+ 2102 0151 13       		.uleb128 0x13
+ 2103 0152 00       		.byte	0
+ 2104 0153 00       		.byte	0
+ 2105 0154 1D       		.uleb128 0x1d
+ 2106 0155 34       		.uleb128 0x34
+ 2107 0156 00       		.byte	0
+ 2108 0157 47       		.uleb128 0x47
+ARM GAS  C:\Users\Pearl\AppData\Local\Temp\ccefFgns.s 			page 38
+
+
+ 2109 0158 13       		.uleb128 0x13
+ 2110 0159 3A       		.uleb128 0x3a
+ 2111 015a 0B       		.uleb128 0xb
+ 2112 015b 3B       		.uleb128 0x3b
+ 2113 015c 0B       		.uleb128 0xb
+ 2114 015d 02       		.uleb128 0x2
+ 2115 015e 18       		.uleb128 0x18
+ 2116 015f 00       		.byte	0
+ 2117 0160 00       		.byte	0
+ 2118 0161 1E       		.uleb128 0x1e
+ 2119 0162 2E       		.uleb128 0x2e
+ 2120 0163 00       		.byte	0
+ 2121 0164 3F       		.uleb128 0x3f
+ 2122 0165 19       		.uleb128 0x19
+ 2123 0166 03       		.uleb128 0x3
+ 2124 0167 0E       		.uleb128 0xe
+ 2125 0168 3A       		.uleb128 0x3a
+ 2126 0169 0B       		.uleb128 0xb
+ 2127 016a 3B       		.uleb128 0x3b
+ 2128 016b 0B       		.uleb128 0xb
+ 2129 016c 27       		.uleb128 0x27
+ 2130 016d 19       		.uleb128 0x19
+ 2131 016e 49       		.uleb128 0x49
+ 2132 016f 13       		.uleb128 0x13
+ 2133 0170 11       		.uleb128 0x11
+ 2134 0171 01       		.uleb128 0x1
+ 2135 0172 12       		.uleb128 0x12
+ 2136 0173 06       		.uleb128 0x6
+ 2137 0174 40       		.uleb128 0x40
+ 2138 0175 18       		.uleb128 0x18
+ 2139 0176 9742     		.uleb128 0x2117
+ 2140 0178 19       		.uleb128 0x19
+ 2141 0179 00       		.byte	0
+ 2142 017a 00       		.byte	0
+ 2143 017b 1F       		.uleb128 0x1f
+ 2144 017c 2E       		.uleb128 0x2e
+ 2145 017d 01       		.byte	0x1
+ 2146 017e 3F       		.uleb128 0x3f
+ 2147 017f 19       		.uleb128 0x19
+ 2148 0180 03       		.uleb128 0x3
+ 2149 0181 0E       		.uleb128 0xe
+ 2150 0182 3A       		.uleb128 0x3a
+ 2151 0183 0B       		.uleb128 0xb
+ 2152 0184 3B       		.uleb128 0x3b
+ 2153 0185 0B       		.uleb128 0xb
+ 2154 0186 27       		.uleb128 0x27
+ 2155 0187 19       		.uleb128 0x19
+ 2156 0188 49       		.uleb128 0x49
+ 2157 0189 13       		.uleb128 0x13
+ 2158 018a 11       		.uleb128 0x11
+ 2159 018b 01       		.uleb128 0x1
+ 2160 018c 12       		.uleb128 0x12
+ 2161 018d 06       		.uleb128 0x6
+ 2162 018e 40       		.uleb128 0x40
+ 2163 018f 18       		.uleb128 0x18
+ 2164 0190 9742     		.uleb128 0x2117
+ 2165 0192 19       		.uleb128 0x19
+ARM GAS  C:\Users\Pearl\AppData\Local\Temp\ccefFgns.s 			page 39
+
+
+ 2166 0193 01       		.uleb128 0x1
+ 2167 0194 13       		.uleb128 0x13
+ 2168 0195 00       		.byte	0
+ 2169 0196 00       		.byte	0
+ 2170 0197 20       		.uleb128 0x20
+ 2171 0198 05       		.uleb128 0x5
+ 2172 0199 00       		.byte	0
+ 2173 019a 03       		.uleb128 0x3
+ 2174 019b 0E       		.uleb128 0xe
+ 2175 019c 3A       		.uleb128 0x3a
+ 2176 019d 0B       		.uleb128 0xb
+ 2177 019e 3B       		.uleb128 0x3b
+ 2178 019f 0B       		.uleb128 0xb
+ 2179 01a0 49       		.uleb128 0x49
+ 2180 01a1 13       		.uleb128 0x13
+ 2181 01a2 02       		.uleb128 0x2
+ 2182 01a3 17       		.uleb128 0x17
+ 2183 01a4 00       		.byte	0
+ 2184 01a5 00       		.byte	0
+ 2185 01a6 21       		.uleb128 0x21
+ 2186 01a7 34       		.uleb128 0x34
+ 2187 01a8 00       		.byte	0
+ 2188 01a9 03       		.uleb128 0x3
+ 2189 01aa 08       		.uleb128 0x8
+ 2190 01ab 3A       		.uleb128 0x3a
+ 2191 01ac 0B       		.uleb128 0xb
+ 2192 01ad 3B       		.uleb128 0x3b
+ 2193 01ae 0B       		.uleb128 0xb
+ 2194 01af 49       		.uleb128 0x49
+ 2195 01b0 13       		.uleb128 0x13
+ 2196 01b1 00       		.byte	0
+ 2197 01b2 00       		.byte	0
+ 2198 01b3 22       		.uleb128 0x22
+ 2199 01b4 1D       		.uleb128 0x1d
+ 2200 01b5 01       		.byte	0x1
+ 2201 01b6 31       		.uleb128 0x31
+ 2202 01b7 13       		.uleb128 0x13
+ 2203 01b8 11       		.uleb128 0x11
+ 2204 01b9 01       		.uleb128 0x1
+ 2205 01ba 12       		.uleb128 0x12
+ 2206 01bb 06       		.uleb128 0x6
+ 2207 01bc 58       		.uleb128 0x58
+ 2208 01bd 0B       		.uleb128 0xb
+ 2209 01be 59       		.uleb128 0x59
+ 2210 01bf 0B       		.uleb128 0xb
+ 2211 01c0 01       		.uleb128 0x1
+ 2212 01c1 13       		.uleb128 0x13
+ 2213 01c2 00       		.byte	0
+ 2214 01c3 00       		.byte	0
+ 2215 01c4 23       		.uleb128 0x23
+ 2216 01c5 1D       		.uleb128 0x1d
+ 2217 01c6 01       		.byte	0x1
+ 2218 01c7 31       		.uleb128 0x31
+ 2219 01c8 13       		.uleb128 0x13
+ 2220 01c9 11       		.uleb128 0x11
+ 2221 01ca 01       		.uleb128 0x1
+ 2222 01cb 12       		.uleb128 0x12
+ARM GAS  C:\Users\Pearl\AppData\Local\Temp\ccefFgns.s 			page 40
+
+
+ 2223 01cc 06       		.uleb128 0x6
+ 2224 01cd 58       		.uleb128 0x58
+ 2225 01ce 0B       		.uleb128 0xb
+ 2226 01cf 59       		.uleb128 0x59
+ 2227 01d0 05       		.uleb128 0x5
+ 2228 01d1 00       		.byte	0
+ 2229 01d2 00       		.byte	0
+ 2230 01d3 24       		.uleb128 0x24
+ 2231 01d4 05       		.uleb128 0x5
+ 2232 01d5 00       		.byte	0
+ 2233 01d6 31       		.uleb128 0x31
+ 2234 01d7 13       		.uleb128 0x13
+ 2235 01d8 02       		.uleb128 0x2
+ 2236 01d9 17       		.uleb128 0x17
+ 2237 01da 00       		.byte	0
+ 2238 01db 00       		.byte	0
+ 2239 01dc 25       		.uleb128 0x25
+ 2240 01dd 1D       		.uleb128 0x1d
+ 2241 01de 01       		.byte	0x1
+ 2242 01df 31       		.uleb128 0x31
+ 2243 01e0 13       		.uleb128 0x13
+ 2244 01e1 52       		.uleb128 0x52
+ 2245 01e2 01       		.uleb128 0x1
+ 2246 01e3 55       		.uleb128 0x55
+ 2247 01e4 17       		.uleb128 0x17
+ 2248 01e5 58       		.uleb128 0x58
+ 2249 01e6 0B       		.uleb128 0xb
+ 2250 01e7 59       		.uleb128 0x59
+ 2251 01e8 0B       		.uleb128 0xb
+ 2252 01e9 01       		.uleb128 0x1
+ 2253 01ea 13       		.uleb128 0x13
+ 2254 01eb 00       		.byte	0
+ 2255 01ec 00       		.byte	0
+ 2256 01ed 26       		.uleb128 0x26
+ 2257 01ee 0B       		.uleb128 0xb
+ 2258 01ef 01       		.byte	0x1
+ 2259 01f0 55       		.uleb128 0x55
+ 2260 01f1 17       		.uleb128 0x17
+ 2261 01f2 00       		.byte	0
+ 2262 01f3 00       		.byte	0
+ 2263 01f4 27       		.uleb128 0x27
+ 2264 01f5 34       		.uleb128 0x34
+ 2265 01f6 00       		.byte	0
+ 2266 01f7 31       		.uleb128 0x31
+ 2267 01f8 13       		.uleb128 0x13
+ 2268 01f9 00       		.byte	0
+ 2269 01fa 00       		.byte	0
+ 2270 01fb 28       		.uleb128 0x28
+ 2271 01fc 1D       		.uleb128 0x1d
+ 2272 01fd 01       		.byte	0x1
+ 2273 01fe 31       		.uleb128 0x31
+ 2274 01ff 13       		.uleb128 0x13
+ 2275 0200 52       		.uleb128 0x52
+ 2276 0201 01       		.uleb128 0x1
+ 2277 0202 55       		.uleb128 0x55
+ 2278 0203 17       		.uleb128 0x17
+ 2279 0204 58       		.uleb128 0x58
+ARM GAS  C:\Users\Pearl\AppData\Local\Temp\ccefFgns.s 			page 41
+
+
+ 2280 0205 0B       		.uleb128 0xb
+ 2281 0206 59       		.uleb128 0x59
+ 2282 0207 0B       		.uleb128 0xb
+ 2283 0208 00       		.byte	0
+ 2284 0209 00       		.byte	0
+ 2285 020a 29       		.uleb128 0x29
+ 2286 020b 1D       		.uleb128 0x1d
+ 2287 020c 01       		.byte	0x1
+ 2288 020d 31       		.uleb128 0x31
+ 2289 020e 13       		.uleb128 0x13
+ 2290 020f 52       		.uleb128 0x52
+ 2291 0210 01       		.uleb128 0x1
+ 2292 0211 55       		.uleb128 0x55
+ 2293 0212 17       		.uleb128 0x17
+ 2294 0213 58       		.uleb128 0x58
+ 2295 0214 0B       		.uleb128 0xb
+ 2296 0215 59       		.uleb128 0x59
+ 2297 0216 05       		.uleb128 0x5
+ 2298 0217 00       		.byte	0
+ 2299 0218 00       		.byte	0
+ 2300 0219 2A       		.uleb128 0x2a
+ 2301 021a 2E       		.uleb128 0x2e
+ 2302 021b 01       		.byte	0x1
+ 2303 021c 3F       		.uleb128 0x3f
+ 2304 021d 19       		.uleb128 0x19
+ 2305 021e 03       		.uleb128 0x3
+ 2306 021f 0E       		.uleb128 0xe
+ 2307 0220 3A       		.uleb128 0x3a
+ 2308 0221 0B       		.uleb128 0xb
+ 2309 0222 3B       		.uleb128 0x3b
+ 2310 0223 0B       		.uleb128 0xb
+ 2311 0224 27       		.uleb128 0x27
+ 2312 0225 19       		.uleb128 0x19
+ 2313 0226 49       		.uleb128 0x49
+ 2314 0227 13       		.uleb128 0x13
+ 2315 0228 20       		.uleb128 0x20
+ 2316 0229 0B       		.uleb128 0xb
+ 2317 022a 01       		.uleb128 0x1
+ 2318 022b 13       		.uleb128 0x13
+ 2319 022c 00       		.byte	0
+ 2320 022d 00       		.byte	0
+ 2321 022e 2B       		.uleb128 0x2b
+ 2322 022f 05       		.uleb128 0x5
+ 2323 0230 00       		.byte	0
+ 2324 0231 03       		.uleb128 0x3
+ 2325 0232 0E       		.uleb128 0xe
+ 2326 0233 3A       		.uleb128 0x3a
+ 2327 0234 0B       		.uleb128 0xb
+ 2328 0235 3B       		.uleb128 0x3b
+ 2329 0236 0B       		.uleb128 0xb
+ 2330 0237 49       		.uleb128 0x49
+ 2331 0238 13       		.uleb128 0x13
+ 2332 0239 00       		.byte	0
+ 2333 023a 00       		.byte	0
+ 2334 023b 2C       		.uleb128 0x2c
+ 2335 023c 34       		.uleb128 0x34
+ 2336 023d 00       		.byte	0
+ARM GAS  C:\Users\Pearl\AppData\Local\Temp\ccefFgns.s 			page 42
+
+
+ 2337 023e 03       		.uleb128 0x3
+ 2338 023f 0E       		.uleb128 0xe
+ 2339 0240 3A       		.uleb128 0x3a
+ 2340 0241 0B       		.uleb128 0xb
+ 2341 0242 3B       		.uleb128 0x3b
+ 2342 0243 0B       		.uleb128 0xb
+ 2343 0244 49       		.uleb128 0x49
+ 2344 0245 13       		.uleb128 0x13
+ 2345 0246 00       		.byte	0
+ 2346 0247 00       		.byte	0
+ 2347 0248 2D       		.uleb128 0x2d
+ 2348 0249 34       		.uleb128 0x34
+ 2349 024a 00       		.byte	0
+ 2350 024b 03       		.uleb128 0x3
+ 2351 024c 0E       		.uleb128 0xe
+ 2352 024d 49       		.uleb128 0x49
+ 2353 024e 13       		.uleb128 0x13
+ 2354 024f 34       		.uleb128 0x34
+ 2355 0250 19       		.uleb128 0x19
+ 2356 0251 1C       		.uleb128 0x1c
+ 2357 0252 0E       		.uleb128 0xe
+ 2358 0253 00       		.byte	0
+ 2359 0254 00       		.byte	0
+ 2360 0255 2E       		.uleb128 0x2e
+ 2361 0256 2E       		.uleb128 0x2e
+ 2362 0257 01       		.byte	0x1
+ 2363 0258 3F       		.uleb128 0x3f
+ 2364 0259 19       		.uleb128 0x19
+ 2365 025a 03       		.uleb128 0x3
+ 2366 025b 0E       		.uleb128 0xe
+ 2367 025c 3A       		.uleb128 0x3a
+ 2368 025d 0B       		.uleb128 0xb
+ 2369 025e 3B       		.uleb128 0x3b
+ 2370 025f 0B       		.uleb128 0xb
+ 2371 0260 27       		.uleb128 0x27
+ 2372 0261 19       		.uleb128 0x19
+ 2373 0262 11       		.uleb128 0x11
+ 2374 0263 01       		.uleb128 0x1
+ 2375 0264 12       		.uleb128 0x12
+ 2376 0265 06       		.uleb128 0x6
+ 2377 0266 40       		.uleb128 0x40
+ 2378 0267 18       		.uleb128 0x18
+ 2379 0268 9742     		.uleb128 0x2117
+ 2380 026a 19       		.uleb128 0x19
+ 2381 026b 01       		.uleb128 0x1
+ 2382 026c 13       		.uleb128 0x13
+ 2383 026d 00       		.byte	0
+ 2384 026e 00       		.byte	0
+ 2385 026f 2F       		.uleb128 0x2f
+ 2386 0270 2E       		.uleb128 0x2e
+ 2387 0271 01       		.byte	0x1
+ 2388 0272 03       		.uleb128 0x3
+ 2389 0273 0E       		.uleb128 0xe
+ 2390 0274 3A       		.uleb128 0x3a
+ 2391 0275 0B       		.uleb128 0xb
+ 2392 0276 3B       		.uleb128 0x3b
+ 2393 0277 05       		.uleb128 0x5
+ARM GAS  C:\Users\Pearl\AppData\Local\Temp\ccefFgns.s 			page 43
+
+
+ 2394 0278 27       		.uleb128 0x27
+ 2395 0279 19       		.uleb128 0x19
+ 2396 027a 20       		.uleb128 0x20
+ 2397 027b 0B       		.uleb128 0xb
+ 2398 027c 01       		.uleb128 0x1
+ 2399 027d 13       		.uleb128 0x13
+ 2400 027e 00       		.byte	0
+ 2401 027f 00       		.byte	0
+ 2402 0280 30       		.uleb128 0x30
+ 2403 0281 2E       		.uleb128 0x2e
+ 2404 0282 00       		.byte	0
+ 2405 0283 03       		.uleb128 0x3
+ 2406 0284 0E       		.uleb128 0xe
+ 2407 0285 3A       		.uleb128 0x3a
+ 2408 0286 0B       		.uleb128 0xb
+ 2409 0287 3B       		.uleb128 0x3b
+ 2410 0288 05       		.uleb128 0x5
+ 2411 0289 27       		.uleb128 0x27
+ 2412 028a 19       		.uleb128 0x19
+ 2413 028b 20       		.uleb128 0x20
+ 2414 028c 0B       		.uleb128 0xb
+ 2415 028d 00       		.byte	0
+ 2416 028e 00       		.byte	0
+ 2417 028f 31       		.uleb128 0x31
+ 2418 0290 05       		.uleb128 0x5
+ 2419 0291 00       		.byte	0
+ 2420 0292 03       		.uleb128 0x3
+ 2421 0293 0E       		.uleb128 0xe
+ 2422 0294 3A       		.uleb128 0x3a
+ 2423 0295 0B       		.uleb128 0xb
+ 2424 0296 3B       		.uleb128 0x3b
+ 2425 0297 05       		.uleb128 0x5
+ 2426 0298 49       		.uleb128 0x49
+ 2427 0299 13       		.uleb128 0x13
+ 2428 029a 00       		.byte	0
+ 2429 029b 00       		.byte	0
+ 2430 029c 32       		.uleb128 0x32
+ 2431 029d 2E       		.uleb128 0x2e
+ 2432 029e 01       		.byte	0x1
+ 2433 029f 31       		.uleb128 0x31
+ 2434 02a0 13       		.uleb128 0x13
+ 2435 02a1 11       		.uleb128 0x11
+ 2436 02a2 01       		.uleb128 0x1
+ 2437 02a3 12       		.uleb128 0x12
+ 2438 02a4 06       		.uleb128 0x6
+ 2439 02a5 40       		.uleb128 0x40
+ 2440 02a6 18       		.uleb128 0x18
+ 2441 02a7 9742     		.uleb128 0x2117
+ 2442 02a9 19       		.uleb128 0x19
+ 2443 02aa 00       		.byte	0
+ 2444 02ab 00       		.byte	0
+ 2445 02ac 33       		.uleb128 0x33
+ 2446 02ad 05       		.uleb128 0x5
+ 2447 02ae 00       		.byte	0
+ 2448 02af 31       		.uleb128 0x31
+ 2449 02b0 13       		.uleb128 0x13
+ 2450 02b1 02       		.uleb128 0x2
+ARM GAS  C:\Users\Pearl\AppData\Local\Temp\ccefFgns.s 			page 44
+
+
+ 2451 02b2 18       		.uleb128 0x18
+ 2452 02b3 00       		.byte	0
+ 2453 02b4 00       		.byte	0
+ 2454 02b5 34       		.uleb128 0x34
+ 2455 02b6 34       		.uleb128 0x34
+ 2456 02b7 00       		.byte	0
+ 2457 02b8 31       		.uleb128 0x31
+ 2458 02b9 13       		.uleb128 0x13
+ 2459 02ba 02       		.uleb128 0x2
+ 2460 02bb 17       		.uleb128 0x17
+ 2461 02bc 00       		.byte	0
+ 2462 02bd 00       		.byte	0
+ 2463 02be 35       		.uleb128 0x35
+ 2464 02bf 34       		.uleb128 0x34
+ 2465 02c0 00       		.byte	0
+ 2466 02c1 31       		.uleb128 0x31
+ 2467 02c2 13       		.uleb128 0x13
+ 2468 02c3 02       		.uleb128 0x2
+ 2469 02c4 18       		.uleb128 0x18
+ 2470 02c5 00       		.byte	0
+ 2471 02c6 00       		.byte	0
+ 2472 02c7 00       		.byte	0
+ 2473              		.section	.debug_loc,"",%progbits
+ 2474              	.Ldebug_loc0:
+ 2475              	.LLST3:
+ 2476 0000 00000000 		.4byte	.LVL9
+ 2477 0004 12000000 		.4byte	.LVL11
+ 2478 0008 0100     		.2byte	0x1
+ 2479 000a 50       		.byte	0x50
+ 2480 000b 12000000 		.4byte	.LVL11
+ 2481 000f 44000000 		.4byte	.LFE222
+ 2482 0013 0400     		.2byte	0x4
+ 2483 0015 F3       		.byte	0xf3
+ 2484 0016 01       		.uleb128 0x1
+ 2485 0017 50       		.byte	0x50
+ 2486 0018 9F       		.byte	0x9f
+ 2487 0019 00000000 		.4byte	0
+ 2488 001d 00000000 		.4byte	0
+ 2489              	.LLST4:
+ 2490 0021 00000000 		.4byte	.LVL9
+ 2491 0025 14000000 		.4byte	.LVL12
+ 2492 0029 0100     		.2byte	0x1
+ 2493 002b 51       		.byte	0x51
+ 2494 002c 14000000 		.4byte	.LVL12
+ 2495 0030 44000000 		.4byte	.LFE222
+ 2496 0034 0400     		.2byte	0x4
+ 2497 0036 71       		.byte	0x71
+ 2498 0037 00       		.sleb128 0
+ 2499 0038 1F       		.byte	0x1f
+ 2500 0039 9F       		.byte	0x9f
+ 2501 003a 00000000 		.4byte	0
+ 2502 003e 00000000 		.4byte	0
+ 2503              	.LLST5:
+ 2504 0042 00000000 		.4byte	.LVL9
+ 2505 0046 1C000000 		.4byte	.LVL14
+ 2506 004a 0100     		.2byte	0x1
+ 2507 004c 52       		.byte	0x52
+ARM GAS  C:\Users\Pearl\AppData\Local\Temp\ccefFgns.s 			page 45
+
+
+ 2508 004d 1C000000 		.4byte	.LVL14
+ 2509 0051 44000000 		.4byte	.LFE222
+ 2510 0055 0400     		.2byte	0x4
+ 2511 0057 F3       		.byte	0xf3
+ 2512 0058 01       		.uleb128 0x1
+ 2513 0059 52       		.byte	0x52
+ 2514 005a 9F       		.byte	0x9f
+ 2515 005b 00000000 		.4byte	0
+ 2516 005f 00000000 		.4byte	0
+ 2517              	.LLST6:
+ 2518 0063 00000000 		.4byte	.LVL9
+ 2519 0067 08000000 		.4byte	.LVL10
+ 2520 006b 0300     		.2byte	0x3
+ 2521 006d 08       		.byte	0x8
+ 2522 006e 20       		.byte	0x20
+ 2523 006f 9F       		.byte	0x9f
+ 2524 0070 00000000 		.4byte	0
+ 2525 0074 00000000 		.4byte	0
+ 2526              	.LLST7:
+ 2527 0078 08000000 		.4byte	.LVL10
+ 2528 007c 1C000000 		.4byte	.LVL14
+ 2529 0080 0100     		.2byte	0x1
+ 2530 0082 52       		.byte	0x52
+ 2531 0083 1C000000 		.4byte	.LVL14
+ 2532 0087 28000000 		.4byte	.LVL16
+ 2533 008b 0400     		.2byte	0x4
+ 2534 008d F3       		.byte	0xf3
+ 2535 008e 01       		.uleb128 0x1
+ 2536 008f 52       		.byte	0x52
+ 2537 0090 9F       		.byte	0x9f
+ 2538 0091 32000000 		.4byte	.LVL18
+ 2539 0095 34000000 		.4byte	.LVL19
+ 2540 0099 0400     		.2byte	0x4
+ 2541 009b F3       		.byte	0xf3
+ 2542 009c 01       		.uleb128 0x1
+ 2543 009d 52       		.byte	0x52
+ 2544 009e 9F       		.byte	0x9f
+ 2545 009f 00000000 		.4byte	0
+ 2546 00a3 00000000 		.4byte	0
+ 2547              	.LLST8:
+ 2548 00a7 08000000 		.4byte	.LVL10
+ 2549 00ab 14000000 		.4byte	.LVL12
+ 2550 00af 0100     		.2byte	0x1
+ 2551 00b1 51       		.byte	0x51
+ 2552 00b2 14000000 		.4byte	.LVL12
+ 2553 00b6 28000000 		.4byte	.LVL16
+ 2554 00ba 0400     		.2byte	0x4
+ 2555 00bc 71       		.byte	0x71
+ 2556 00bd 00       		.sleb128 0
+ 2557 00be 1F       		.byte	0x1f
+ 2558 00bf 9F       		.byte	0x9f
+ 2559 00c0 32000000 		.4byte	.LVL18
+ 2560 00c4 34000000 		.4byte	.LVL19
+ 2561 00c8 0400     		.2byte	0x4
+ 2562 00ca 71       		.byte	0x71
+ 2563 00cb 00       		.sleb128 0
+ 2564 00cc 1F       		.byte	0x1f
+ARM GAS  C:\Users\Pearl\AppData\Local\Temp\ccefFgns.s 			page 46
+
+
+ 2565 00cd 9F       		.byte	0x9f
+ 2566 00ce 00000000 		.4byte	0
+ 2567 00d2 00000000 		.4byte	0
+ 2568              	.LLST9:
+ 2569 00d6 08000000 		.4byte	.LVL10
+ 2570 00da 12000000 		.4byte	.LVL11
+ 2571 00de 0100     		.2byte	0x1
+ 2572 00e0 50       		.byte	0x50
+ 2573 00e1 12000000 		.4byte	.LVL11
+ 2574 00e5 14000000 		.4byte	.LVL12
+ 2575 00e9 0400     		.2byte	0x4
+ 2576 00eb F3       		.byte	0xf3
+ 2577 00ec 01       		.uleb128 0x1
+ 2578 00ed 50       		.byte	0x50
+ 2579 00ee 9F       		.byte	0x9f
+ 2580 00ef 14000000 		.4byte	.LVL12
+ 2581 00f3 28000000 		.4byte	.LVL16
+ 2582 00f7 0A00     		.2byte	0xa
+ 2583 00f9 F3       		.byte	0xf3
+ 2584 00fa 01       		.uleb128 0x1
+ 2585 00fb 50       		.byte	0x50
+ 2586 00fc 75       		.byte	0x75
+ 2587 00fd 00       		.sleb128 0
+ 2588 00fe 22       		.byte	0x22
+ 2589 00ff 71       		.byte	0x71
+ 2590 0100 00       		.sleb128 0
+ 2591 0101 1A       		.byte	0x1a
+ 2592 0102 9F       		.byte	0x9f
+ 2593 0103 32000000 		.4byte	.LVL18
+ 2594 0107 34000000 		.4byte	.LVL19
+ 2595 010b 0A00     		.2byte	0xa
+ 2596 010d F3       		.byte	0xf3
+ 2597 010e 01       		.uleb128 0x1
+ 2598 010f 50       		.byte	0x50
+ 2599 0110 75       		.byte	0x75
+ 2600 0111 00       		.sleb128 0
+ 2601 0112 22       		.byte	0x22
+ 2602 0113 71       		.byte	0x71
+ 2603 0114 00       		.sleb128 0
+ 2604 0115 1A       		.byte	0x1a
+ 2605 0116 9F       		.byte	0x9f
+ 2606 0117 00000000 		.4byte	0
+ 2607 011b 00000000 		.4byte	0
+ 2608              	.LLST10:
+ 2609 011f 28000000 		.4byte	.LVL16
+ 2610 0123 2E000000 		.4byte	.LVL17
+ 2611 0127 0200     		.2byte	0x2
+ 2612 0129 30       		.byte	0x30
+ 2613 012a 9F       		.byte	0x9f
+ 2614 012b 34000000 		.4byte	.LVL19
+ 2615 012f 3A000000 		.4byte	.LVL20
+ 2616 0133 0200     		.2byte	0x2
+ 2617 0135 30       		.byte	0x30
+ 2618 0136 9F       		.byte	0x9f
+ 2619 0137 00000000 		.4byte	0
+ 2620 013b 00000000 		.4byte	0
+ 2621              	.LLST0:
+ARM GAS  C:\Users\Pearl\AppData\Local\Temp\ccefFgns.s 			page 47
+
+
+ 2622 013f 00000000 		.4byte	.LVL0
+ 2623 0143 06000000 		.4byte	.LVL1
+ 2624 0147 0100     		.2byte	0x1
+ 2625 0149 50       		.byte	0x50
+ 2626 014a 06000000 		.4byte	.LVL1
+ 2627 014e 0C000000 		.4byte	.LVL2
+ 2628 0152 0300     		.2byte	0x3
+ 2629 0154 70       		.byte	0x70
+ 2630 0155 01       		.sleb128 1
+ 2631 0156 9F       		.byte	0x9f
+ 2632 0157 0C000000 		.4byte	.LVL2
+ 2633 015b 12000000 		.4byte	.LVL3
+ 2634 015f 0400     		.2byte	0x4
+ 2635 0161 F3       		.byte	0xf3
+ 2636 0162 01       		.uleb128 0x1
+ 2637 0163 50       		.byte	0x50
+ 2638 0164 9F       		.byte	0x9f
+ 2639 0165 12000000 		.4byte	.LVL3
+ 2640 0169 16000000 		.4byte	.LVL5
+ 2641 016d 0600     		.2byte	0x6
+ 2642 016f 73       		.byte	0x73
+ 2643 0170 00       		.sleb128 0
+ 2644 0171 71       		.byte	0x71
+ 2645 0172 00       		.sleb128 0
+ 2646 0173 1A       		.byte	0x1a
+ 2647 0174 9F       		.byte	0x9f
+ 2648 0175 16000000 		.4byte	.LVL5
+ 2649 0179 1A000000 		.4byte	.LVL6
+ 2650 017d 0100     		.2byte	0x1
+ 2651 017f 51       		.byte	0x51
+ 2652 0180 1A000000 		.4byte	.LVL6
+ 2653 0184 34000000 		.4byte	.LFE221
+ 2654 0188 0F00     		.2byte	0xf
+ 2655 018a F3       		.byte	0xf3
+ 2656 018b 01       		.uleb128 0x1
+ 2657 018c 50       		.byte	0x50
+ 2658 018d F3       		.byte	0xf3
+ 2659 018e 01       		.uleb128 0x1
+ 2660 018f 51       		.byte	0x51
+ 2661 0190 22       		.byte	0x22
+ 2662 0191 31       		.byte	0x31
+ 2663 0192 1C       		.byte	0x1c
+ 2664 0193 F3       		.byte	0xf3
+ 2665 0194 01       		.uleb128 0x1
+ 2666 0195 51       		.byte	0x51
+ 2667 0196 1F       		.byte	0x1f
+ 2668 0197 1A       		.byte	0x1a
+ 2669 0198 9F       		.byte	0x9f
+ 2670 0199 00000000 		.4byte	0
+ 2671 019d 00000000 		.4byte	0
+ 2672              	.LLST1:
+ 2673 01a1 00000000 		.4byte	.LVL0
+ 2674 01a5 12000000 		.4byte	.LVL3
+ 2675 01a9 0100     		.2byte	0x1
+ 2676 01ab 51       		.byte	0x51
+ 2677 01ac 12000000 		.4byte	.LVL3
+ 2678 01b0 16000000 		.4byte	.LVL5
+ARM GAS  C:\Users\Pearl\AppData\Local\Temp\ccefFgns.s 			page 48
+
+
+ 2679 01b4 0400     		.2byte	0x4
+ 2680 01b6 71       		.byte	0x71
+ 2681 01b7 00       		.sleb128 0
+ 2682 01b8 1F       		.byte	0x1f
+ 2683 01b9 9F       		.byte	0x9f
+ 2684 01ba 16000000 		.4byte	.LVL5
+ 2685 01be 34000000 		.4byte	.LFE221
+ 2686 01c2 0400     		.2byte	0x4
+ 2687 01c4 F3       		.byte	0xf3
+ 2688 01c5 01       		.uleb128 0x1
+ 2689 01c6 51       		.byte	0x51
+ 2690 01c7 9F       		.byte	0x9f
+ 2691 01c8 00000000 		.4byte	0
+ 2692 01cc 00000000 		.4byte	0
+ 2693              	.LLST2:
+ 2694 01d0 14000000 		.4byte	.LVL4
+ 2695 01d4 2A000000 		.4byte	.LVL7
+ 2696 01d8 0100     		.2byte	0x1
+ 2697 01da 50       		.byte	0x50
+ 2698 01db 2A000000 		.4byte	.LVL7
+ 2699 01df 2C000000 		.4byte	.LVL8
+ 2700 01e3 1100     		.2byte	0x11
+ 2701 01e5 75       		.byte	0x75
+ 2702 01e6 00       		.sleb128 0
+ 2703 01e7 F3       		.byte	0xf3
+ 2704 01e8 01       		.uleb128 0x1
+ 2705 01e9 51       		.byte	0x51
+ 2706 01ea 22       		.byte	0x22
+ 2707 01eb 72       		.byte	0x72
+ 2708 01ec 00       		.sleb128 0
+ 2709 01ed 22       		.byte	0x22
+ 2710 01ee 31       		.byte	0x31
+ 2711 01ef 1C       		.byte	0x1c
+ 2712 01f0 F3       		.byte	0xf3
+ 2713 01f1 01       		.uleb128 0x1
+ 2714 01f2 51       		.byte	0x51
+ 2715 01f3 1F       		.byte	0x1f
+ 2716 01f4 1A       		.byte	0x1a
+ 2717 01f5 9F       		.byte	0x9f
+ 2718 01f6 2C000000 		.4byte	.LVL8
+ 2719 01fa 34000000 		.4byte	.LFE221
+ 2720 01fe 1500     		.2byte	0x15
+ 2721 0200 03       		.byte	0x3
+ 2722 0201 00000000 		.4byte	ch_memcore
+ 2723 0205 06       		.byte	0x6
+ 2724 0206 F3       		.byte	0xf3
+ 2725 0207 01       		.uleb128 0x1
+ 2726 0208 51       		.byte	0x51
+ 2727 0209 22       		.byte	0x22
+ 2728 020a 72       		.byte	0x72
+ 2729 020b 00       		.sleb128 0
+ 2730 020c 22       		.byte	0x22
+ 2731 020d 31       		.byte	0x31
+ 2732 020e 1C       		.byte	0x1c
+ 2733 020f F3       		.byte	0xf3
+ 2734 0210 01       		.uleb128 0x1
+ 2735 0211 51       		.byte	0x51
+ARM GAS  C:\Users\Pearl\AppData\Local\Temp\ccefFgns.s 			page 49
+
+
+ 2736 0212 1F       		.byte	0x1f
+ 2737 0213 1A       		.byte	0x1a
+ 2738 0214 9F       		.byte	0x9f
+ 2739 0215 00000000 		.4byte	0
+ 2740 0219 00000000 		.4byte	0
+ 2741              		.section	.debug_aranges,"",%progbits
+ 2742 0000 34000000 		.4byte	0x34
+ 2743 0004 0200     		.2byte	0x2
+ 2744 0006 00000000 		.4byte	.Ldebug_info0
+ 2745 000a 04       		.byte	0x4
+ 2746 000b 00       		.byte	0
+ 2747 000c 0000     		.2byte	0
+ 2748 000e 0000     		.2byte	0
+ 2749 0010 00000000 		.4byte	.LFB220
+ 2750 0014 18000000 		.4byte	.LFE220-.LFB220
+ 2751 0018 00000000 		.4byte	.LFB221
+ 2752 001c 34000000 		.4byte	.LFE221-.LFB221
+ 2753 0020 00000000 		.4byte	.LFB222
+ 2754 0024 44000000 		.4byte	.LFE222-.LFB222
+ 2755 0028 00000000 		.4byte	.LFB223
+ 2756 002c 10000000 		.4byte	.LFE223-.LFB223
+ 2757 0030 00000000 		.4byte	0
+ 2758 0034 00000000 		.4byte	0
+ 2759              		.section	.debug_ranges,"",%progbits
+ 2760              	.Ldebug_ranges0:
+ 2761 0000 08000000 		.4byte	.LBB30
+ 2762 0004 28000000 		.4byte	.LBE30
+ 2763 0008 32000000 		.4byte	.LBB42
+ 2764 000c 34000000 		.4byte	.LBE42
+ 2765 0010 00000000 		.4byte	0
+ 2766 0014 00000000 		.4byte	0
+ 2767 0018 28000000 		.4byte	.LBB33
+ 2768 001c 2E000000 		.4byte	.LBE33
+ 2769 0020 34000000 		.4byte	.LBB43
+ 2770 0024 3A000000 		.4byte	.LBE43
+ 2771 0028 00000000 		.4byte	0
+ 2772 002c 00000000 		.4byte	0
+ 2773 0030 00000000 		.4byte	.LFB220
+ 2774 0034 18000000 		.4byte	.LFE220
+ 2775 0038 00000000 		.4byte	.LFB221
+ 2776 003c 34000000 		.4byte	.LFE221
+ 2777 0040 00000000 		.4byte	.LFB222
+ 2778 0044 44000000 		.4byte	.LFE222
+ 2779 0048 00000000 		.4byte	.LFB223
+ 2780 004c 10000000 		.4byte	.LFE223
+ 2781 0050 00000000 		.4byte	0
+ 2782 0054 00000000 		.4byte	0
+ 2783              		.section	.debug_line,"",%progbits
+ 2784              	.Ldebug_line0:
+ 2785 0000 80030000 		.section	.debug_str,"MS",%progbits,1
+ 2785      0200EC02 
+ 2785      00000201 
+ 2785      FB0E0D00 
+ 2785      01010101 
+ 2786              	.LASF48:
+ 2787 0000 63685F74 		.ascii	"ch_threads_list\000"
+ 2787      68726561 
+ARM GAS  C:\Users\Pearl\AppData\Local\Temp\ccefFgns.s 			page 50
+
+
+ 2787      64735F6C 
+ 2787      69737400 
+ 2788              	.LASF100:
+ 2789 0010 74696D65 		.ascii	"timesize\000"
+ 2789      73697A65 
+ 2789      00
+ 2790              	.LASF75:
+ 2791 0019 53797374 		.ascii	"SystemCoreClock\000"
+ 2791      656D436F 
+ 2791      7265436C 
+ 2791      6F636B00 
+ 2792              	.LASF88:
+ 2793 0029 77746D74 		.ascii	"wtmtxp\000"
+ 2793      787000
+ 2794              	.LASF126:
+ 2795 0030 6D656D6F 		.ascii	"memory_pool_t\000"
+ 2795      72795F70 
+ 2795      6F6F6C5F 
+ 2795      7400
+ 2796              	.LASF138:
+ 2797 003e 6669666F 		.ascii	"fifo_list\000"
+ 2797      5F6C6973 
+ 2797      7400
+ 2798              	.LASF78:
+ 2799 0048 72656761 		.ascii	"regarm_t\000"
+ 2799      726D5F74 
+ 2799      00
+ 2800              	.LASF130:
+ 2801 0051 64796E5F 		.ascii	"dyn_list_t\000"
+ 2801      6C697374 
+ 2801      5F7400
+ 2802              	.LASF37:
+ 2803 005c 666C6167 		.ascii	"flags\000"
+ 2803      7300
+ 2804              	.LASF72:
+ 2805 0062 73797374 		.ascii	"systime_t\000"
+ 2805      696D655F 
+ 2805      7400
+ 2806              	.LASF43:
+ 2807 006c 7265616C 		.ascii	"realprio\000"
+ 2807      7072696F 
+ 2807      00
+ 2808              	.LASF41:
+ 2809 0075 6570656E 		.ascii	"epending\000"
+ 2809      64696E67 
+ 2809      00
+ 2810              	.LASF0:
+ 2811 007e 756E7369 		.ascii	"unsigned int\000"
+ 2811      676E6564 
+ 2811      20696E74 
+ 2811      00
+ 2812              	.LASF49:
+ 2813 008b 6E657874 		.ascii	"next\000"
+ 2813      00
+ 2814              	.LASF98:
+ 2815 0090 76657273 		.ascii	"version\000"
+ 2815      696F6E00 
+ARM GAS  C:\Users\Pearl\AppData\Local\Temp\ccefFgns.s 			page 51
+
+
+ 2816              	.LASF46:
+ 2817 0098 74687265 		.ascii	"threads_list_t\000"
+ 2817      6164735F 
+ 2817      6C697374 
+ 2817      5F7400
+ 2818              	.LASF132:
+ 2819 00a7 6F626A5F 		.ascii	"obj_list\000"
+ 2819      6C697374 
+ 2819      00
+ 2820              	.LASF10:
+ 2821 00b0 5F5F696E 		.ascii	"__int32_t\000"
+ 2821      7433325F 
+ 2821      7400
+ 2822              	.LASF38:
+ 2823 00ba 72656673 		.ascii	"refs\000"
+ 2823      00
+ 2824              	.LASF156:
+ 2825 00bf 6368436F 		.ascii	"chCoreAllocAlignedWithOffset\000"
+ 2825      7265416C 
+ 2825      6C6F6341 
+ 2825      6C69676E 
+ 2825      65645769 
+ 2826              	.LASF112:
+ 2827 00dc 6F66665F 		.ascii	"off_time\000"
+ 2827      74696D65 
+ 2827      00
+ 2828              	.LASF84:
+ 2829 00e5 77746F62 		.ascii	"wtobjp\000"
+ 2829      6A7000
+ 2830              	.LASF149:
+ 2831 00ec 706F7274 		.ascii	"port_lock\000"
+ 2831      5F6C6F63 
+ 2831      6B00
+ 2832              	.LASF70:
+ 2833 00f6 76746C69 		.ascii	"vtlist\000"
+ 2833      737400
+ 2834              	.LASF80:
+ 2835 00fd 706F7274 		.ascii	"port_context\000"
+ 2835      5F636F6E 
+ 2835      74657874 
+ 2835      00
+ 2836              	.LASF54:
+ 2837 010a 63685F72 		.ascii	"ch_ready_list\000"
+ 2837      65616479 
+ 2837      5F6C6973 
+ 2837      7400
+ 2838              	.LASF60:
+ 2839 0118 66756E63 		.ascii	"func\000"
+ 2839      00
+ 2840              	.LASF89:
+ 2841 011d 65776D61 		.ascii	"ewmask\000"
+ 2841      736B00
+ 2842              	.LASF52:
+ 2843 0124 70726576 		.ascii	"prev\000"
+ 2843      00
+ 2844              	.LASF51:
+ 2845 0129 63685F74 		.ascii	"ch_threads_queue\000"
+ARM GAS  C:\Users\Pearl\AppData\Local\Temp\ccefFgns.s 			page 52
+
+
+ 2845      68726561 
+ 2845      64735F71 
+ 2845      75657565 
+ 2845      00
+ 2846              	.LASF131:
+ 2847 013a 63685F6F 		.ascii	"ch_objects_factory\000"
+ 2847      626A6563 
+ 2847      74735F66 
+ 2847      6163746F 
+ 2847      727900
+ 2848              	.LASF104:
+ 2849 014d 6F66665F 		.ascii	"off_newer\000"
+ 2849      6E657765 
+ 2849      7200
+ 2850              	.LASF56:
+ 2851 0157 76746675 		.ascii	"vtfunc_t\000"
+ 2851      6E635F74 
+ 2851      00
+ 2852              	.LASF155:
+ 2853 0160 6368436F 		.ascii	"chCoreGetStatusX\000"
+ 2853      72654765 
+ 2853      74537461 
+ 2853      74757358 
+ 2853      00
+ 2854              	.LASF65:
+ 2855 0171 63685F73 		.ascii	"ch_system_debug\000"
+ 2855      79737465 
+ 2855      6D5F6465 
+ 2855      62756700 
+ 2856              	.LASF19:
+ 2857 0181 75696E74 		.ascii	"uint32_t\000"
+ 2857      33325F74 
+ 2857      00
+ 2858              	.LASF86:
+ 2859 018a 73656E74 		.ascii	"sentmsg\000"
+ 2859      6D736700 
+ 2860              	.LASF26:
+ 2861 0192 6576656E 		.ascii	"eventmask_t\000"
+ 2861      746D6173 
+ 2861      6B5F7400 
+ 2862              	.LASF101:
+ 2863 019e 74687265 		.ascii	"threadsize\000"
+ 2863      61647369 
+ 2863      7A6500
+ 2864              	.LASF90:
+ 2865 01a9 63685F73 		.ascii	"ch_semaphore\000"
+ 2865      656D6170 
+ 2865      686F7265 
+ 2865      00
+ 2866              	.LASF24:
+ 2867 01b6 74707269 		.ascii	"tprio_t\000"
+ 2867      6F5F7400 
+ 2868              	.LASF58:
+ 2869 01be 63685F76 		.ascii	"ch_virtual_timer\000"
+ 2869      69727475 
+ 2869      616C5F74 
+ 2869      696D6572 
+ARM GAS  C:\Users\Pearl\AppData\Local\Temp\ccefFgns.s 			page 53
+
+
+ 2869      00
+ 2870              	.LASF120:
+ 2871 01cf 6D656D63 		.ascii	"memcore_t\000"
+ 2871      6F72655F 
+ 2871      7400
+ 2872              	.LASF145:
+ 2873 01d9 6368436F 		.ascii	"chCoreAllocAlignedWithOffsetI\000"
+ 2873      7265416C 
+ 2873      6C6F6341 
+ 2873      6C69676E 
+ 2873      65645769 
+ 2874              	.LASF153:
+ 2875 01f7 2E2F2F6F 		.ascii	".//os/lib/src/chmemcore.c\000"
+ 2875      732F6C69 
+ 2875      622F7372 
+ 2875      632F6368 
+ 2875      6D656D63 
+ 2876              	.LASF15:
+ 2877 0211 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 2877      206C6F6E 
+ 2877      6720756E 
+ 2877      7369676E 
+ 2877      65642069 
+ 2878              	.LASF8:
+ 2879 0228 5F5F7569 		.ascii	"__uint16_t\000"
+ 2879      6E743136 
+ 2879      5F7400
+ 2880              	.LASF27:
+ 2881 0233 636E745F 		.ascii	"cnt_t\000"
+ 2881      7400
+ 2882              	.LASF107:
+ 2883 0239 6F66665F 		.ascii	"off_stklimit\000"
+ 2883      73746B6C 
+ 2883      696D6974 
+ 2883      00
+ 2884              	.LASF92:
+ 2885 0246 6F776E65 		.ascii	"owner\000"
+ 2885      7200
+ 2886              	.LASF50:
+ 2887 024c 74687265 		.ascii	"threads_queue_t\000"
+ 2887      6164735F 
+ 2887      71756575 
+ 2887      655F7400 
+ 2888              	.LASF42:
+ 2889 025c 6D74786C 		.ascii	"mtxlist\000"
+ 2889      69737400 
+ 2890              	.LASF62:
+ 2891 0264 63685F76 		.ascii	"ch_virtual_timers_list\000"
+ 2891      69727475 
+ 2891      616C5F74 
+ 2891      696D6572 
+ 2891      735F6C69 
+ 2892              	.LASF151:
+ 2893 027b 62617365 		.ascii	"basePri\000"
+ 2893      50726900 
+ 2894              	.LASF29:
+ 2895 0283 74687265 		.ascii	"thread_t\000"
+ARM GAS  C:\Users\Pearl\AppData\Local\Temp\ccefFgns.s 			page 54
+
+
+ 2895      61645F74 
+ 2895      00
+ 2896              	.LASF157:
+ 2897 028c 5F636F72 		.ascii	"_core_init\000"
+ 2897      655F696E 
+ 2897      697400
+ 2898              	.LASF105:
+ 2899 0297 6F66665F 		.ascii	"off_older\000"
+ 2899      6F6C6465 
+ 2899      7200
+ 2900              	.LASF108:
+ 2901 02a1 6F66665F 		.ascii	"off_state\000"
+ 2901      73746174 
+ 2901      6500
+ 2902              	.LASF143:
+ 2903 02ab 5F5F6865 		.ascii	"__heap_base__\000"
+ 2903      61705F62 
+ 2903      6173655F 
+ 2903      5F00
+ 2904              	.LASF4:
+ 2905 02b9 73697A65 		.ascii	"size_t\000"
+ 2905      5F7400
+ 2906              	.LASF82:
+ 2907 02c0 7264796D 		.ascii	"rdymsg\000"
+ 2907      736700
+ 2908              	.LASF123:
+ 2909 02c7 6F626A65 		.ascii	"object_size\000"
+ 2909      63745F73 
+ 2909      697A6500 
+ 2910              	.LASF141:
+ 2911 02d3 6F666673 		.ascii	"offset\000"
+ 2911      657400
+ 2912              	.LASF116:
+ 2913 02da 5F426F6F 		.ascii	"_Bool\000"
+ 2913      6C00
+ 2914              	.LASF154:
+ 2915 02e0 433A5C55 		.ascii	"C:\\Users\\Pearl\\RM\\assignment2-master\000"
+ 2915      73657273 
+ 2915      5C506561 
+ 2915      726C5C52 
+ 2915      4D5C6173 
+ 2916              	.LASF139:
+ 2917 0305 6F626A65 		.ascii	"objects_factory_t\000"
+ 2917      6374735F 
+ 2917      66616374 
+ 2917      6F72795F 
+ 2917      7400
+ 2918              	.LASF91:
+ 2919 0317 63685F6D 		.ascii	"ch_mutex\000"
+ 2919      75746578 
+ 2919      00
+ 2920              	.LASF14:
+ 2921 0320 5F5F7569 		.ascii	"__uint64_t\000"
+ 2921      6E743634 
+ 2921      5F7400
+ 2922              	.LASF77:
+ 2923 032b 41504250 		.ascii	"APBPrescTable\000"
+ARM GAS  C:\Users\Pearl\AppData\Local\Temp\ccefFgns.s 			page 55
+
+
+ 2923      72657363 
+ 2923      5461626C 
+ 2923      6500
+ 2924              	.LASF103:
+ 2925 0339 6F66665F 		.ascii	"off_ctx\000"
+ 2925      63747800 
+ 2926              	.LASF150:
+ 2927 0341 5F5F7365 		.ascii	"__set_BASEPRI\000"
+ 2927      745F4241 
+ 2927      53455052 
+ 2927      4900
+ 2928              	.LASF147:
+ 2929 034f 63685379 		.ascii	"chSysLock\000"
+ 2929      734C6F63 
+ 2929      6B00
+ 2930              	.LASF109:
+ 2931 0359 6F66665F 		.ascii	"off_flags\000"
+ 2931      666C6167 
+ 2931      7300
+ 2932              	.LASF31:
+ 2933 0363 7072696F 		.ascii	"prio\000"
+ 2933      00
+ 2934              	.LASF136:
+ 2935 0368 73656D5F 		.ascii	"sem_pool\000"
+ 2935      706F6F6C 
+ 2935      00
+ 2936              	.LASF93:
+ 2937 0371 63686172 		.ascii	"char\000"
+ 2937      00
+ 2938              	.LASF45:
+ 2939 0376 74687265 		.ascii	"thread_reference_t\000"
+ 2939      61645F72 
+ 2939      65666572 
+ 2939      656E6365 
+ 2939      5F7400
+ 2940              	.LASF35:
+ 2941 0389 77616261 		.ascii	"wabase\000"
+ 2941      736500
+ 2942              	.LASF94:
+ 2943 0390 63685F69 		.ascii	"ch_idle_thread_wa\000"
+ 2943      646C655F 
+ 2943      74687265 
+ 2943      61645F77 
+ 2943      6100
+ 2944              	.LASF22:
+ 2945 03a2 74737461 		.ascii	"tstate_t\000"
+ 2945      74655F74 
+ 2945      00
+ 2946              	.LASF16:
+ 2947 03ab 75696E74 		.ascii	"uint8_t\000"
+ 2947      385F7400 
+ 2948              	.LASF127:
+ 2949 03b3 63685F64 		.ascii	"ch_dyn_element\000"
+ 2949      796E5F65 
+ 2949      6C656D65 
+ 2949      6E7400
+ 2950              	.LASF40:
+ARM GAS  C:\Users\Pearl\AppData\Local\Temp\ccefFgns.s 			page 56
+
+
+ 2951 03c2 6D736771 		.ascii	"msgqueue\000"
+ 2951      75657565 
+ 2951      00
+ 2952              	.LASF47:
+ 2953 03cb 63685F74 		.ascii	"ch_thread\000"
+ 2953      68726561 
+ 2953      6400
+ 2954              	.LASF129:
+ 2955 03d5 63685F64 		.ascii	"ch_dyn_list\000"
+ 2955      796E5F6C 
+ 2955      69737400 
+ 2956              	.LASF106:
+ 2957 03e1 6F66665F 		.ascii	"off_name\000"
+ 2957      6E616D65 
+ 2957      00
+ 2958              	.LASF64:
+ 2959 03ea 73797374 		.ascii	"system_debug_t\000"
+ 2959      656D5F64 
+ 2959      65627567 
+ 2959      5F7400
+ 2960              	.LASF1:
+ 2961 03f9 6C6F6E67 		.ascii	"long long int\000"
+ 2961      206C6F6E 
+ 2961      6720696E 
+ 2961      7400
+ 2962              	.LASF96:
+ 2963 0407 7A65726F 		.ascii	"zero\000"
+ 2963      00
+ 2964              	.LASF25:
+ 2965 040c 6D73675F 		.ascii	"msg_t\000"
+ 2965      7400
+ 2966              	.LASF133:
+ 2967 0412 6F626A5F 		.ascii	"obj_pool\000"
+ 2967      706F6F6C 
+ 2967      00
+ 2968              	.LASF57:
+ 2969 041b 76697274 		.ascii	"virtual_timer_t\000"
+ 2969      75616C5F 
+ 2969      74696D65 
+ 2969      725F7400 
+ 2970              	.LASF97:
+ 2971 042b 73697A65 		.ascii	"size\000"
+ 2971      00
+ 2972              	.LASF99:
+ 2973 0430 70747273 		.ascii	"ptrsize\000"
+ 2973      697A6500 
+ 2974              	.LASF76:
+ 2975 0438 41484250 		.ascii	"AHBPrescTable\000"
+ 2975      72657363 
+ 2975      5461626C 
+ 2975      6500
+ 2976              	.LASF73:
+ 2977 0446 73797369 		.ascii	"sysinterval_t\000"
+ 2977      6E746572 
+ 2977      76616C5F 
+ 2977      7400
+ 2978              	.LASF134:
+ARM GAS  C:\Users\Pearl\AppData\Local\Temp\ccefFgns.s 			page 57
+
+
+ 2979 0454 6275665F 		.ascii	"buf_list\000"
+ 2979      6C697374 
+ 2979      00
+ 2980              	.LASF66:
+ 2981 045d 70616E69 		.ascii	"panic_msg\000"
+ 2981      635F6D73 
+ 2981      6700
+ 2982              	.LASF21:
+ 2983 0467 746D6F64 		.ascii	"tmode_t\000"
+ 2983      655F7400 
+ 2984              	.LASF28:
+ 2985 046f 75636E74 		.ascii	"ucnt_t\000"
+ 2985      5F7400
+ 2986              	.LASF71:
+ 2987 0476 6D61696E 		.ascii	"mainthread\000"
+ 2987      74687265 
+ 2987      616400
+ 2988              	.LASF2:
+ 2989 0481 6C6F6E67 		.ascii	"long double\000"
+ 2989      20646F75 
+ 2989      626C6500 
+ 2990              	.LASF17:
+ 2991 048d 75696E74 		.ascii	"uint16_t\000"
+ 2991      31365F74 
+ 2991      00
+ 2992              	.LASF113:
+ 2993 0496 63686465 		.ascii	"chdebug_t\000"
+ 2993      6275675F 
+ 2993      7400
+ 2994              	.LASF102:
+ 2995 04a0 6F66665F 		.ascii	"off_prio\000"
+ 2995      7072696F 
+ 2995      00
+ 2996              	.LASF121:
+ 2997 04a9 63685F6D 		.ascii	"ch_memcore\000"
+ 2997      656D636F 
+ 2997      726500
+ 2998              	.LASF7:
+ 2999 04b4 73686F72 		.ascii	"short int\000"
+ 2999      7420696E 
+ 2999      7400
+ 3000              	.LASF11:
+ 3001 04be 6C6F6E67 		.ascii	"long int\000"
+ 3001      20696E74 
+ 3001      00
+ 3002              	.LASF81:
+ 3003 04c7 706F7274 		.ascii	"port_intctx\000"
+ 3003      5F696E74 
+ 3003      63747800 
+ 3004              	.LASF74:
+ 3005 04d3 49544D5F 		.ascii	"ITM_RxBuffer\000"
+ 3005      52784275 
+ 3005      66666572 
+ 3005      00
+ 3006              	.LASF140:
+ 3007 04e0 63685F66 		.ascii	"ch_factory\000"
+ 3007      6163746F 
+ARM GAS  C:\Users\Pearl\AppData\Local\Temp\ccefFgns.s 			page 58
+
+
+ 3007      727900
+ 3008              	.LASF68:
+ 3009 04eb 63685F73 		.ascii	"ch_system\000"
+ 3009      79737465 
+ 3009      6D00
+ 3010              	.LASF152:
+ 3011 04f5 474E5520 		.ascii	"GNU C11 7.2.1 20170904 (release) [ARM/embedded-7-br"
+ 3011      43313120 
+ 3011      372E322E 
+ 3011      31203230 
+ 3011      31373039 
+ 3012 0528 616E6368 		.ascii	"anch revision 255204] -mcpu=cortex-m3 -mthumb -ggdb"
+ 3012      20726576 
+ 3012      6973696F 
+ 3012      6E203235 
+ 3012      35323034 
+ 3013 055b 202D4F32 		.ascii	" -O2 -fomit-frame-pointer -falign-functions=16 -ffu"
+ 3013      202D666F 
+ 3013      6D69742D 
+ 3013      6672616D 
+ 3013      652D706F 
+ 3014 058e 6E637469 		.ascii	"nction-sections -fdata-sections -fno-common\000"
+ 3014      6F6E2D73 
+ 3014      65637469 
+ 3014      6F6E7320 
+ 3014      2D666461 
+ 3015              	.LASF125:
+ 3016 05ba 70726F76 		.ascii	"provider\000"
+ 3016      69646572 
+ 3016      00
+ 3017              	.LASF63:
+ 3018 05c3 6C617374 		.ascii	"lasttime\000"
+ 3018      74696D65 
+ 3018      00
+ 3019              	.LASF20:
+ 3020 05cc 75696E74 		.ascii	"uint64_t\000"
+ 3020      36345F74 
+ 3020      00
+ 3021              	.LASF69:
+ 3022 05d5 726C6973 		.ascii	"rlist\000"
+ 3022      7400
+ 3023              	.LASF5:
+ 3024 05db 5F5F7569 		.ascii	"__uint8_t\000"
+ 3024      6E74385F 
+ 3024      7400
+ 3025              	.LASF117:
+ 3026 05e5 6D656D67 		.ascii	"memgetfunc_t\000"
+ 3026      65746675 
+ 3026      6E635F74 
+ 3026      00
+ 3027              	.LASF34:
+ 3028 05f2 6E616D65 		.ascii	"name\000"
+ 3028      00
+ 3029              	.LASF95:
+ 3030 05f7 6964656E 		.ascii	"identifier\000"
+ 3030      74696669 
+ 3030      657200
+ARM GAS  C:\Users\Pearl\AppData\Local\Temp\ccefFgns.s 			page 59
+
+
+ 3031              	.LASF111:
+ 3032 0602 6F66665F 		.ascii	"off_preempt\000"
+ 3032      70726565 
+ 3032      6D707400 
+ 3033              	.LASF146:
+ 3034 060e 63685379 		.ascii	"chSysUnlock\000"
+ 3034      73556E6C 
+ 3034      6F636B00 
+ 3035              	.LASF23:
+ 3036 061a 74726566 		.ascii	"trefs_t\000"
+ 3036      735F7400 
+ 3037              	.LASF13:
+ 3038 0622 6C6F6E67 		.ascii	"long unsigned int\000"
+ 3038      20756E73 
+ 3038      69676E65 
+ 3038      6420696E 
+ 3038      7400
+ 3039              	.LASF53:
+ 3040 0634 72656164 		.ascii	"ready_list_t\000"
+ 3040      795F6C69 
+ 3040      73745F74 
+ 3040      00
+ 3041              	.LASF30:
+ 3042 0641 71756575 		.ascii	"queue\000"
+ 3042      6500
+ 3043              	.LASF18:
+ 3044 0647 696E7433 		.ascii	"int32_t\000"
+ 3044      325F7400 
+ 3045              	.LASF87:
+ 3046 064f 77747365 		.ascii	"wtsemp\000"
+ 3046      6D7000
+ 3047              	.LASF115:
+ 3048 0656 6D757465 		.ascii	"mutex_t\000"
+ 3048      785F7400 
+ 3049              	.LASF32:
+ 3050 065e 6E657765 		.ascii	"newer\000"
+ 3050      7200
+ 3051              	.LASF6:
+ 3052 0664 756E7369 		.ascii	"unsigned char\000"
+ 3052      676E6564 
+ 3052      20636861 
+ 3052      7200
+ 3053              	.LASF12:
+ 3054 0672 5F5F7569 		.ascii	"__uint32_t\000"
+ 3054      6E743332 
+ 3054      5F7400
+ 3055              	.LASF39:
+ 3056 067d 77616974 		.ascii	"waiting\000"
+ 3056      696E6700 
+ 3057              	.LASF61:
+ 3058 0685 76697274 		.ascii	"virtual_timers_list_t\000"
+ 3058      75616C5F 
+ 3058      74696D65 
+ 3058      72735F6C 
+ 3058      6973745F 
+ 3059              	.LASF128:
+ 3060 069b 64796E5F 		.ascii	"dyn_element_t\000"
+ARM GAS  C:\Users\Pearl\AppData\Local\Temp\ccefFgns.s 			page 60
+
+
+ 3060      656C656D 
+ 3060      656E745F 
+ 3060      7400
+ 3061              	.LASF137:
+ 3062 06a9 6D62785F 		.ascii	"mbx_list\000"
+ 3062      6C697374 
+ 3062      00
+ 3063              	.LASF36:
+ 3064 06b2 73746174 		.ascii	"state\000"
+ 3064      6500
+ 3065              	.LASF122:
+ 3066 06b8 706F6F6C 		.ascii	"pool_header\000"
+ 3066      5F686561 
+ 3066      64657200 
+ 3067              	.LASF67:
+ 3068 06c4 63685F73 		.ascii	"ch_system_t\000"
+ 3068      79737465 
+ 3068      6D5F7400 
+ 3069              	.LASF85:
+ 3070 06d0 77747472 		.ascii	"wttrp\000"
+ 3070      7000
+ 3071              	.LASF3:
+ 3072 06d6 7369676E 		.ascii	"signed char\000"
+ 3072      65642063 
+ 3072      68617200 
+ 3073              	.LASF59:
+ 3074 06e2 64656C74 		.ascii	"delta\000"
+ 3074      6100
+ 3075              	.LASF9:
+ 3076 06e8 73686F72 		.ascii	"short unsigned int\000"
+ 3076      7420756E 
+ 3076      7369676E 
+ 3076      65642069 
+ 3076      6E7400
+ 3077              	.LASF79:
+ 3078 06fb 73746B61 		.ascii	"stkalign_t\000"
+ 3078      6C69676E 
+ 3078      5F7400
+ 3079              	.LASF110:
+ 3080 0706 6F66665F 		.ascii	"off_refs\000"
+ 3080      72656673 
+ 3080      00
+ 3081              	.LASF119:
+ 3082 070f 656E646D 		.ascii	"endmem\000"
+ 3082      656D00
+ 3083              	.LASF55:
+ 3084 0716 63757272 		.ascii	"current\000"
+ 3084      656E7400 
+ 3085              	.LASF142:
+ 3086 071e 5F5F6675 		.ascii	"__func__\000"
+ 3086      6E635F5F 
+ 3086      00
+ 3087              	.LASF114:
+ 3088 0727 63685F64 		.ascii	"ch_debug\000"
+ 3088      65627567 
+ 3088      00
+ 3089              	.LASF148:
+ARM GAS  C:\Users\Pearl\AppData\Local\Temp\ccefFgns.s 			page 61
+
+
+ 3090 0730 706F7274 		.ascii	"port_unlock\000"
+ 3090      5F756E6C 
+ 3090      6F636B00 
+ 3091              	.LASF124:
+ 3092 073c 616C6967 		.ascii	"align\000"
+ 3092      6E00
+ 3093              	.LASF33:
+ 3094 0742 6F6C6465 		.ascii	"older\000"
+ 3094      7200
+ 3095              	.LASF118:
+ 3096 0748 6E657874 		.ascii	"nextmem\000"
+ 3096      6D656D00 
+ 3097              	.LASF83:
+ 3098 0750 65786974 		.ascii	"exitcode\000"
+ 3098      636F6465 
+ 3098      00
+ 3099              	.LASF144:
+ 3100 0759 5F5F6865 		.ascii	"__heap_end__\000"
+ 3100      61705F65 
+ 3100      6E645F5F 
+ 3100      00
+ 3101              	.LASF135:
+ 3102 0766 73656D5F 		.ascii	"sem_list\000"
+ 3102      6C697374 
+ 3102      00
+ 3103              	.LASF44:
+ 3104 076f 6D706F6F 		.ascii	"mpool\000"
+ 3104      6C00
+ 3105              		.ident	"GCC: (GNU Tools for Arm Embedded Processors 7-2017-q4-major) 7.2.1 20170904 (release) [ARM
+ARM GAS  C:\Users\Pearl\AppData\Local\Temp\ccefFgns.s 			page 62
+
+
+DEFINED SYMBOLS
+                            *ABS*:00000000 chmemcore.c
+C:\Users\Pearl\AppData\Local\Temp\ccefFgns.s:16     .text._core_init:00000000 $t
+C:\Users\Pearl\AppData\Local\Temp\ccefFgns.s:24     .text._core_init:00000000 _core_init
+C:\Users\Pearl\AppData\Local\Temp\ccefFgns.s:43     .text._core_init:0000000c $d
+C:\Users\Pearl\AppData\Local\Temp\ccefFgns.s:50     .text.chCoreAllocAlignedWithOffsetI:00000000 $t
+C:\Users\Pearl\AppData\Local\Temp\ccefFgns.s:58     .text.chCoreAllocAlignedWithOffsetI:00000000 chCoreAllocAlignedWithOffsetI
+C:\Users\Pearl\AppData\Local\Temp\ccefFgns.s:128    .text.chCoreAllocAlignedWithOffsetI:00000030 $d
+C:\Users\Pearl\AppData\Local\Temp\ccefFgns.s:133    .text.chCoreAllocAlignedWithOffset:00000000 $t
+C:\Users\Pearl\AppData\Local\Temp\ccefFgns.s:141    .text.chCoreAllocAlignedWithOffset:00000000 chCoreAllocAlignedWithOffset
+C:\Users\Pearl\AppData\Local\Temp\ccefFgns.s:275    .text.chCoreAllocAlignedWithOffset:00000040 $d
+C:\Users\Pearl\AppData\Local\Temp\ccefFgns.s:280    .text.chCoreGetStatusX:00000000 $t
+C:\Users\Pearl\AppData\Local\Temp\ccefFgns.s:288    .text.chCoreGetStatusX:00000000 chCoreGetStatusX
+C:\Users\Pearl\AppData\Local\Temp\ccefFgns.s:305    .text.chCoreGetStatusX:0000000c $d
+C:\Users\Pearl\AppData\Local\Temp\ccefFgns.s:315    .bss.ch_memcore:00000000 ch_memcore
+C:\Users\Pearl\AppData\Local\Temp\ccefFgns.s:311    .bss.ch_memcore:00000000 $d
+
+UNDEFINED SYMBOLS
+__heap_base__
+__heap_end__

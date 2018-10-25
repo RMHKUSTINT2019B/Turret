@@ -34,60 +34,46 @@ static RC_Ctl_t* rc;
 
 static int16_t motor_output;        //Torque command for motors
 int digit = 0;
-int A = 8192*30/360;                              //angle between two target
+const float pi = 3.1415926;
+double A;                              //angle between two target
 
 //These are the parameters of PID controller
-const float chassis_kp = 0;     //Proportional
-const float chassis_ki = 0;     //Integration
-const float chassis_kd = 0;     //Derivative
+const float chassis_kp = 150;     //Proportional
+const float chassis_ki = 0.5;     //Integration
+const float chassis_kd = 1000;     //Derivative
 
-static int16_t set_angle(){
-  if(digit == 1) return A;
-  else if(digit == 3) return -A;
+static float set_angle(int x){
+  if(x == 1) return A;
+  else if(x == 3) return -A;
   else return 0;
 }
 
-static int16_t angle(const int16_t current, int16_t *previous) {
-  int16_t change = 0;
-  static int16_t total_angle_change = 0;
-
-  change = current - *previous;
-
-  if(change > 4095) change -= 4095;
-
-  total_angle_change += change;
-  *previous_angle = current_angle;
-
-  return total_angle_change;
-}
-
-static int16_t pid_control(const int16_t setPoint, const int16_t current,
+static int16_t pid_control(const float setPoint, const float current,
                            float* error_int, float* error_der,
                            int16_t* previous_error) {
   int16_t output = 0;
+
   int16_t error = 0;
 
-  const int dt = 2;
-  const int n = 19;
 
-  error = setPoint*n - current;
-  *error_int += error * dt;
-  if (setPoint != 0) *error_int *= 0.985;
+  error = setPoint - current;
+  *error_int += error;
+  *error_int *= 0.5;
 
-  *error_der = (error - *previous_error) / dt;
+  *error_der = (error - *previous_error);
 
   output = chassis_kp * error + chassis_ki * *error_int
       + chassis_kd * *error_der; //Proportional controller
 
       //NOTE: Limit your maximum integrated error is often useful
-  float MAX_ERROR_INT = 10000;
+  float MAX_ERROR_INT = 10000000;
 
   if (*error_int > MAX_ERROR_INT)
     *error_int = MAX_ERROR_INT;
   else if (*error_int < -MAX_ERROR_INT)
     *error_int = -MAX_ERROR_INT;
 
-  chThdSleepMilliseconds(dt);
+  chThdSleepMilliseconds(2);
 
   *previous_error = error;
 
@@ -106,29 +92,39 @@ static THD_FUNCTION(motor_ctrl_thread, p) {
 
   Encoder_canStruct* encoder = can_getEncoder(); //Pointer to motor encoder feedback
 
+  A = pi/3;
 
   static float motor_error_int; //error integrators for the four motors
   static float motor_error_der; //error derivatives for the four motors
   static int16_t previous_error;
-  static int16_t previous_angle;
 
-  previous_angle = (encoder + i)->angle_rotor_raw;
+  float initial_angle;
+  initial_angle = (encoder)->radian_angle;
 
   while (true) {
+    if(rc->s2 == 1) digit = 1;
+    else if(rc->s2 == 3) digit = 2;
+    else digit = 3;
 
-    int16_t current_angle = angle((encoder + i)->angle_rotor_raw,
-                                  previous_angle);
-    motor_output = pid_control(set_angle(),
-                               current_angle,
-                               motor_error_int,
-                               motor_error_der,
-                               previous_error);
-    /*
-     TODO set motor current
-     */
+    if(digit>=1&&digit<=3&&(encoder)->radian_angle<=19*set_angle(digit)+initial_angle+A/8&&(encoder)->radian_angle>=19*set_angle(digit)+initial_angle-A/8){
+     //*³öÈ­¡£¡£¡£
+      chThdSleepMilliseconds(2000);
+      motor_output = pid_control(initial_angle,
+                               (encoder)->radian_angle,
+                               &motor_error_int,
+                               &motor_error_der,
+                               &previous_error);
+    }
+    else{
+          motor_output = pid_control(19*set_angle(digit)+initial_angle,
+                                   (encoder)->radian_angle,
+                                   &motor_error_int,
+                                   &motor_error_der,
+                                   &previous_error);
+        }
     can_motorSetCurrent(0x200, motor_output, 0, 0, 0);
 
-    chThdSleepMilliseconds(2);
+    chThdSleepMilliseconds(1);
   }
 }
 
@@ -160,7 +156,11 @@ int main(void) {
    */
 
   while (true) {
-    palTogglePad(GPIOA, GPIOA_LED);
+
+    if(set_angle(digit) == -A) palClearPad(GPIOA, GPIOA_LED);
+    else if(set_angle(digit) == 0) palSetPad(GPIOA, GPIOA_LED);
+    else if(set_angle(digit) == A) palTogglePad(GPIOA, GPIOA_LED);
+
     chThdSleepMilliseconds(500);
   }
 }
